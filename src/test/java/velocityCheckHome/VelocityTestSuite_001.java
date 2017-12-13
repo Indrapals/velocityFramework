@@ -117,7 +117,7 @@ public class VelocityTestSuite_001 {
 		  }	       
 	    }
 	
-	   /*
+	   
 	        @Test
 		    public void manageFleetTileTest_003() throws Exception{
 			vcpobj=new VehicleCheckPage(BrowserUtilities.driver);
@@ -139,7 +139,7 @@ public class VelocityTestSuite_001 {
 				 TestLinkIntegration.updateResult("VLC-3", e.getMessage(), TestLinkAPIResults.TEST_FAILED);
 			  }	       
 		    }
-		*//*
+		/*
 	         @Test
 			public void vehicleCheckTileTest_004() throws Exception{
 			
@@ -161,7 +161,7 @@ public class VelocityTestSuite_001 {
 					// TestLinkIntegration.updateResult("GR-1", e.getMessage(), TestLinkAPIResults.TEST_FAILED);
 				  }	       
 			    }
-		*/	
+		*/
 	@AfterTest
 	public void crash() throws IOException{
 		BrowserUtilities.closeBrowser();
