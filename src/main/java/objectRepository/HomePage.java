@@ -15,20 +15,15 @@ public class HomePage {
 		PageFactory.initElements(BrowserUtilities.driver, this);
 	}
 	
-		
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]")
-	public WebElement VEHICLECHECK_TITLE;
+	public WebElement VEHICLECHECK_MENU;
+		
+	@FindBy(xpath ="//img[@alt='Vehicle Check']")
+	public WebElement VEHICLECHECK_TILE;
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]//following-sibling::ul/li")
-	public By VEHICLECHECK_DROPDOWN;
+	public WebElement VEHICLECHECK_DROPDOWN;
 	
-
-	public void verifyVehicleCheck() throws Exception
-	{
-		
-	    
-		
-	}
 	
 	
 }

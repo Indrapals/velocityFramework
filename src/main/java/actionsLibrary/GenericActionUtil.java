@@ -370,10 +370,30 @@ public class GenericActionUtil {
 
 		public static void clickAndHold(WebElement element){
 			Actions action=new Actions(BrowserUtilities.driver);
-			action.moveToElement(element).clickAndHold().perform();
+			action.moveToElement(element).build().perform();
+			
+			
+		}
+
+		/**
+		 *  method to release hold element 
+		 */
+
+		public static void release(WebElement element){
+			Actions action=new Actions(BrowserUtilities.driver);
+			action.release(element).build().perform();
 			
 		}
 		
+		/**
+		 *  method to move to element 
+		 */
+
+		public static void moveTo(WebElement element){
+			Actions action=new Actions(BrowserUtilities.driver);
+			action.moveToElement(element).build().perform();
+			
+		}
 		/**
 		 *  method to drag and drop element 
 		 */
@@ -396,7 +416,16 @@ public class GenericActionUtil {
 	        	BrowserUtilities.driver.switchTo().window(win);
                
 	        	}
-     	
-			
+		}
+			/**
+			 *  method to get rgba color style of element 
+			 */
+
+			public static String getcolor(WebElement element){
+				
+				String BColor=element.getCssValue("background-color");
+		    	//String BColor=BrowserUtilities.driver.findElement(By.id("vehicle-check-manage-fleet")).getCssValue("background-color");
+		    	
+				return BColor;	
 		}
 }

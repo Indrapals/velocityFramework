@@ -43,12 +43,7 @@ public class LoginPage {
 	public WebElement LANG_AMERICAN_ENG;
 
 	
-	/*@FindBy(how=How.ID,using ="txtPassword")
-	public WebElement PASSWORD; 
-	
-	@FindBy(how=How.ID,using ="btnLogin")
-	public WebElement LOGIN_BTN; 
-*/	
+		
 	public void login_User() throws Exception
 	{
 		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
