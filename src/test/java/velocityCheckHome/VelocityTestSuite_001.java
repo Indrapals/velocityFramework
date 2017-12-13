@@ -139,7 +139,8 @@ public class VelocityTestSuite_001 {
 				 TestLinkIntegration.updateResult("VLC-3", e.getMessage(), TestLinkAPIResults.TEST_FAILED);
 			  }	       
 		    }
-		/*
+		
+	     /*
 	         @Test
 			public void vehicleCheckTileTest_004() throws Exception{
 			
