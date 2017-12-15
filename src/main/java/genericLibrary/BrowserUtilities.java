@@ -52,7 +52,7 @@ public static WebDriver driver;
 
 	public static void closeBrowser() throws IOException{
 		
-		ScreenshootUtilities.captureScreenShot();
+		//ScreenshootUtilities.captureScreenShot();
 		driver.close();
 	
 	}

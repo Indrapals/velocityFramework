@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63427" started-at="2017-12-13T13:18:21Z" finished-at="2017-12-13T13:19:25Z">
+  <suite name="Default suite" duration-ms="43388" started-at="2017-12-15T10:56:38Z" finished-at="2017-12-15T10:57:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63427" started-at="2017-12-13T13:18:21Z" finished-at="2017-12-13T13:19:25Z">
+    <test name="Default test" duration-ms="43388" started-at="2017-12-15T10:56:38Z" finished-at="2017-12-15T10:57:22Z">
       <class name="velocityCheckHome.VelocityTestSuite_001">
-        <test-method status="PASS" signature="launch()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="launch" is-config="true" duration-ms="8921" started-at="2017-12-13T18:48:21Z" finished-at="2017-12-13T18:48:30Z">
+        <test-method status="PASS" signature="launch()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="launch" is-config="true" duration-ms="8930" started-at="2017-12-15T16:26:38Z" finished-at="2017-12-15T16:26:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="manageFleetTileTest_003()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="manageFleetTileTest_003" duration-ms="40788" started-at="2017-12-13T18:48:30Z" finished-at="2017-12-13T18:49:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- manageFleetTileTest_003 -->
-        <test-method status="PASS" signature="vehicleCheckMenuTest_001()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehicleCheckMenuTest_001" duration-ms="5872" started-at="2017-12-13T18:49:11Z" finished-at="2017-12-13T18:49:17Z">
+        <test-method status="PASS" signature="vehicleCheckMenuTest_001()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehicleCheckMenuTest_001" duration-ms="25003" started-at="2017-12-15T16:26:47Z" finished-at="2017-12-15T16:27:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleCheckMenuTest_001 -->
-        <test-method status="PASS" signature="vehicleCheckTileTest_002()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehicleCheckTileTest_002" duration-ms="7253" started-at="2017-12-13T18:49:17Z" finished-at="2017-12-13T18:49:24Z">
+        <test-method status="PASS" signature="vehicleCheckTileTest_002()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehicleCheckTileTest_002" duration-ms="4942" started-at="2017-12-15T16:27:12Z" finished-at="2017-12-15T16:27:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleCheckTileTest_002 -->
-        <test-method status="PASS" signature="crash()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="crash" is-config="true" duration-ms="538" started-at="2017-12-13T18:49:24Z" finished-at="2017-12-13T18:49:25Z">
+        <test-method status="PASS" signature="vehicleCheckTileTest_003()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehicleCheckTileTest_003" duration-ms="1645" started-at="2017-12-15T16:27:17Z" finished-at="2017-12-15T16:27:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehicleCheckTileTest_003 -->
+        <test-method status="PASS" signature="vehiclesTileTest_004()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="vehiclesTileTest_004" duration-ms="2648" started-at="2017-12-15T16:27:19Z" finished-at="2017-12-15T16:27:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehiclesTileTest_004 -->
+        <test-method status="PASS" signature="crash()[pri:0, instance:velocityCheckHome.VelocityTestSuite_001@754ba872]" name="crash" is-config="true" duration-ms="154" started-at="2017-12-15T16:27:21Z" finished-at="2017-12-15T16:27:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- crash -->

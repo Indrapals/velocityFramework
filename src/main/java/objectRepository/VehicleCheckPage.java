@@ -1,5 +1,7 @@
 package objectRepository;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,8 +45,15 @@ public class VehicleCheckPage {
 	@FindBy(xpath ="//h2[text()='Manage Fleet']")
 	public WebElement MANAGEFLEET_MENU;
 	
-	@FindBy(xpath ="//div[text()='Vehicles']")
+	@FindBy(xpath ="//a[@href='/vehicle-check/manage-vehicles/']")
 	public WebElement VEHICLES_TILE;
+	
+	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]//following-sibling::ul/li")
+	public List<WebElement> VEHICLECHECK_DROPDOWNLIST;
+	
+	
+	@FindBy(xpath ="//div[text()='Vehicles']")
+	public WebElement VEHICLES_TILE_TEXT;
 	
 	@FindBy(xpath ="//div[text()='Drivers']")
 	public WebElement DRIVERS_TILE;
@@ -52,7 +61,34 @@ public class VehicleCheckPage {
 	@FindBy(xpath ="//h2[text()='Manage Vehicles']")
 	public WebElement MANAGEVEHICLES_MENU;
 	
+	@FindBy(xpath ="//table[@id='data-table']/thead/tr[1]/th")
+	public List<WebElement> MANAGEVEHICLES_HEADERLIST;
 	
+	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Active']")
+	public List<WebElement> ACTIVECHECK_LIST;
+	
+	@FindBy(xpath ="//button[contains(text(),'Show Removed Vehicles')]")
+	public WebElement SHOWREMOVED_VEHICLES_BUTTON;
+	
+	@FindBy(xpath ="//button[contains(text(),'Hide Removed Vehicles')]")
+	public WebElement HIDEREMOVED_VEHICLES_BUTTON;
+	
+	
+	
+	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Inactive']")
+	public List<WebElement> INACTIVECHECK_LIST;
+	
+	@FindBy(id ="add-objects")
+	public WebElement ADDOBJECTES_BUTTON;
+	
+	@FindBy(id ="edit-objects")
+	public WebElement EDITOBJECTS_BUTTON;
+	
+	@FindBy(xpath ="//div[@id='formset-modal']/div/div/form/table/thead/tr/th[contains(text(),'Vehicle Type')]")
+	public WebElement VEHICLETYPE_HEADER;
+	
+	@FindBy(xpath ="//div[@id='formset-modal']/div/div[1]/form/table/thead/tr/th")
+	public List<WebElement> VEHICLETYPE_HEADER_LIST;
 	
 	
 	
@@ -95,6 +131,7 @@ public class VehicleCheckPage {
 		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
 	    return GenericActionUtil.getcolor(VEHICLECHECKDASH_TILE);
 	}
+	
 	public String getAlertTileColor() throws Exception
 	{
 		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
