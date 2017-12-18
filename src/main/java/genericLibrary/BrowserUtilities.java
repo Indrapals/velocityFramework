@@ -1,11 +1,15 @@
 package genericLibrary;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import actionsLibrary.CommonActionUtil;
 
 public class BrowserUtilities {
 	
@@ -23,7 +27,7 @@ public static WebDriver driver;
 				System.setProperty("webdriver.firefox.marionette",ConfigProperties.getObject("pathGeckoDriver"));
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-		WaitUtilities.waitForPageToLoad();
+		CommonActionUtil.implicitWait();
 		driver.get(ConfigProperties.getObject("url"));
         
 	}
@@ -33,7 +37,7 @@ public static WebDriver driver;
         System.setProperty("webdriver.chrome.driver", ConfigProperties.getObject("pathChromeDriver"));
 		 driver = new ChromeDriver(); 
 		driver.manage().window().maximize();
-		 WaitUtilities.waitForPageToLoad();
+		 CommonActionUtil.implicitWait();
 		 driver.get(ConfigProperties.getObject("url"));
 
 			  }	
@@ -42,7 +46,7 @@ public static WebDriver driver;
 		 System.setProperty("webdriver.ie.driver",ConfigProperties.getObject("pathIEDriver"));
 		 driver = new InternetExplorerDriver();		
 		 driver.manage().window().maximize();
-		 WaitUtilities.waitForPageToLoad();
+		 CommonActionUtil.implicitWait();
 		 driver.get(ConfigProperties.getObject("url"));
 	}
 	
@@ -50,6 +54,21 @@ public static WebDriver driver;
 	
 	}
 
+	public static void getWindowHandles() throws IOException, InterruptedException{
+		Thread.sleep(1000);
+	//	String parentWindowHandler = BrowserUtilities.driver.getWindowHandle(); // Store your parent window
+		
+		String subWindowHandler = null;
+
+		Set<String> handles = BrowserUtilities.driver.getWindowHandles(); // get all window handles
+
+		Iterator<String> iterator = handles.iterator();
+		while (iterator.hasNext()){
+		   subWindowHandler = iterator.next();
+		   BrowserUtilities.driver.switchTo().window(subWindowHandler);
+		}
+
+	}
 	public static void closeBrowser() throws IOException{
 		
 		//ScreenshootUtilities.captureScreenShot();

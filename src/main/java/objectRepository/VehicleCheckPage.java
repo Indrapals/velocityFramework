@@ -4,138 +4,224 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import actionsLibrary.GenericActionUtil;
-import genericLibrary.*;
+import actionsLibrary.CommonActionUtil;
+
 
 
 public class VehicleCheckPage {
 	
 	final WebDriver driver;
+
 	public VehicleCheckPage(WebDriver driver){
 		this.driver=driver;
-		PageFactory.initElements(BrowserUtilities.driver, this);
+		
 	}
 	
 	@FindBy(id ="vehicle-check-manage-fleet")
+	@CacheLookup
 	public WebElement MANAGEFLEET_TILE;
 	
 	@FindBy(id ="vehicle-check-manage-groups")
+	@CacheLookup
 	public WebElement MANAGEGROUPS_TILE;
 	
 	@FindBy(id ="vehicle-check-reports")
+	@CacheLookup
 	public WebElement REPORTS_TILE;
 	
 	@FindBy(id ="vehicle-check-manage-questions")
+	@CacheLookup
 	public WebElement MANAGEQUESTION_TILE;
 	
 	@FindBy(id ="vehicle-check-defect-management")
+	@CacheLookup
 	public WebElement DEFECTMANAGEMENT_TILE;
 
 	@FindBy(id ="vehicle-due-dates-dashboard")
+	@CacheLookup
 	public WebElement DUEDATES_TILE;
 
 	@FindBy(id ="vehicle-check-dashboard")
+	@CacheLookup
 	public WebElement VEHICLECHECKDASH_TILE;
 	
 	@FindBy(id ="vehicle-check-alerts")
+	@CacheLookup
 	public WebElement ALERTS_TILE;
 	
 	@FindBy(xpath ="//h2[text()='Manage Fleet']")
+	@CacheLookup
 	public WebElement MANAGEFLEET_MENU;
 	
 	@FindBy(xpath ="//a[@href='/vehicle-check/manage-vehicles/']")
+	@CacheLookup
 	public WebElement VEHICLES_TILE;
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]//following-sibling::ul/li")
+	@CacheLookup
 	public List<WebElement> VEHICLECHECK_DROPDOWNLIST;
 	
 	
 	@FindBy(xpath ="//div[text()='Vehicles']")
+	@CacheLookup
 	public WebElement VEHICLES_TILE_TEXT;
 	
 	@FindBy(xpath ="//div[text()='Drivers']")
+	@CacheLookup
 	public WebElement DRIVERS_TILE;
 	
 	@FindBy(xpath ="//h2[text()='Manage Vehicles']")
+	@CacheLookup
 	public WebElement MANAGEVEHICLES_MENU;
 	
 	@FindBy(xpath ="//table[@id='data-table']/thead/tr[1]/th")
+	@CacheLookup
 	public List<WebElement> MANAGEVEHICLES_HEADERLIST;
 	
 	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Active']")
+	@CacheLookup
 	public List<WebElement> ACTIVECHECK_LIST;
 	
 	@FindBy(xpath ="//button[contains(text(),'Show Removed Vehicles')]")
+	@CacheLookup
 	public WebElement SHOWREMOVED_VEHICLES_BUTTON;
 	
 	@FindBy(xpath ="//button[contains(text(),'Hide Removed Vehicles')]")
+	@CacheLookup
 	public WebElement HIDEREMOVED_VEHICLES_BUTTON;
 	
-	
-	
 	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Inactive']")
+	@CacheLookup
 	public List<WebElement> INACTIVECHECK_LIST;
 	
 	@FindBy(id ="add-objects")
-	public WebElement ADDOBJECTES_BUTTON;
+	@CacheLookup
+	public WebElement ADDOBJECTS_BUTTON;
 	
 	@FindBy(id ="edit-objects")
+	@CacheLookup
 	public WebElement EDITOBJECTS_BUTTON;
 	
 	@FindBy(xpath ="//div[@id='formset-modal']/div/div/form/table/thead/tr/th[contains(text(),'Vehicle Type')]")
+	@CacheLookup
 	public WebElement VEHICLETYPE_HEADER;
 	
 	@FindBy(xpath ="//div[@id='formset-modal']/div/div[1]/form/table/thead/tr/th")
+	@CacheLookup
 	public List<WebElement> VEHICLETYPE_HEADER_LIST;
 	
+	@FindBy(id ="id_form-0-vehicle_type")
+	@CacheLookup
+	public WebElement VEHICLETYPE_DROPDOWN;
+	
+	@FindBy(xpath ="//select[@id='id_form-0-vehicle_type']/option")
+	@CacheLookup
+	public List<WebElement> VEHICLETYPE_DROPDOWN_LIST;
+	
+	@FindBy(id ="id_form-0-registration")
+	@CacheLookup
+	public WebElement VEHICLEREGISTRATION_TEXTBOX;
+	
+	@FindBy(xpath ="//input[@id='id_form-0-can_attach_trailer']//following-sibling::img")
+	@CacheLookup
+	public WebElement ATTACHTRAILER_CHECKBOX;
+	
+	@FindBy(id ="id_form-0-groups")
+	@CacheLookup
+	public WebElement GROUP_DROPDOWN;
+	
+	@FindBy(xpath ="//input[@id='id_form-0-visible']//following-sibling::img")
+	@CacheLookup
+	public WebElement ACTIVE_CHECKBOX;
+	
+	@FindBy(xpath ="//input[@id='id_form-0-removed']//following-sibling::button")
+	@CacheLookup
+	public WebElement MANAGEVEHICLEPOPUP_REMOVEBUTTON;
 	
 	
+	@FindBy(xpath ="//div[@id='formset-modal']/div/div/form/table/tbody/tr/td/div/label")
+	@CacheLookup
+	public List<WebElement> DUEDATES_CALENDER_LIST;
+		
+	@FindBy(name ="add_objects")
+	@CacheLookup
+	public WebElement MANAGEVEHICLEPOPUP_ADDBUTTON;
 	
+	@FindBy(name ="submit_formset")
+	@CacheLookup
+	public WebElement MANAGEVEHICLEPOPUP_SUBMITBUTTON;
 	
+	@FindBy(name ="cancel-button")
+	@CacheLookup
+	public WebElement MANAGEVEHICLEPOPUP_CANCELBUTTON;
+	
+
 	
 	public String getManagementFleetTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(MANAGEFLEET_TILE);
+		
+	    return CommonActionUtil.getcolor(MANAGEFLEET_TILE);
 	}
 	
 	public String getManageGroupsTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(MANAGEGROUPS_TILE);
+		
+	    return CommonActionUtil.getcolor(MANAGEGROUPS_TILE);
 	}
 	public String getReportsTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(REPORTS_TILE);
+		
+	    return CommonActionUtil.getcolor(REPORTS_TILE);
 	}
 	public String getManageQuestionTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(MANAGEQUESTION_TILE);
+		
+	    return CommonActionUtil.getcolor(MANAGEQUESTION_TILE);
 	}
 	public String getDefectManagementTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(DEFECTMANAGEMENT_TILE);
+		
+	    return CommonActionUtil.getcolor(DEFECTMANAGEMENT_TILE);
 	}
 	public String getDueDatesTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(DUEDATES_TILE);
+		
+	    return CommonActionUtil.getcolor(DUEDATES_TILE);
 	}
 	public String getVechicleCheckDashboardTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(VEHICLECHECKDASH_TILE);
+		
+	    return CommonActionUtil.getcolor(VEHICLECHECKDASH_TILE);
 	}
 	
 	public String getAlertTileColor() throws Exception
 	{
-		PageFactory.initElements(BrowserUtilities.driver,LoginPage.class);
-	    return GenericActionUtil.getcolor(ALERTS_TILE);
+		
+	    return CommonActionUtil.getcolor(ALERTS_TILE);
+	}
+	
+	public String getManageVehiclepopupAddButtonColor() throws Exception
+	{
+		
+	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_ADDBUTTON);
+	}
+	
+	public String getManageVehiclepopupSubmitButtonColor() throws Exception
+	{
+		
+	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_SUBMITBUTTON);
+	}
+	public String getManageVehiclepopupCancelButtonColor() throws Exception
+	{
+		
+	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_CANCELBUTTON);
+	}
+	
+	public void clickonSubmitButton() throws Exception
+	{
+		MANAGEVEHICLEPOPUP_SUBMITBUTTON.click();
 	}
 	
 	

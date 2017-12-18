@@ -1,6 +1,5 @@
 package actionsLibrary;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -11,8 +10,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +21,7 @@ import genericLibrary.*;
 
 
 
-public class GenericActionUtil {
+public class CommonActionUtil {
 
 	/**
 	 * @author Indrapal Singh
@@ -191,17 +191,20 @@ public class GenericActionUtil {
 	/**
 	 *  method to get message test of alert
 	 * @return message text which is displayed
+	 * @throws InterruptedException 
 	 */
-	public static String getAlertText() 
+	public static String getAlertText() throws InterruptedException 
 	{ 
 		try {
 			Alert alert = BrowserUtilities.driver.switchTo().alert(); 
+			Thread.sleep(1000);
 			String alertText = alert.getText(); 
 			return alertText; 
 		} catch (NoAlertPresentException e){
 			throw new NoAlertPresentException();
 		}
-	}   
+	}  
+	
 
 	/**
 	 *  method to verify if alert is present
@@ -295,7 +298,26 @@ public class GenericActionUtil {
 		}
 		}
  
-	
+	/**
+	 *  method to verify if elements list is Displayed
+	 * @return returns true if element is Displayed else false
+	 */
+	public static boolean isListDisplayed(List<WebElement> element) 
+	{ 
+
+		if(((WebElement) element).isDisplayed())
+			
+			{System.out.println(element+"is displayed");
+		
+		return true;}
+		
+		else {
+			
+			System.out.println(element+"is not displayed");
+			return false;
+		}
+		}
+ 
 	/**
 	 *  method to Accept Alert if alert is present
 	 */
@@ -428,4 +450,49 @@ public class GenericActionUtil {
 		    	
 				return BColor;	
 		}
+			
+			public static void implicitWait()
+			{
+				BrowserUtilities.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
+			}
+			
+
+			public static void expWait_elementclick(WebDriver driver,By by){
+				
+			        try {
+						(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
+						driver.findElement(by).click();
+					} catch (StaleElementReferenceException  ser) {
+						// TODO Auto-generated catch block
+						driver.findElement(by).click();
+					}
+			        catch (TimeoutException   toe) {
+						//  test.log(logStatus.Error, "Element identified by " + by.toString() + " was not clickable after 10 seconds");
+						
+					}
+			}
+			
+			public static void expWait_elementlocated(WebDriver driver,WebElement element){
+				
+					(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated((By) element));			
+		       
+		}
+
+			
+			public static void locateThenClick(WebDriver driver,By by){
+				
+		        try {
+					(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(by));
+					driver.findElement(by).click();
+				} catch (StaleElementReferenceException  ser) {
+					// TODO Auto-generated catch block
+					driver.findElement(by).click();
+				}
+		        catch (TimeoutException   toe) {
+					//  test.log(logStatus.Error, "Element identified by " + by.toString() + " was not clickable after 10 seconds");
+					
+				}
+		
+		}
+			
 }
