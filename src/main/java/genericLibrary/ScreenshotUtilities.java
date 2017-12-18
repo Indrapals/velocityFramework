@@ -17,7 +17,7 @@ import org.testng.ITestNGMethod;
  * captureScreenShot method to capture screenshoot after every test
  */
 
-public class ScreenshootUtilities {
+public class ScreenshotUtilities {
 	
 	public static void getScreenShot(WebDriver ldriver,ITestNGMethod method){
 	 
@@ -26,7 +26,7 @@ public class ScreenshootUtilities {
 	try {
 	  // now copy the  screenshot to desired location using copyFile method
 	 
-		FileUtils.copyFile(src, new File(ConfigProperties.getObject("Screenshootpath")+System.currentTimeMillis()+".png"));
+		FileUtils.copyFile(src, new File(ConfigProperties.getObject("Screenshotpath")+System.currentTimeMillis()+".png"));
 	       }
 	 
 	catch (IOException e)
@@ -47,7 +47,7 @@ public class ScreenshootUtilities {
 		try {
 		  // now copy the  screenshot to desired location using copyFile method
 		 
-			FileUtils.copyFile(src, new File(ConfigProperties.getObject("Screenshootpath")+System.currentTimeMillis()+".png"));
+			FileUtils.copyFile(src, new File(ConfigProperties.getObject("Screenshotpath")+System.currentTimeMillis()+".png"));
 		       }
 		 
 		catch (IOException e)

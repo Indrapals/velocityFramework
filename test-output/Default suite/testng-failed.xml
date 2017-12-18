@@ -5,9 +5,12 @@
     <classes>
       <class name="velocityTestScript.VelocityTest_001">
         <methods>
-          <include name="vehicleCheckMenuTest_001"/>
+          <include name="vehicleCheckTileTest_003"/>
+          <include name="vehiclesaddButtonPopupTest_007"/>
+          <include name="vehiclesTileTest_004"/>
           <include name="captureTest"/>
-          <include name="crash"/>
+          <include name="vehiclesaddButtonPopupTest_005"/>
+          <include name="vehiclesaddButtonPopupTest_008"/>
           <include name="launch"/>
           <include name="laodPages"/>
         </methods>

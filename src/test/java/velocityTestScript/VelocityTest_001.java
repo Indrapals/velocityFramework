@@ -20,11 +20,11 @@ import org.testng.annotations.Test;
 import actionsLibrary.CommonActionUtil;
 import genericLibrary.BrowserUtilities;
 import genericLibrary.LogUtilities;
-import genericLibrary.ScreenshootUtilities;
+import genericLibrary.ScreenshotUtilities;
 import genericLibrary.TestLinkIntegration;
-import objectRepository.HomePage;
-import objectRepository.LoginPage;
-import objectRepository.VehicleCheckPage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.VehicleCheckPage;
 import testlink.api.java.client.TestLinkAPIResults;
 
 public class VelocityTest_001 {
@@ -65,15 +65,12 @@ public class VelocityTest_001 {
 		
 		
 	    try {
-	    	//Login user
+	    	
 	    	lpobj.login_User();
 	    	
 	    	LogUtilities.info("User login Successfully");
 	    	
-	    	//Verify Vehicle Check tile is displayed on Velocity Home Page
-	    	Assert.assertTrue(hpobj.VEHICLECHECK_MENU.isDisplayed());
-	    	
-	    	//Verify elements in the Vehicle Check drop down menu 
+	    	Assert.assertTrue(hpobj.VEHICLECHECK_MENU.isDisplayed(),"Vehicle menu displayed");
 	    
             CommonActionUtil.moveTo(hpobj.VEHICLECHECK_MENU);
 			
@@ -82,11 +79,10 @@ public class VelocityTest_001 {
 			for(int i=0;i<vcpobj.VEHICLECHECK_DROPDOWNLIST.size();i++)
 	        {
 	            System.out.println("Display Text : " + vcpobj.VEHICLECHECK_DROPDOWNLIST.get(i).getText());
-	            Assert.assertEquals(arr[i],vcpobj.VEHICLECHECK_DROPDOWNLIST.get(i).getText());
-			 
+	            Assert.assertEquals(arr[i],vcpobj.VEHICLECHECK_DROPDOWNLIST.get(i).getText(),"Verify vehicle Dropdown List");
+	            
 	        }
-			 System.out.println("vehicle Dropdown List Verified");
-		
+			
 	    	System.out.println("Found all items in Vehicle check title successfully: => Assertion for Step1 PASS ");
 	    	LogUtilities.info("Test step 1 passed Successfully");
 	    	
@@ -102,42 +98,36 @@ public class VelocityTest_001 {
 	    public void vehicleCheckTileTest_002() throws Exception{
 		
 	     try {
+	    	 
 	    	CommonActionUtil.moveTo(hpobj.VEHICLECHECK_TILE);
 	    	hpobj.VEHICLECHECK_TILE.click();
 	    	
-	    	//Verify ManagementFleet with tile color
 	    	vcpobj.MANAGEFLEET_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManagementFleetTileColor());
+	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManagementFleetTileColor(),"Manage fleet tile verify");
 	    	
-	    	//Verify ManagemeGroups tile color
 	    	vcpobj.MANAGEGROUPS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageGroupsTileColor());
+	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageGroupsTileColor(),"Manage groups tile verify");
 	    	
-	    	//Verify REPORTS tile color
 	    	vcpobj.REPORTS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getReportsTileColor());
+	    	Assert.assertEquals(ExpectedBlue, vcpobj.getReportsTileColor(),"Reports tile verify");
 	    	
-	    	//Verify MANAGEQUESTION tile color
 	    	vcpobj.MANAGEQUESTION_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageQuestionTileColor());
+	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageQuestionTileColor(),"Manage question tile verify");
 	    	
-	    	//Verify DEFECTMANAGEMENT_TILE color
 	    	vcpobj.DEFECTMANAGEMENT_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getDefectManagementTileColor());
+	    	Assert.assertEquals(ExpectedBlue, vcpobj.getDefectManagementTileColor(),"Defect management tile verify");
 	    	
-	    	//Verify DUEDATES_TILE color
 	    	vcpobj.DUEDATES_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPurple, vcpobj.getDueDatesTileColor());
+	    	Assert.assertEquals(ExpectedPurple, vcpobj.getDueDatesTileColor(),"Due Dates fleet tile verify");
 	    	
-	    	//Verify VEHICLECHECKDASH_TILE color
 	    	vcpobj.VEHICLECHECKDASH_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPurple, vcpobj.getVechicleCheckDashboardTileColor());
-	   	
-	    	//Verify ALERTS_TILE color
+	    	Assert.assertEquals(ExpectedPurple, vcpobj.getVechicleCheckDashboardTileColor(),"Vehicle check dash tile verify");
+	   
 	    	vcpobj.ALERTS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPink, vcpobj.getAlertTileColor());
+	    	Assert.assertEquals(ExpectedPink, vcpobj.getAlertTileColor(),"Alerts fleet tile verify");
 	    	
 	    	System.out.println("All Eight Tiles Found and verified with required color: => Assertion for Step2 PASS");
+	    	
 	    	LogUtilities.info("All tiles verified with their colors:Test step2 passed");
 	    	
 	    	 TestLinkIntegration.updateResult("VLC-2", null, TestLinkAPIResults.TEST_PASSED);    	
@@ -154,11 +144,12 @@ public class VelocityTest_001 {
 	    	
 	    	vcpobj.MANAGEFLEET_TILE.click();
 	    	
-	    	Assert.assertEquals("Manage Fleet", vcpobj.MANAGEFLEET_MENU.getText());
+	    	Assert.assertEquals("Manage Fleet", vcpobj.MANAGEFLEET_MENU.getText(),"Manage fleet menu verify");
 	    	
-	        Assert.assertEquals("Vehicles", vcpobj.VEHICLES_TILE_TEXT.getText());
+	        Assert.assertEquals("Vehicles", vcpobj.VEHICLES_TILE_TEXT.getText(),"Vehicles tile verify");
 	    
-	        Assert.assertEquals("Drivers", vcpobj.DRIVERS_TILE.getText());
+	        Assert.assertEquals("Drivers", vcpobj.DRIVERS_TILE.getText(),"Drivers tile verify");
+	        
 	        System.out.println("Manage Fleet title ,Vehicles tile and Drivers tile Displayed: => Assertion for Step3 PASS");
 	        LogUtilities.info("All elements verified :Test step3 passed");
 	        
@@ -182,34 +173,27 @@ public class VelocityTest_001 {
 		    	
 				for(int i=0;i<vcpobj.MANAGEVEHICLES_HEADERLIST.size();i++)
 		        {
-		            System.out.println("Display Text : " + vcpobj.MANAGEVEHICLES_HEADERLIST.get(i).getText());
-		            Assert.assertEquals(vehicleHeaderListarr[i],vcpobj.MANAGEVEHICLES_HEADERLIST.get(i).getText());
+		          System.out.println("Display Text : " + vcpobj.MANAGEVEHICLES_HEADERLIST.get(i).getText());
+		          Assert.assertEquals(vehicleHeaderListarr[i],vcpobj.MANAGEVEHICLES_HEADERLIST.get(i).getText(),"Vehicle headerlist verify");
 				 
 		        }
 				 System.out.println("Manage Vehicle HeaderList Verified");
 				
-				  //Verify Active check
 				 for (WebElement element : vcpobj.ACTIVECHECK_LIST) {
-		    	      Assert.assertTrue(element.isDisplayed());
+		    	      Assert.assertTrue(element.isDisplayed(),"Active check list verify");
 		    	    }
-				 System.out.println("Active Vehicles present With green background");
-				 
-				 
-		    	//Verify ShowRemoved vehicles ,Add and Edit button
+				
 				 vcpobj.ADDOBJECTS_BUTTON.isDisplayed();
 				 vcpobj.EDITOBJECTS_BUTTON.isDisplayed();
 				 vcpobj.SHOWREMOVED_VEHICLES_BUTTON.isDisplayed();
 				 
 		    	System.out.println("Add,Edit and Show removed button verified");	
 		    	
-		    	//Verify Inactive check
-		    	 
 		    	 vcpobj.SHOWREMOVED_VEHICLES_BUTTON.click();
 		    	 for (WebElement element : vcpobj.INACTIVECHECK_LIST) {
-		    	     Assert.assertTrue(element.isDisplayed());
+		    	     Assert.assertTrue(element.isDisplayed(),"Inactive check list verify");
 		    	    }
-		    	 System.out.println("Inactive Vehicles present With red background");
-		    	
+		    		
 		     System.out.println("All elements verified => Assertion for Step4 PASS");
 		     LogUtilities.info("All elements verified :Test step4 passed");
 		       
@@ -240,12 +224,12 @@ public class VelocityTest_001 {
 				
 				List<WebElement> VehicleTypeDropDownList = VehicleTypeDropDown.getOptions();
 				
-				for(int i=0; i<VehicleTypeDropDownList.size(); i++){
-					 System.out.println("Display Text : " + VehicleTypeDropDownList.get(i).getText());
-			            Assert.assertEquals(VehicleTypeDropdownarr[i],VehicleTypeDropDownList.get(i).getText());
+				for(int i=0; i<VehicleTypeDropDownList.size(); i++)
+				{
+			    System.out.println("Display Text : " + VehicleTypeDropDownList.get(i).getText());
+	            Assert.assertEquals(VehicleTypeDropdownarr[i],VehicleTypeDropDownList.get(i).getText(),"Verify Vehicle type drop down");
 				}
-				System.out.println("Dropdown list verified");
-			     
+				 
 				vcpobj.VEHICLETYPE_DROPDOWN.click();
 				vcpobj.VEHICLEREGISTRATION_TEXTBOX.isDisplayed();
 				vcpobj.ATTACHTRAILER_CHECKBOX.isDisplayed();
@@ -256,25 +240,22 @@ public class VelocityTest_001 {
 				String DueDatesarr[] = {"Annual Test Date:", "Tax Due Date:", "Service Due Date:", "Insurance Due Date:"};
 				
 				for(int i=0; i<vcpobj.DUEDATES_CALENDER_LIST.size(); i++){
-					 System.out.println("Display Text : " + vcpobj.DUEDATES_CALENDER_LIST.get(i).getText());
-			            Assert.assertEquals(DueDatesarr[i],vcpobj.DUEDATES_CALENDER_LIST.get(i).getText());
+			    System.out.println("Display Text : " + vcpobj.DUEDATES_CALENDER_LIST.get(i).getText());
+	            Assert.assertEquals(DueDatesarr[i],vcpobj.DUEDATES_CALENDER_LIST.get(i).getText(),"Duedates calander list verify ");
 				}
 				
 		     System.out.println("Due dates and calender dates are similar to Expected Elements");	
 	        
 		     vcpobj.MANAGEVEHICLEPOPUP_ADDBUTTON.isDisplayed();
-				
-		   //Verify Manage Vehcile Popup Add button color
+			
 		     vcpobj.MANAGEVEHICLEPOPUP_ADDBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedBlue, vcpobj.getManageVehiclepopupAddButtonColor());
+		    Assert.assertEquals(ExpectedBlue, vcpobj.getManageVehiclepopupAddButtonColor(),"Manage Vehicle popup add button verify");
 		    
-		  //Verify Manage Vehcile Popup Submit button color
 		    vcpobj.MANAGEVEHICLEPOPUP_SUBMITBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedLightGreen, vcpobj.getManageVehiclepopupSubmitButtonColor());
+		    Assert.assertEquals(ExpectedLightGreen, vcpobj.getManageVehiclepopupSubmitButtonColor(),"Manage Vehicle popup submit button verify");
 		    
-		  //Verify Manage Vehcile Popup Cancel button color
 		    vcpobj.MANAGEVEHICLEPOPUP_CANCELBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedLightRed, vcpobj.getManageVehiclepopupCancelButtonColor());
+		    Assert.assertEquals(ExpectedLightRed, vcpobj.getManageVehiclepopupCancelButtonColor(),"Manage Vehicle popup cancel button verify");
 		    	
 		   
 				System.out.println("All elements verified => Assertion for Step5 PASS");
@@ -299,7 +280,7 @@ public class VelocityTest_001 {
 		    	
 				String without_data =CommonActionUtil.getAlertText();
 				
-                Assert.assertEquals(without_data, "Form cannot have less than one element!");
+                Assert.assertEquals(without_data, "Form cannot have less than one element!","Alert without data verify");
 				CommonActionUtil.acceptAlert();
 					
 				System.out.println("All elements verified => Assertion for Step7 PASS");
@@ -322,7 +303,7 @@ public class VelocityTest_001 {
 		    	CommonActionUtil.implicitWait();
 		    
 				String with_data =CommonActionUtil.getAlertText();
-				Assert.assertEquals(with_data, "Form cannot have less than one element!");
+				Assert.assertEquals(with_data, "Form cannot have less than one element!","Alert with data verify");
 				CommonActionUtil.acceptAlert();
 					
 				System.out.println("All elements verified => Assertion for Step8 PASS");
@@ -338,7 +319,7 @@ public class VelocityTest_001 {
          
          @AfterMethod
          public void captureTest(){
-          ScreenshootUtilities.captureScreenShot();
+          ScreenshotUtilities.captureScreenShot();
          }
          
 	    @AfterTest
