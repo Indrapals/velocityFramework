@@ -211,11 +211,11 @@ public class VelocityTest_001 {
 		    	 System.out.println("Inactive Vehicles present With red background");
 		    	
 		     System.out.println("All elements verified => Assertion for Step4 PASS");
+		     LogUtilities.info("All elements verified :Test step4 passed");
 		       
 		       TestLinkIntegration.updateResult("VLC-4", null, TestLinkAPIResults.TEST_PASSED);    	
 			   } catch (Exception e) {
 				System.out.println("Test Failed");
-				   e.printStackTrace();
 			   TestLinkIntegration.updateResult("VLC-4", null, TestLinkAPIResults.TEST_FAILED);
 			  }	       
 		    }
@@ -278,12 +278,12 @@ public class VelocityTest_001 {
 		    	
 		   
 				System.out.println("All elements verified => Assertion for Step5 PASS");
-			    
+				LogUtilities.info("All elements verified :Test step5 passed");
+				
 			TestLinkIntegration.updateResult("VLC-5", null, TestLinkAPIResults.TEST_PASSED);    	
 			
 		    } catch (Exception e) {
 				System.out.println("Test Failed");
-				   e.printStackTrace();
 			 TestLinkIntegration.updateResult("VLC-5", null, TestLinkAPIResults.TEST_FAILED);
 			  }	       
 		    }
@@ -303,12 +303,11 @@ public class VelocityTest_001 {
 				CommonActionUtil.acceptAlert();
 					
 				System.out.println("All elements verified => Assertion for Step7 PASS");
-			    
-				TestLinkIntegration.updateResult("VLC-7", null, TestLinkAPIResults.TEST_PASSED);    	
+				LogUtilities.info("All elements verified :Test step7 passed");
+				TestLinkIntegration.updateResult("VLC-9", null, TestLinkAPIResults.TEST_PASSED);    	
 			   } catch (Exception e) {
 				System.out.println("Test Failed");
-				   e.printStackTrace();
-				TestLinkIntegration.updateResult("VLC-7", null, TestLinkAPIResults.TEST_PASSED);
+				TestLinkIntegration.updateResult("VLC-9", null, TestLinkAPIResults.TEST_PASSED);
 			  }	       
 		    }
          
@@ -327,12 +326,11 @@ public class VelocityTest_001 {
 				CommonActionUtil.acceptAlert();
 					
 				System.out.println("All elements verified => Assertion for Step8 PASS");
-			    
-				TestLinkIntegration.updateResult("VLC-8", null, TestLinkAPIResults.TEST_PASSED);    	
+				LogUtilities.info("All elements verified :Test step8 passed");
+				TestLinkIntegration.updateResult("VLC-10", null, TestLinkAPIResults.TEST_PASSED);    	
 			   } catch (Exception e) {
 				System.out.println("Test Failed");
-				   e.printStackTrace();
-			    TestLinkIntegration.updateResult("VLC-8", null, TestLinkAPIResults.TEST_PASSED);
+			    TestLinkIntegration.updateResult("VLC-10", null, TestLinkAPIResults.TEST_PASSED);
 			  }	       
 		    }
          

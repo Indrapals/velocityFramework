@@ -957,3 +957,26 @@
 2017-12-18 11:11:59,795 INFO  [LogUtilities] Test step 1 passed Successfully 
 2017-12-18 11:12:06,238 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
 2017-12-18 11:12:07,998 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2017-12-18 11:42:59,753 INFO  [LogUtilities] Browser launched with url Successfully 
+2017-12-18 11:43:03,070 INFO  [LogUtilities] User login Successfully 
+2017-12-18 11:43:03,715 INFO  [LogUtilities] Test step 1 passed Successfully 
+2017-12-18 11:43:15,557 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2017-12-18 11:43:20,028 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2017-12-18 11:56:22,863 INFO  [LogUtilities] Browser launched with url Successfully 
+2017-12-18 11:56:29,498 INFO  [LogUtilities] User login Successfully 
+2017-12-18 11:56:30,142 INFO  [LogUtilities] Test step 1 passed Successfully 
+2017-12-18 11:56:36,710 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2017-12-18 11:56:52,740 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2017-12-18 11:56:57,450 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2017-12-18 11:57:00,724 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2017-12-18 11:57:04,015 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2017-12-18 11:57:08,903 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2017-12-18 11:59:33,728 INFO  [LogUtilities] Browser launched with url Successfully 
+2017-12-18 11:59:37,255 INFO  [LogUtilities] User login Successfully 
+2017-12-18 11:59:37,901 INFO  [LogUtilities] Test step 1 passed Successfully 
+2017-12-18 11:59:45,122 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2017-12-18 11:59:47,659 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2017-12-18 11:59:56,440 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2017-12-18 12:00:00,103 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2017-12-18 12:00:02,507 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2017-12-18 12:00:05,244 INFO  [LogUtilities] All elements verified :Test step8 passed 

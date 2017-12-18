@@ -1,117 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32495" started-at="2017-12-18T05:41:44Z" finished-at="2017-12-18T05:42:16Z">
+  <suite name="Suite" duration-ms="61553" started-at="2017-12-18T06:26:09Z" finished-at="2017-12-18T06:27:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32495" started-at="2017-12-18T05:41:44Z" finished-at="2017-12-18T05:42:16Z">
+    <test name="Test" duration-ms="61553" started-at="2017-12-18T06:26:09Z" finished-at="2017-12-18T06:27:10Z">
       <class name="velocityTestScript.VelocityTest_001">
-        <test-method status="PASS" signature="launch()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="launch" is-config="true" duration-ms="11826" started-at="2017-12-18T11:11:44Z" finished-at="2017-12-18T11:11:56Z">
+        <test-method status="PASS" signature="launch()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="launch" is-config="true" duration-ms="13555" started-at="2017-12-18T11:56:09Z" finished-at="2017-12-18T11:56:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="43" started-at="2017-12-18T11:11:56Z" finished-at="2017-12-18T11:11:56Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="44" started-at="2017-12-18T11:56:22Z" finished-at="2017-12-18T11:56:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehicleCheckMenuTest_001()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehicleCheckMenuTest_001" duration-ms="5007" started-at="2017-12-18T11:11:56Z" finished-at="2017-12-18T11:12:01Z">
+        <test-method status="PASS" signature="vehicleCheckMenuTest_001()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehicleCheckMenuTest_001" duration-ms="8072" started-at="2017-12-18T11:56:22Z" finished-at="2017-12-18T11:56:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleCheckMenuTest_001 -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:01Z" finished-at="2017-12-18T11:12:01Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="447" started-at="2017-12-18T11:56:30Z" finished-at="2017-12-18T11:56:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehicleCheckTileTest_002()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehicleCheckTileTest_002" duration-ms="5681" started-at="2017-12-18T11:12:01Z" finished-at="2017-12-18T11:12:06Z">
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="vehicleCheckTileTest_002()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehicleCheckTileTest_002" duration-ms="6115" started-at="2017-12-18T11:56:31Z" finished-at="2017-12-18T11:56:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleCheckTileTest_002 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:01Z" finished-at="2017-12-18T11:12:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:06Z" finished-at="2017-12-18T11:12:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="6" started-at="2017-12-18T11:12:06Z" finished-at="2017-12-18T11:12:06Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:56:31Z" finished-at="2017-12-18T11:56:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehicleCheckTileTest_003()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehicleCheckTileTest_003" duration-ms="1840" started-at="2017-12-18T11:12:06Z" finished-at="2017-12-18T11:12:08Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="394" started-at="2017-12-18T11:56:37Z" finished-at="2017-12-18T11:56:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="vehicleCheckTileTest_003()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehicleCheckTileTest_003" duration-ms="15421" started-at="2017-12-18T11:56:37Z" finished-at="2017-12-18T11:56:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleCheckTileTest_003 -->
-        <test-method status="PASS" signature="vehiclesTileTest_004()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehiclesTileTest_004" duration-ms="3235" started-at="2017-12-18T11:12:08Z" finished-at="2017-12-18T11:12:11Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:56:37Z" finished-at="2017-12-18T11:56:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- laodPages -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="380" started-at="2017-12-18T11:56:53Z" finished-at="2017-12-18T11:56:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="vehiclesTileTest_004()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehiclesTileTest_004" duration-ms="4250" started-at="2017-12-18T11:56:53Z" finished-at="2017-12-18T11:56:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehiclesTileTest_004 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:08Z" finished-at="2017-12-18T11:12:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:08Z" finished-at="2017-12-18T11:12:08Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:56:53Z" finished-at="2017-12-18T11:56:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:11Z" finished-at="2017-12-18T11:12:11Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="381" started-at="2017-12-18T11:56:58Z" finished-at="2017-12-18T11:56:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:11Z" finished-at="2017-12-18T11:12:11Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:56:58Z" finished-at="2017-12-18T11:56:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_005()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehiclesaddButtonPopupTest_005" duration-ms="1977" started-at="2017-12-18T11:12:11Z" finished-at="2017-12-18T11:12:13Z">
+        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_005()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehiclesaddButtonPopupTest_005" duration-ms="4146" started-at="2017-12-18T11:56:58Z" finished-at="2017-12-18T11:57:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehiclesaddButtonPopupTest_005 -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:13Z" finished-at="2017-12-18T11:12:13Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="331" started-at="2017-12-18T11:57:02Z" finished-at="2017-12-18T11:57:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:57:02Z" finished-at="2017-12-18T11:57:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_007()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehiclesaddButtonPopupTest_007" duration-ms="1131" started-at="2017-12-18T11:12:13Z" finished-at="2017-12-18T11:12:15Z">
+        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_007()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehiclesaddButtonPopupTest_007" duration-ms="4418" started-at="2017-12-18T11:57:02Z" finished-at="2017-12-18T11:57:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehiclesaddButtonPopupTest_007 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:13Z" finished-at="2017-12-18T11:12:13Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="384" started-at="2017-12-18T11:57:07Z" finished-at="2017-12-18T11:57:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="3" started-at="2017-12-18T11:12:15Z" finished-at="2017-12-18T11:12:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="4" started-at="2017-12-18T11:12:15Z" finished-at="2017-12-18T11:12:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_008()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehiclesaddButtonPopupTest_008" duration-ms="1413" started-at="2017-12-18T11:12:15Z" finished-at="2017-12-18T11:12:16Z">
+        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_008()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="vehiclesaddButtonPopupTest_008" duration-ms="2692" started-at="2017-12-18T11:57:07Z" finished-at="2017-12-18T11:57:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehiclesaddButtonPopupTest_008 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="1" started-at="2017-12-18T11:12:16Z" finished-at="2017-12-18T11:12:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="laodPages" is-config="true" duration-ms="5" started-at="2017-12-18T11:12:16Z" finished-at="2017-12-18T11:12:16Z">
+        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="laodPages" is-config="true" duration-ms="0" started-at="2017-12-18T11:57:07Z" finished-at="2017-12-18T11:57:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="vehiclesaddButtonPopupTest_009()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="vehiclesaddButtonPopupTest_009" duration-ms="294" started-at="2017-12-18T11:12:16Z" finished-at="2017-12-18T11:12:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- vehiclesaddButtonPopupTest_009 -->
-        <test-method status="PASS" signature="crash()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="crash" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:16Z" finished-at="2017-12-18T11:12:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- crash -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@57fffcd7]" name="captureTest" is-config="true" duration-ms="0" started-at="2017-12-18T11:12:16Z" finished-at="2017-12-18T11:12:16Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="captureTest" is-config="true" duration-ms="340" started-at="2017-12-18T11:57:10Z" finished-at="2017-12-18T11:57:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="crash()[pri:0, instance:velocityTestScript.VelocityTest_001@3abbfa04]" name="crash" is-config="true" duration-ms="137" started-at="2017-12-18T11:57:10Z" finished-at="2017-12-18T11:57:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- crash -->
       </class> <!-- velocityTestScript.VelocityTest_001 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
