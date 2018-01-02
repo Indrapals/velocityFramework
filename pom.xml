@@ -54,18 +54,37 @@
     	<artifactId>selenium-java</artifactId>
     	<version>3.4.0</version>
     </dependency>
-  
+  <dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>4.0.0</version> 
+</dependency>
     	<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.9.6</version>
 		</dependency>
-		
-			<dependency>
+   <dependency>
+   <groupId>org.sikuli</groupId>
+   <artifactId>sikuli-api</artifactId>
+   <version>1.2.0</version>
+</dependency>
+<dependency>
+    <groupId>com.sikulix</groupId>
+    <artifactId>sikulixapi</artifactId>
+    <version>1.1.0</version>
+</dependency>
+<dependency>
+    <groupId>org.sikuli</groupId>
+    <artifactId>sikuli-core</artifactId>
+    <version>1.2.0</version>
+</dependency>
+	<dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
     <version>3.16</version>
 </dependency>
+
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
@@ -131,6 +150,13 @@
          <scope>system</scope>
          <version>1.0</version>
          <systemPath>${basedir}\Resources\ws-commons-util-1.0.2.jar</systemPath>
+      </dependency>
+          <dependency>
+         <groupId>ATUTestRecorder_2.1</groupId>
+         <artifactId>ATUTestRecorder_2.1</artifactId>
+         <scope>system</scope>
+         <version>2.1</version>
+         <systemPath>${basedir}\Resources\ATUTestRecorder_2.1.jar</systemPath>
       </dependency>
 		
   </dependencies>

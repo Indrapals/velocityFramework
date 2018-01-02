@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test name="Test(failed)">
     <classes>
-      <class name="velocityTestScript.VelocityTest_001">
+      <class name="velocityWebTest.VelocityTest_001">
         <methods>
           <include name="captureTest"/>
           <include name="crash"/>
@@ -11,7 +11,7 @@
           <include name="launch"/>
           <include name="laodPages"/>
         </methods>
-      </class> <!-- velocityTestScript.VelocityTest_001 -->
+      </class> <!-- velocityWebTest.VelocityTest_001 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

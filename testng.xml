@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="Test">
+    
+    <test name="Test-1">
     <classes>
-      <class name="velocityTestScript.VelocityTest_001"/>
+          <class name="velocityWebTest.VelocityTest_001"/>       
     </classes>
   </test> <!-- Test -->
+     
+    <test name="Test-2">
+    <classes>
+          <class name="velocityAndroidAppTest.velocityAppTest"/>    
+    </classes>       
+  </test> <!-- Test -->
+  
+   <test name="Test-3">
+    <classes>
+          <class name="velocityMapTest.VelocityLiveMapTest"/>    
+    </classes>       
+  </test> <!-- Test -->
+  
+
 </suite> <!-- Suite -->

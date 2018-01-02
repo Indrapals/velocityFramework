@@ -1,12 +1,16 @@
 package pageObjects;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
 import actionsLibrary.CommonActionUtil;
+import genericLibrary.BrowserUtilities;
 
 
 
@@ -16,7 +20,7 @@ public class VehicleCheckPage {
 
 	public VehicleCheckPage(WebDriver driver){
 		this.driver=driver;
-		
+	
 	}
 	
 	@FindBy(id ="vehicle-check-manage-fleet")
@@ -158,6 +162,15 @@ public class VehicleCheckPage {
 	public WebElement MANAGEVEHICLEPOPUP_CANCELBUTTON;
 	
 
+	@FindBy(xpath ="//td[contains(@class,'vehicle-reg sorting')]")
+	@CacheLookup
+	public List<WebElement> ACTIVEVEHICLE_LIST;
+	
+	
+	
+	@FindBy(xpath ="//img[@alt='Vehicle Check']")
+	@CacheLookup
+	public WebElement VEHICLECHECK_TILE;
 	
 	public String getManagementFleetTileColor() throws Exception
 	{
@@ -224,5 +237,14 @@ public class VehicleCheckPage {
 		MANAGEVEHICLEPOPUP_SUBMITBUTTON.click();
 	}
 	
-	
+	public void getaction(){
+		
+		VEHICLECHECK_TILE.click();
+		MANAGEFLEET_TILE.click();
+		VEHICLES_TILE.click();
+
+		List<String> lstMovedItem=new ArrayList<String>();
+        for(int i=0;i<ACTIVECHECK_LIST.size();i++){
+           lstMovedItem.add(ACTIVECHECK_LIST.get(i).getText());
+        }}
 }

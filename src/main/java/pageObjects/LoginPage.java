@@ -1,9 +1,14 @@
 package pageObjects;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import genericLibrary.*;
 
@@ -14,10 +19,14 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver){
 		this.driver=driver;
-		
+
 	}
 	
-		
+	
+	@FindBy(xpath ="//a[contains(text(),'I agree')]")
+	@CacheLookup
+	public WebElement I_AGREE;
+	
 	@FindBy(id ="id_username")
 	@CacheLookup
 	public WebElement USERNAME;
@@ -54,16 +63,26 @@ public class LoginPage {
 		
 	public void login_User() throws Exception
 	{
+		I_AGREE.click();
 		USERNAME.sendKeys(ConfigProperties.getObject("userName"));
 		PASSWORD.sendKeys(ConfigProperties.getObject("passWord"));
 		LOGIN_BTN.click();
 	 
 	}
 	
+	public void testweb() throws IOException{
+		BrowserUtilities.getBrowser();
+		USERNAME.sendKeys(ConfigProperties.getObject("userName"));
+		PASSWORD.sendKeys(ConfigProperties.getObject("passWord"));
+		LOGIN_BTN.click();
+		
+		
+        }
+	
 		
 	
 	
 	
 	
-	
+
 }

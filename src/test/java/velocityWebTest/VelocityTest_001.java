@@ -1,6 +1,9 @@
-package velocityTestScript;
+package velocityWebTest;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +21,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import actionsLibrary.CommonActionUtil;
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
 import genericLibrary.BrowserUtilities;
 import genericLibrary.LogUtilities;
 import genericLibrary.ScreenshotUtilities;
@@ -40,12 +45,17 @@ public class VelocityTest_001 {
 	static String ExpectedBlue="rgba(79, 184, 232, 1)";
 	static String ExpectedLightGreen="rgba(152, 202, 105, 1)";
 	static String ExpectedLightRed="rgba(242, 102, 79, 1)";
-	
-	
+	 ATUTestRecorder recorder;
+	  DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
+	  Date date = new Date();
 	
 	  @BeforeTest
-	  public void launch() throws IOException{
-		
+	  public void launch() throws IOException, ATUTestRecorderException{
+		//Provide path to store videos and file name format.
+		  recorder = new ATUTestRecorder("C:\\Users\\Ranosys\\workspace\\velocity\\ScriptVideos\\","TestVideo-"+dateFormat.format(date),false);
+		  //To start video recording.
+		  recorder.start(); 
+		  
 		DOMConfigurator.configure("log4j.xml");
 		
 		BrowserUtilities.getBrowser();
@@ -62,7 +72,6 @@ public class VelocityTest_001 {
 	
 	  @Test(alwaysRun = true)
 	  public void vehicleCheckMenuTest_001() throws Exception{
-		
 		
 	    try {
 	    	
@@ -103,28 +112,28 @@ public class VelocityTest_001 {
 	    	hpobj.VEHICLECHECK_TILE.click();
 	    	
 	    	vcpobj.MANAGEFLEET_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManagementFleetTileColor(),"Manage fleet tile verify");
+	    	Assert.assertEquals(vcpobj.getManagementFleetTileColor(),ExpectedBlue,"Manage fleet tile verify");
 	    	
 	    	vcpobj.MANAGEGROUPS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageGroupsTileColor(),"Manage groups tile verify");
+	    	Assert.assertEquals(vcpobj.getManageGroupsTileColor(),ExpectedBlue,"Manage groups tile verify");
 	    	
 	    	vcpobj.REPORTS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getReportsTileColor(),"Reports tile verify");
+	    	Assert.assertEquals(vcpobj.getReportsTileColor(),ExpectedBlue,"Reports tile verify");
 	    	
 	    	vcpobj.MANAGEQUESTION_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getManageQuestionTileColor(),"Manage question tile verify");
+	    	Assert.assertEquals(vcpobj.getManageQuestionTileColor(),ExpectedBlue,"Manage question tile verify");
 	    	
 	    	vcpobj.DEFECTMANAGEMENT_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedBlue, vcpobj.getDefectManagementTileColor(),"Defect management tile verify");
+	    	Assert.assertEquals(vcpobj.getDefectManagementTileColor(),ExpectedBlue,"Defect management tile verify");
 	    	
 	    	vcpobj.DUEDATES_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPurple, vcpobj.getDueDatesTileColor(),"Due Dates fleet tile verify");
+	    	Assert.assertEquals(vcpobj.getDueDatesTileColor(),ExpectedPurple,"Due Dates fleet tile verify");
 	    	
 	    	vcpobj.VEHICLECHECKDASH_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPurple, vcpobj.getVechicleCheckDashboardTileColor(),"Vehicle check dash tile verify");
+	    	Assert.assertEquals(vcpobj.getVechicleCheckDashboardTileColor(),ExpectedPurple,"Vehicle check dash tile verify");
 	   
 	    	vcpobj.ALERTS_TILE.isDisplayed();
-	    	Assert.assertEquals(ExpectedPink, vcpobj.getAlertTileColor(),"Alerts fleet tile verify");
+	    	Assert.assertEquals(vcpobj.getAlertTileColor(),ExpectedPink,"Alerts fleet tile verify");
 	    	
 	    	System.out.println("All Eight Tiles Found and verified with required color: => Assertion for Step2 PASS");
 	    	
@@ -249,13 +258,13 @@ public class VelocityTest_001 {
 		     vcpobj.MANAGEVEHICLEPOPUP_ADDBUTTON.isDisplayed();
 			
 		     vcpobj.MANAGEVEHICLEPOPUP_ADDBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedBlue, vcpobj.getManageVehiclepopupAddButtonColor(),"Manage Vehicle popup add button verify");
+		    Assert.assertEquals(vcpobj.getManageVehiclepopupAddButtonColor(),ExpectedBlue,"Manage Vehicle popup add button verify");
 		    
 		    vcpobj.MANAGEVEHICLEPOPUP_SUBMITBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedLightGreen, vcpobj.getManageVehiclepopupSubmitButtonColor(),"Manage Vehicle popup submit button verify");
+		    Assert.assertEquals(vcpobj.getManageVehiclepopupSubmitButtonColor(),ExpectedLightGreen,"Manage Vehicle popup submit button verify");
 		    
 		    vcpobj.MANAGEVEHICLEPOPUP_CANCELBUTTON.isDisplayed();
-		    Assert.assertEquals(ExpectedLightRed, vcpobj.getManageVehiclepopupCancelButtonColor(),"Manage Vehicle popup cancel button verify");
+		    Assert.assertEquals(vcpobj.getManageVehiclepopupCancelButtonColor(),ExpectedLightRed,"Manage Vehicle popup cancel button verify");
 		    	
 		   
 				System.out.println("All elements verified => Assertion for Step5 PASS");
@@ -319,13 +328,14 @@ public class VelocityTest_001 {
          
          @AfterMethod
          public void captureTest(){
-          ScreenshotUtilities.captureScreenShot();
+         ScreenshotUtilities.captureScreenShot();
          }
          
 	    @AfterTest
-	    public void crash() throws IOException
+	    public void crash() throws IOException, ATUTestRecorderException
 	    {
 		  BrowserUtilities.closeBrowser();
+		  recorder.stop();
 	      }
 
 }

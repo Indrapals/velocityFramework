@@ -4,13 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import genericLibrary.BrowserUtilities;
 
 public class HomePage {
 
 	final WebDriver driver;
 	public HomePage(WebDriver driver){
 		this.driver=driver;
-		
+	
 	}
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]")
@@ -25,6 +28,11 @@ public class HomePage {
 	@CacheLookup
 	public WebElement VEHICLECHECK_DROPDOWN;
 	
+	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(text(),'Kinesis Telematics')]")
+	@CacheLookup
+	public WebElement KINESISTELEMATICS_MENU;
+	
+
 	
 	
 }
