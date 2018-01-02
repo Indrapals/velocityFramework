@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -227,8 +228,8 @@ public class velocityAppTest  extends BrowserUtilities{
 			{
 				System.out.println("All elements:"+s);
 			}
-		      
- 	      
+     	  List<String> allElementsTextApp = new ArrayList<String>(allElementsText);
+   	    
  	     int ElementsCount = allElementsText.size();
 			if(ElementsCount == 13)
 			{
@@ -258,9 +259,14 @@ public class velocityAppTest  extends BrowserUtilities{
  		          String text=element.getText();
 				
 				   allWebElementsText.add(text);
+				   
  		        }
+ 		       List<String> allElementsTextWeb = new ArrayList<String>(allWebElementsText);
+ 		      Collections.sort(allElementsTextApp);
+ 		     Collections.sort(allElementsTextWeb);
 			BrowserUtilities.closeBrowser();
-	    Assert.assertEquals(allElementsText, allWebElementsText,"Verified both the list of active vehicles");
+		
+	    Assert.assertEquals(allElementsTextApp, allElementsTextWeb,"Verified both the list of active vehicles");
 	   
 	    TestLinkIntegration.updateResult("VLC-15", null, TestLinkAPIResults.TEST_PASSED); 
  	     }catch (Exception e)
