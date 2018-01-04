@@ -42,9 +42,8 @@ public class VelocityLiveMapTest {
 	static int countblue=0;
 	static String ExpectedBlue="rgba(79, 184, 232, 1)";
 	 ATUTestRecorder recorder;
-	  DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
-	  Date date = new Date();
-
+	 DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
+	 Date date = new Date();
 	  
 	  @BeforeTest
 	  public void launch() throws IOException, ATUTestRecorderException{
