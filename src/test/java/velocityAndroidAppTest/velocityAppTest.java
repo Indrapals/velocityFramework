@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.exec.ExecuteException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -53,6 +54,7 @@ public class velocityAppTest  extends BrowserUtilities{
 	 ATUTestRecorder recorder;
 	  DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
 	  Date date = new Date();
+	  Dimension size;
 	  
 	 @BeforeTest
 	  public void launch() throws IOException, ATUTestRecorderException {
@@ -168,10 +170,15 @@ public class velocityAppTest  extends BrowserUtilities{
  			  allElementsText.add(text);
  			 
  		   }
- 		   Thread.sleep(1000);
- 		   
- 		  AndroidAction.scrollExact("DG57 NCJ");
- 		  
+		   size = ApplicationSetup.driver.manage().window().getSize();
+		   System.out.println(size);
+		    int height=size.getHeight();
+		    int weight=size.getWidth();
+		    int x=weight/2;
+		    int starty = (int)(height * 0.60);
+		    int endy = (int)(height * 0.37);
+		    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
+	  
  		 
  		 List<MobileElement> list2=  ApplicationSetup.driver.findElements(By.id("item_name"));
  		 
@@ -182,7 +189,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			 
 		   }
 		  
-		   AndroidAction.scrollExact("hgfhg");
+		   ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 		
 		   List<MobileElement> list3=  ApplicationSetup.driver.findElements(By.id("item_name"));
 	 		 
@@ -193,7 +200,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			 
 		   }
 		   
-             AndroidAction.scrollExact("Hire Van 1");
+		   ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 		   
 		    List<MobileElement> list4=  ApplicationSetup.driver.findElements(By.id("item_name"));
 	 		 
@@ -204,7 +211,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			 
 		   }
 		   
-		   AndroidAction.scrollExact("PSV");
+		   ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 		    List<MobileElement> list5=  ApplicationSetup.driver.findElements(By.id("item_name"));
 	 		 
 			   for(WebElement element: list5){
@@ -214,15 +221,17 @@ public class velocityAppTest  extends BrowserUtilities{
 				 
 			   }
 			 
-			   AndroidAction.scrollExact("TRAIL1");
-			   List<MobileElement> list6=  ApplicationSetup.driver.findElements(By.id("item_name"));
+			   ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
+				  
 		 		 
-			   for(WebElement element: list6){
-				   String text=element.getText();
-				   System.out.println(text);
-				  allElementsText.add(text);
-				 
-			   }
+		 		 List<MobileElement> list6=  ApplicationSetup.driver.findElements(By.id("item_name"));
+		 		 
+				   for(WebElement element: list6){
+					   String text=element.getText();
+					   System.out.println(text);
+					  allElementsText.add(text);
+					 
+				   }
 			   
      	   for(String s : allElementsText)
 			{
@@ -236,7 +245,8 @@ public class velocityAppTest  extends BrowserUtilities{
 				System.out.println("List of elements are equal ");
 			}
 			
- 	   	    	BrowserUtilities.getBrowser();
+ 	   	   	BrowserUtilities.getBrowser();
+ 	   	    driver.findElement(By.xpath("//a[contains(text(),'I agree')]")).click();
  	   		driver.findElement(By.xpath("//input[@value='Login']")).click();
  	   	    	driver.findElement(By.id("id_username")).sendKeys("anand.ramdeo@ranosys.com");
  				driver.findElement(By.id("id_password")).sendKeys("Wednesday1350");
@@ -276,7 +286,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			  }		 	  
        }
 	   
-	   @Test(enabled = true)
+	 @Test(enabled = true)
 	    public void vehicleAppTest_016() throws TestLinkAPIException 
 	    {
 	      try { 
@@ -284,10 +294,9 @@ public class velocityAppTest  extends BrowserUtilities{
 	    	 appobj.NAVBACK_BUTTON.click();
 	    	 appobj.LOGIN_BUTTON.click();
 	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
-	    	 
 	    	 String ExpectedMessage="Vehicle not found.";
 	          Assert.assertEquals(ExpectedMessage,appobj.MESSAGE_POPUP.getText());
-	          TestLinkIntegration.updateResult("VLC-16", null, TestLinkAPIResults.TEST_PASSED); 
+	    	      TestLinkIntegration.updateResult("VLC-16", null, TestLinkAPIResults.TEST_PASSED); 
 		       }
 	      catch (Exception e)
 	         {
@@ -302,10 +311,20 @@ public class velocityAppTest  extends BrowserUtilities{
  	      try { 
  	    	
  	    	 appobj.OK_BUTTON.click();
- 	    	//AndroidAction.implicit_wait(200, TimeUnit.SECONDS);
- 	    	Thread.sleep(1000);
+ 	    	AndroidAction.implicit_wait(200, TimeUnit.SECONDS);
+ 	    	  Thread.sleep(1000);
  	    	 appobj.VEHICLE_SELECT_DROPDOWN.click();
- 	    	 AndroidAction.scrollExact("Hire Van 1");
+ 	    	  size = ApplicationSetup.driver.manage().window().getSize();
+ 			   System.out.println(size);
+ 			    int height=size.getHeight();
+ 			    int weight=size.getWidth();
+ 			    int x=weight/2;
+ 			    int starty = (int)(height * 0.60);
+ 			    int endy = (int)(height * 0.37);
+ 			    for(int i=0;i<=2;i++){
+ 			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
+ 			    }
+ 	    	
  	   	     appobj.SELECT_HIREVAN1.click();
  	   	     appobj.SELECTVEHICLE_OK_BUTTON.click();
  	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
@@ -347,7 +366,17 @@ public class velocityAppTest  extends BrowserUtilities{
 	      try { 
 	    	 
 	    	  appobj.VEHICLE_SELECT_DROPDOWN.click();
-	 	    	 AndroidAction.scrollExact("Hire Van 1");
+	    	  size = ApplicationSetup.driver.manage().window().getSize();
+			   System.out.println(size);
+			    int height=size.getHeight();
+			    int weight=size.getWidth();
+			    int x=weight/2;
+			    int starty = (int)(height * 0.60);
+			    int endy = (int)(height * 0.37);
+			    for(int i=0;i<=2;i++){
+			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
+			    }
+	 	 
 	 	   	     appobj.SELECT_HIREVAN1.click();
 	 	   	     appobj.SELECTVEHICLE_OK_BUTTON.click();
 	 	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
@@ -363,7 +392,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			  }		 	  
      }
 	   
-	   
+	  
 	      @AfterMethod
 	      public void captureTest(){
 	      ScreenshotUtilities.captureAndroidScreenShot();

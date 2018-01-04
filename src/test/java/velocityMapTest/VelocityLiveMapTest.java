@@ -48,7 +48,7 @@ public class VelocityLiveMapTest {
 	  
 	  @BeforeTest
 	  public void launch() throws IOException, ATUTestRecorderException{
-			//Provide path to store videos and file name format.
+		 //Provide path to store videos and file name format.
 		  recorder = new ATUTestRecorder("C:\\Users\\Ranosys\\workspace\\velocity\\ScriptVideos\\","TestVideo-"+dateFormat.format(date),false);
 		  //To start video recording.
 		  recorder.start(); 
@@ -58,7 +58,7 @@ public class VelocityLiveMapTest {
 		BrowserUtilities.getBrowser();
 		
 		LogUtilities.info("Browser launched with url Successfully");
-		BrowserUtilities.driver.findElement(By.xpath("//a[contains(text(),'I agree')]")).click();
+		
 	}
 	
 	  @BeforeMethod
@@ -90,7 +90,7 @@ public class VelocityLiveMapTest {
             
             System.out.println("No of Parked vehicle present on screen :  " + lmpobj.PARKEDVEHICLE_LIST.size()/4);
             
-            System.out.println("No of Parked vehicle present on screen :  " + lmpobj.MOVINGVEHICLE_LIST.size()/4);
+            System.out.println("No of Moving vehicle present on screen :  " + lmpobj.MOVINGVEHICLE_LIST.size()/4);
             
             System.out.println("No of vehicle clusters present on screen :  " + lmpobj.VEHICLECLUSTER_LIST.size());
             
@@ -109,11 +109,11 @@ public class VelocityLiveMapTest {
                
                	}
             }
-            
-            
+                        
 			System.out.println("Verified test successfully: => Assertion for Step 20 PASS ");
 			TestLinkIntegration.updateResult("VLC-20", null, TestLinkAPIResults.TEST_PASSED);
 		   } catch (Exception e) {
+			  
 			System.out.println("Test Failed");	
 			TestLinkIntegration.updateResult("VLC-20", e.getMessage(), TestLinkAPIResults.TEST_FAILED);
 		  }	       

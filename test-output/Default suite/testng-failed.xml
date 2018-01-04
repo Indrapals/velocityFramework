@@ -3,21 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="velocityAndroidAppTest.velocityAppTest">
+      <class name="velocityMapTest.VelocityLiveMapTest">
         <methods>
+          <include name="liveMapTest_023"/>
+          <include name="liveMapTest_022"/>
+          <include name="liveMapTest_025"/>
+          <include name="liveMapTest_024"/>
+          <include name="laodPages"/>
+          <include name="liveMapTest_021"/>
+          <include name="liveMapTest_027"/>
+          <include name="liveMapTest_026"/>
           <include name="launch"/>
-          <include name="setUp"/>
-          <include name="vehicleAppTest_019"/>
-          <include name="vehicleAppTest_017"/>
+          <include name="liveMapTest_028"/>
           <include name="captureTest"/>
-          <include name="vehicleAppTest_018"/>
-          <include name="vehicleAppTest_015"/>
-          <include name="vehicleAppTest_016"/>
-          <include name="vehicleAppTest_013"/>
-          <include name="vehicleAppTest_014"/>
-          <include name="vehicleAppTest_012"/>
         </methods>
-      </class> <!-- velocityAndroidAppTest.velocityAppTest -->
+      </class> <!-- velocityMapTest.VelocityLiveMapTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

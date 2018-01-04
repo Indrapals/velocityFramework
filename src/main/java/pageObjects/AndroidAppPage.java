@@ -115,7 +115,7 @@ public class AndroidAppPage {
 	@CacheLookup
 	public WebElement SELECTVEHICLE_OK_BUTTON;
 	
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hire Van 1')]")
+	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hire 1')]")
 	@CacheLookup
 	public WebElement SELECT_HIREVAN1;
 	
@@ -155,6 +155,7 @@ public class AndroidAppPage {
 		EMAIL_CLEAR.click();	
 		LOGIN_USERNAME.sendKeys("jen.littletom@kinesisdemo.com");
 		CODE_CLEAR.click();
+		AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
 		LOGIN_BUTTON.click();
 	 
 	}
@@ -168,6 +169,7 @@ public class AndroidAppPage {
 			LOGIN_USERNAME.sendKeys("jen.littletom@kinesisdemo.com");
 		
 			LOGIN_PASSWORD.sendKeys("783234307");
+			AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
 			LOGIN_BUTTON.click();
 		 
 		}
@@ -188,7 +190,7 @@ public class AndroidAppPage {
 		//Login Active user with correct code
 		public void login_ActiveUser_With_CorrectCode() throws Exception
 			{
-			AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
+			//AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
 			OK_BUTTON.click();	
 			AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
 			EMAIL_CLEAR.click();	

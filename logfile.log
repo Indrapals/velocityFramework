@@ -1328,3 +1328,51 @@
 2018-01-02 17:06:39,346 INFO  [LogUtilities] All elements verified :Test step8 passed 
 2018-01-02 17:11:51,273 INFO  [LogUtilities] Browser launched with url Successfully 
 2018-01-02 17:11:56,072 INFO  [LogUtilities] User login Successfully 
+2018-01-02 17:43:36,936 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-02 17:43:41,416 INFO  [LogUtilities] User login Successfully 
+2018-01-02 17:43:42,480 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-02 17:43:51,183 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-02 17:43:57,046 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-02 17:44:03,687 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-02 17:44:13,690 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-02 17:44:17,081 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-02 17:44:20,494 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-02 17:49:46,067 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-02 17:49:50,730 INFO  [LogUtilities] User login Successfully 
+2018-01-03 10:56:12,600 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 10:56:19,811 INFO  [LogUtilities] User login Successfully 
+2018-01-03 10:56:21,764 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-03 10:56:30,495 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-03 10:56:36,048 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-03 10:56:42,625 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-03 10:56:48,999 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-03 10:56:51,628 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-03 10:56:54,956 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-03 11:03:13,012 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:15:24,823 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:16:19,202 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:18:42,732 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:20:14,894 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:20:23,305 INFO  [LogUtilities] User login Successfully 
+2018-01-03 15:21:03,541 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:21:13,417 INFO  [LogUtilities] User login Successfully 
+2018-01-03 15:36:14,961 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:36:20,084 INFO  [LogUtilities] User login Successfully 
+2018-01-03 15:37:03,955 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:37:09,164 INFO  [LogUtilities] User login Successfully 
+2018-01-03 15:38:40,562 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-03 15:38:48,004 INFO  [LogUtilities] User login Successfully 
+2018-01-04 11:09:20,511 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 11:09:26,091 INFO  [LogUtilities] User login Successfully 
+2018-01-04 11:09:28,275 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-04 11:09:37,280 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-04 11:09:41,068 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-04 11:09:51,386 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-04 11:09:57,616 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-04 11:10:00,518 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-04 11:10:03,680 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-04 11:37:23,867 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 11:37:29,902 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 11:37:30,645 INFO  [LogUtilities] User login Successfully 
+2018-01-04 11:39:04,750 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 11:39:11,421 INFO  [LogUtilities] User login Successfully 
