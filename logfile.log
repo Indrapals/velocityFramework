@@ -1376,3 +1376,25 @@
 2018-01-04 11:37:30,645 INFO  [LogUtilities] User login Successfully 
 2018-01-04 11:39:04,750 INFO  [LogUtilities] Browser launched with url Successfully 
 2018-01-04 11:39:11,421 INFO  [LogUtilities] User login Successfully 
+2018-01-04 12:07:08,526 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 12:07:16,266 INFO  [LogUtilities] User login Successfully 
+2018-01-04 12:07:18,433 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-04 12:07:29,132 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-04 12:07:35,218 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-04 12:07:42,147 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-04 12:07:49,014 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-04 12:07:53,303 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-04 12:07:57,607 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-04 12:11:33,155 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 12:11:40,348 INFO  [LogUtilities] User login Successfully 
+2018-01-04 12:49:17,744 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 12:49:23,860 INFO  [LogUtilities] User login Successfully 
+2018-01-04 12:49:24,786 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-04 12:49:32,611 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-04 12:49:37,388 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-04 12:49:44,796 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-04 12:49:50,677 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-04 12:49:53,777 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-04 12:49:57,153 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-04 12:54:59,398 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-04 12:55:06,919 INFO  [LogUtilities] User login Successfully 
