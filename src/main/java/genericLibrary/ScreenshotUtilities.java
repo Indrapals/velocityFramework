@@ -20,6 +20,7 @@ import pageObjects.AndroidAppPage;
  * captureScreenShot method to capture screenshoot after every test
  */
 
+
 public class ScreenshotUtilities {
 	
 	public static void getScreenShot(WebDriver ldriver,ITestNGMethod method){
