@@ -172,11 +172,11 @@ public class VelocityLiveMapTest {
 	    	Screen screen = new Screen();
 	    	Pattern SatelliteImage = new Pattern("D:\\Sikuli.sikuli\\1514292511154.png");
 	    	if(screen.exists(SatelliteImage) != null){
-	    		System.out.println("Satellite view verified");
+	    		
 	    		lmpobj.STANDARD_CHECKBOX.click();
 	    	}
 	    	
-			System.out.println("Verified test successfully: => Assertion for Step 23 PASS ");
+			System.out.println("Satellite view verified test successfully: => Assertion for Step 23 PASS ");
 			TestLinkIntegration.updateResult("VLC-23", null, TestLinkAPIResults.TEST_PASSED);
 		   } catch (Exception e) {
 			System.out.println("Test Failed");	
@@ -192,14 +192,13 @@ public class VelocityLiveMapTest {
 	    	
 	    	lmpobj.TRAFFIC_CHECKBOX.click();
 	    	Screen screen = new Screen();
-	    	Pattern SatelliteImage = new Pattern("D:\\Sikuli.sikuli\\1514292696619.png");
-	    	if(screen.exists(SatelliteImage) != null){
-	    		System.out.println("Traffic view verified");
+	    	Pattern TrafficImage = new Pattern("D:\\Sikuli.sikuli\\1514292696619.png");
+	    	if(screen.exists(TrafficImage) != null){
 	    		lmpobj.TRAFFIC_CHECKBOX.click();
 	    		lmpobj.RESTMAP_BUTTON.click();
 	    	}
 	    	
-			System.out.println("Verified test successfully: => Assertion for Step 24 PASS ");
+			System.out.println("Traffic view verified test successfully: => Assertion for Step 24 PASS ");
 			TestLinkIntegration.updateResult("VLC-24", null, TestLinkAPIResults.TEST_PASSED);
 		   } catch (Exception e) {
 			System.out.println("Test Failed");	
@@ -213,16 +212,15 @@ public class VelocityLiveMapTest {
 	    	
 	    	lmpobj.POINTSOFINTEREST_CHECKBOX.click();
 	    	Screen screen = new Screen();
-	    	Pattern SatelliteImage = new Pattern("D:\\Sikuli.sikuli\\1514351111559.png");
-	    	if(screen.exists(SatelliteImage) != null){
-	    	System.out.println("POI view verified");
+	    	Pattern POIImage = new Pattern("D:\\Sikuli.sikuli\\1514351111559.png");
+	    	if(screen.exists(POIImage) != null){
 	    	
 	    	lmpobj.POINTSOFINTEREST_CHECKBOX.click();
 	    	lmpobj.RESTMAP_BUTTON.click();
 	    	lmpobj.OPTIONS_CLOSE_BUTTON.click();
 	    	}
 	    	
-			System.out.println("Verified test successfully: => Assertion for Step 25 PASS ");
+			System.out.println("POI view verified test successfully: => Assertion for Step 25 PASS ");
 			TestLinkIntegration.updateResult("VLC-25", null, TestLinkAPIResults.TEST_PASSED);
 		   } catch (Exception e) {
 			System.out.println("Test Failed");	
@@ -251,10 +249,8 @@ public class VelocityLiveMapTest {
 	    try {
 	    	
 	    	lmpobj.SUMMARY_BUTTON.click();
-	   
-   		
+	 	
 	    	lmpobj.SUMMARY_GROUP_BUTTON.click();
-	    	
 	    	
 	    	for(WebElement element:lmpobj.VEHICLE_GROUP_NAME_LIST){
 		    Assert.assertTrue(element.isDisplayed(), "Groups list's names are displayed");

@@ -2,128 +2,128 @@
 <testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="107729" started-at="2018-01-04T06:08:47Z" finished-at="2018-01-04T06:10:35Z">
+  <suite name="Default suite" duration-ms="161510" started-at="2018-01-11T11:02:50Z" finished-at="2018-01-11T11:05:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="107729" started-at="2018-01-04T06:08:47Z" finished-at="2018-01-04T06:10:35Z">
-      <class name="velocityMapTest.VelocityLiveMapTest">
-        <test-method status="PASS" signature="launch()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="launch" is-config="true" duration-ms="16787" started-at="2018-01-04T11:38:47Z" finished-at="2018-01-04T11:39:04Z">
+    <test name="Default test" duration-ms="161510" started-at="2018-01-11T11:02:50Z" finished-at="2018-01-11T11:05:31Z">
+      <class name="velocityAndroidAppTest.velocityAppTest">
+        <test-method status="PASS" signature="launch()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="launch" is-config="true" duration-ms="11870" started-at="2018-01-11T16:32:50Z" finished-at="2018-01-11T16:33:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="209" started-at="2018-01-04T11:39:04Z" finished-at="2018-01-04T11:39:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="470" started-at="2018-01-11T16:33:02Z" finished-at="2018-01-11T16:33:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_020()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_020" duration-ms="48110" started-at="2018-01-04T11:39:05Z" finished-at="2018-01-04T11:39:53Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_011()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_011" duration-ms="15079" started-at="2018-01-11T16:33:02Z" finished-at="2018-01-11T16:33:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- liveMapTest_020 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="1127" started-at="2018-01-04T11:39:53Z" finished-at="2018-01-04T11:39:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="14" started-at="2018-01-04T11:39:54Z" finished-at="2018-01-04T11:39:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_021()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_021" duration-ms="2590" started-at="2018-01-04T11:39:54Z" finished-at="2018-01-04T11:39:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- liveMapTest_021 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="795" started-at="2018-01-04T11:39:57Z" finished-at="2018-01-04T11:39:57Z">
+        </test-method> <!-- vehicleAppTest_011 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="239" started-at="2018-01-11T16:33:17Z" finished-at="2018-01-11T16:33:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="15" started-at="2018-01-04T11:39:57Z" finished-at="2018-01-04T11:39:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="24" started-at="2018-01-11T16:33:18Z" finished-at="2018-01-11T16:33:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_022()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_022" duration-ms="1762" started-at="2018-01-04T11:39:57Z" finished-at="2018-01-04T11:39:59Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_012()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_012" duration-ms="18599" started-at="2018-01-11T16:33:18Z" finished-at="2018-01-11T16:33:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- liveMapTest_022 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="783" started-at="2018-01-04T11:39:59Z" finished-at="2018-01-04T11:40:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="8" started-at="2018-01-04T11:40:00Z" finished-at="2018-01-04T11:40:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_023()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_023" duration-ms="7812" started-at="2018-01-04T11:40:00Z" finished-at="2018-01-04T11:40:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- liveMapTest_023 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="820" started-at="2018-01-04T11:40:08Z" finished-at="2018-01-04T11:40:09Z">
+        </test-method> <!-- vehicleAppTest_012 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="259" started-at="2018-01-11T16:33:36Z" finished-at="2018-01-11T16:33:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="5" started-at="2018-01-04T11:40:09Z" finished-at="2018-01-04T11:40:09Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="7" started-at="2018-01-11T16:33:36Z" finished-at="2018-01-11T16:33:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_024()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_024" duration-ms="6071" started-at="2018-01-04T11:40:09Z" finished-at="2018-01-04T11:40:15Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_013()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_013" duration-ms="20230" started-at="2018-01-11T16:33:36Z" finished-at="2018-01-11T16:33:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- liveMapTest_024 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="931" started-at="2018-01-04T11:40:15Z" finished-at="2018-01-04T11:40:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="7" started-at="2018-01-04T11:40:16Z" finished-at="2018-01-04T11:40:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_025()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_025" duration-ms="4593" started-at="2018-01-04T11:40:16Z" finished-at="2018-01-04T11:40:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- liveMapTest_025 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="781" started-at="2018-01-04T11:40:20Z" finished-at="2018-01-04T11:40:21Z">
+        </test-method> <!-- vehicleAppTest_013 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="275" started-at="2018-01-11T16:33:57Z" finished-at="2018-01-11T16:33:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="5" started-at="2018-01-04T11:40:21Z" finished-at="2018-01-04T11:40:21Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-11T16:33:57Z" finished-at="2018-01-11T16:33:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_026()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_026" duration-ms="2049" started-at="2018-01-04T11:40:21Z" finished-at="2018-01-04T11:40:23Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_014()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_014" duration-ms="20543" started-at="2018-01-11T16:33:57Z" finished-at="2018-01-11T16:34:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- liveMapTest_026 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="731" started-at="2018-01-04T11:40:23Z" finished-at="2018-01-04T11:40:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="6" started-at="2018-01-04T11:40:24Z" finished-at="2018-01-04T11:40:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_027()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_027" duration-ms="2379" started-at="2018-01-04T11:40:24Z" finished-at="2018-01-04T11:40:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- liveMapTest_027 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="799" started-at="2018-01-04T11:40:26Z" finished-at="2018-01-04T11:40:27Z">
+        </test-method> <!-- vehicleAppTest_014 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="394" started-at="2018-01-11T16:34:18Z" finished-at="2018-01-11T16:34:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="laodPages" is-config="true" duration-ms="6" started-at="2018-01-04T11:40:27Z" finished-at="2018-01-04T11:40:27Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="11" started-at="2018-01-11T16:34:18Z" finished-at="2018-01-11T16:34:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="PASS" signature="liveMapTest_028()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="liveMapTest_028" duration-ms="3035" started-at="2018-01-04T11:40:27Z" finished-at="2018-01-04T11:40:30Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_015()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_015" duration-ms="42461" started-at="2018-01-11T16:34:18Z" finished-at="2018-01-11T16:35:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- liveMapTest_028 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="captureTest" is-config="true" duration-ms="897" started-at="2018-01-04T11:40:30Z" finished-at="2018-01-04T11:40:31Z">
+        </test-method> <!-- vehicleAppTest_015 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="283" started-at="2018-01-11T16:35:00Z" finished-at="2018-01-11T16:35:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="crash()[pri:0, instance:velocityMapTest.VelocityLiveMapTest@5abca1e0]" name="crash" is-config="true" duration-ms="4314" started-at="2018-01-04T11:40:31Z" finished-at="2018-01-04T11:40:35Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-11T16:35:01Z" finished-at="2018-01-11T16:35:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- crash -->
-      </class> <!-- velocityMapTest.VelocityLiveMapTest -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_016()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_016" duration-ms="6489" started-at="2018-01-11T16:35:01Z" finished-at="2018-01-11T16:35:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehicleAppTest_016 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="249" started-at="2018-01-11T16:35:07Z" finished-at="2018-01-11T16:35:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="3" started-at="2018-01-11T16:35:07Z" finished-at="2018-01-11T16:35:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_017()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_017" duration-ms="8909" started-at="2018-01-11T16:35:07Z" finished-at="2018-01-11T16:35:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehicleAppTest_017 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="281" started-at="2018-01-11T16:35:16Z" finished-at="2018-01-11T16:35:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-11T16:35:17Z" finished-at="2018-01-11T16:35:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_018()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_018" duration-ms="2418" started-at="2018-01-11T16:35:17Z" finished-at="2018-01-11T16:35:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehicleAppTest_018 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="311" started-at="2018-01-11T16:35:19Z" finished-at="2018-01-11T16:35:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="2" started-at="2018-01-11T16:35:19Z" finished-at="2018-01-11T16:35:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="vehicleAppTest_019()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_019" duration-ms="8544" started-at="2018-01-11T16:35:19Z" finished-at="2018-01-11T16:35:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vehicleAppTest_019 -->
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="256" started-at="2018-01-11T16:35:28Z" finished-at="2018-01-11T16:35:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureTest -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="endTest" is-config="true" duration-ms="3239" started-at="2018-01-11T16:35:28Z" finished-at="2018-01-11T16:35:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- velocityAndroidAppTest.velocityAppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

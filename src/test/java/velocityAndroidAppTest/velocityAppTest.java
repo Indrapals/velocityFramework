@@ -262,7 +262,7 @@ public class velocityAppTest  extends BrowserUtilities{
  			
  				Thread.sleep(500);
  				JavascriptExecutor js = (JavascriptExecutor)BrowserUtilities.driver;
- 				js.executeScript("window.scrollBy(0,300)", "");
+ 				js.executeScript("window.scrollBy(0,400)", "");
  		        for(WebElement element:lst){
  		        	
  		           System.out.println(element.getText());
