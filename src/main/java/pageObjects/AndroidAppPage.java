@@ -115,7 +115,7 @@ public class AndroidAppPage {
 	@CacheLookup
 	public WebElement SELECTVEHICLE_OK_BUTTON;
 	
-	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hire 1')]")
+	@FindBy(xpath ="//android.widget.TextView[contains(@text,'Hire')]")
 	@CacheLookup
 	public WebElement SELECT_HIREVAN1;
 	

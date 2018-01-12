@@ -2,124 +2,124 @@
 <testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="178316" started-at="2018-01-12T08:10:33Z" finished-at="2018-01-12T08:13:31Z">
+  <suite name="Default suite" duration-ms="185940" started-at="2018-01-12T08:30:23Z" finished-at="2018-01-12T08:33:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="178316" started-at="2018-01-12T08:10:33Z" finished-at="2018-01-12T08:13:31Z">
+    <test name="Default test" duration-ms="185940" started-at="2018-01-12T08:30:23Z" finished-at="2018-01-12T08:33:29Z">
       <class name="velocityAndroidAppTest.velocityAppTest">
-        <test-method status="PASS" signature="launch()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="launch" is-config="true" duration-ms="12348" started-at="2018-01-12T13:40:33Z" finished-at="2018-01-12T13:40:45Z">
+        <test-method status="PASS" signature="launch()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="launch" is-config="true" duration-ms="12850" started-at="2018-01-12T14:00:23Z" finished-at="2018-01-12T14:00:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="413" started-at="2018-01-12T13:40:45Z" finished-at="2018-01-12T13:40:46Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="483" started-at="2018-01-12T14:00:36Z" finished-at="2018-01-12T14:00:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_011()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_011" duration-ms="15319" started-at="2018-01-12T13:40:46Z" finished-at="2018-01-12T13:41:01Z">
+        <test-method status="PASS" signature="vehicleAppTest_011()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_011" duration-ms="15508" started-at="2018-01-12T14:00:36Z" finished-at="2018-01-12T14:00:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_011 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="279" started-at="2018-01-12T13:41:01Z" finished-at="2018-01-12T13:41:01Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="272" started-at="2018-01-12T14:00:52Z" finished-at="2018-01-12T14:00:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="16" started-at="2018-01-12T13:41:01Z" finished-at="2018-01-12T13:41:01Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="36" started-at="2018-01-12T14:00:52Z" finished-at="2018-01-12T14:00:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_012()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_012" duration-ms="23191" started-at="2018-01-12T13:41:01Z" finished-at="2018-01-12T13:41:24Z">
+        <test-method status="PASS" signature="vehicleAppTest_012()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_012" duration-ms="28191" started-at="2018-01-12T14:00:52Z" finished-at="2018-01-12T14:01:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_012 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="245" started-at="2018-01-12T13:41:24Z" finished-at="2018-01-12T13:41:25Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="233" started-at="2018-01-12T14:01:20Z" finished-at="2018-01-12T14:01:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="6" started-at="2018-01-12T13:41:25Z" finished-at="2018-01-12T13:41:25Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="21" started-at="2018-01-12T14:01:20Z" finished-at="2018-01-12T14:01:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_013()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_013" duration-ms="18705" started-at="2018-01-12T13:41:25Z" finished-at="2018-01-12T13:41:43Z">
+        <test-method status="PASS" signature="vehicleAppTest_013()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_013" duration-ms="19030" started-at="2018-01-12T14:01:20Z" finished-at="2018-01-12T14:01:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_013 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="239" started-at="2018-01-12T13:41:43Z" finished-at="2018-01-12T13:41:44Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="243" started-at="2018-01-12T14:01:39Z" finished-at="2018-01-12T14:01:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-12T13:41:44Z" finished-at="2018-01-12T13:41:44Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="7" started-at="2018-01-12T14:01:40Z" finished-at="2018-01-12T14:01:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_014()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_014" duration-ms="21120" started-at="2018-01-12T13:41:44Z" finished-at="2018-01-12T13:42:05Z">
+        <test-method status="PASS" signature="vehicleAppTest_014()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_014" duration-ms="21950" started-at="2018-01-12T14:01:40Z" finished-at="2018-01-12T14:02:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_014 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="318" started-at="2018-01-12T13:42:05Z" finished-at="2018-01-12T13:42:05Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="321" started-at="2018-01-12T14:02:02Z" finished-at="2018-01-12T14:02:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="8" started-at="2018-01-12T13:42:05Z" finished-at="2018-01-12T13:42:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="5" started-at="2018-01-12T14:02:02Z" finished-at="2018-01-12T14:02:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_015()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_015" duration-ms="52393" started-at="2018-01-12T13:42:05Z" finished-at="2018-01-12T13:42:58Z">
+        <test-method status="PASS" signature="vehicleAppTest_015()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_015" duration-ms="51932" started-at="2018-01-12T14:02:02Z" finished-at="2018-01-12T14:02:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_015 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="327" started-at="2018-01-12T13:42:58Z" finished-at="2018-01-12T13:42:58Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="404" started-at="2018-01-12T14:02:54Z" finished-at="2018-01-12T14:02:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-12T13:42:58Z" finished-at="2018-01-12T13:42:58Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="3" started-at="2018-01-12T14:02:54Z" finished-at="2018-01-12T14:02:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_016()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_016" duration-ms="7715" started-at="2018-01-12T13:42:58Z" finished-at="2018-01-12T13:43:06Z">
+        <test-method status="PASS" signature="vehicleAppTest_016()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_016" duration-ms="7859" started-at="2018-01-12T14:02:54Z" finished-at="2018-01-12T14:03:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_016 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="208" started-at="2018-01-12T13:43:06Z" finished-at="2018-01-12T13:43:06Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="240" started-at="2018-01-12T14:03:02Z" finished-at="2018-01-12T14:03:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="8" started-at="2018-01-12T13:43:06Z" finished-at="2018-01-12T13:43:06Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="5" started-at="2018-01-12T14:03:02Z" finished-at="2018-01-12T14:03:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_017()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_017" duration-ms="9907" started-at="2018-01-12T13:43:06Z" finished-at="2018-01-12T13:43:16Z">
+        <test-method status="PASS" signature="vehicleAppTest_017()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_017" duration-ms="10319" started-at="2018-01-12T14:03:02Z" finished-at="2018-01-12T14:03:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_017 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="295" started-at="2018-01-12T13:43:16Z" finished-at="2018-01-12T13:43:16Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="282" started-at="2018-01-12T14:03:13Z" finished-at="2018-01-12T14:03:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="4" started-at="2018-01-12T13:43:16Z" finished-at="2018-01-12T13:43:16Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="12" started-at="2018-01-12T14:03:13Z" finished-at="2018-01-12T14:03:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_018()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_018" duration-ms="2724" started-at="2018-01-12T13:43:16Z" finished-at="2018-01-12T13:43:19Z">
+        <test-method status="PASS" signature="vehicleAppTest_018()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_018" duration-ms="3122" started-at="2018-01-12T14:03:13Z" finished-at="2018-01-12T14:03:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_018 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="300" started-at="2018-01-12T13:43:19Z" finished-at="2018-01-12T13:43:19Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="274" started-at="2018-01-12T14:03:16Z" finished-at="2018-01-12T14:03:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="3" started-at="2018-01-12T13:43:19Z" finished-at="2018-01-12T13:43:19Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="setUp" is-config="true" duration-ms="3" started-at="2018-01-12T14:03:16Z" finished-at="2018-01-12T14:03:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="vehicleAppTest_019()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_019" duration-ms="8596" started-at="2018-01-12T13:43:19Z" finished-at="2018-01-12T13:43:28Z">
+        <test-method status="PASS" signature="vehicleAppTest_019()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="vehicleAppTest_019" duration-ms="8734" started-at="2018-01-12T14:03:16Z" finished-at="2018-01-12T14:03:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vehicleAppTest_019 -->
-        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="291" started-at="2018-01-12T13:43:28Z" finished-at="2018-01-12T13:43:28Z">
+        <test-method status="PASS" signature="captureTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="captureTest" is-config="true" duration-ms="303" started-at="2018-01-12T14:03:25Z" finished-at="2018-01-12T14:03:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="endTest" is-config="true" duration-ms="3285" started-at="2018-01-12T13:43:28Z" finished-at="2018-01-12T13:43:31Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:velocityAndroidAppTest.velocityAppTest@3b0143d3]" name="endTest" is-config="true" duration-ms="3214" started-at="2018-01-12T14:03:25Z" finished-at="2018-01-12T14:03:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

@@ -320,7 +320,7 @@ public class velocityAppTest  extends BrowserUtilities{
  			    int weight=size.getWidth();
  			    int x=weight/2;
  			    int starty = (int)(height * 0.60);
- 			    int endy = (int)(height * 0.37);
+ 			    int endy = (int)(height * 0.38);
  			    for(int i=0;i<=2;i++){
  			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
  			    }
@@ -372,7 +372,7 @@ public class velocityAppTest  extends BrowserUtilities{
 			    int weight=size.getWidth();
 			    int x=weight/2;
 			    int starty = (int)(height * 0.60);
-			    int endy = (int)(height * 0.37);
+			    int endy = (int)(height * 0.38);
 			    for(int i=0;i<=2;i++){
 			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 			    }
