@@ -36,6 +36,8 @@ public class ApplicationSetup {
 		  capabilities.setCapability("unicodeKeyboard", true);
 		  
 		  capabilities.setCapability("resetKeyboard", true);
+
+		  capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 3000);
 		  
 		  capabilities.setCapability(MobileCapabilityType.TAKES_SCREENSHOT, "true");
 		  

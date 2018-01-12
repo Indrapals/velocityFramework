@@ -176,7 +176,7 @@ public class velocityAppTest  extends BrowserUtilities{
 		    int weight=size.getWidth();
 		    int x=weight/2;
 		    int starty = (int)(height * 0.60);
-		    int endy = (int)(height * 0.37);
+		    int endy = (int)(height * 0.38);
 		    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 	  
  		 
@@ -251,16 +251,16 @@ public class velocityAppTest  extends BrowserUtilities{
  	   	    	driver.findElement(By.id("id_username")).sendKeys("anand.ramdeo@ranosys.com");
  				driver.findElement(By.id("id_password")).sendKeys("Wednesday1350");
  				driver.findElement(By.xpath("//input[@value='Login']")).click();
- 				Thread.sleep(500);
+ 				Thread.sleep(300);
  				driver.findElement(By.xpath("//img[@alt='Vehicle Check']")).click();
- 				Thread.sleep(500);
+ 				Thread.sleep(200);
  				driver.findElement(By.id("vehicle-check-manage-fleet")).click();
  				driver.findElement(By.xpath("//a[@href='/vehicle-check/manage-vehicles/']")).click();
  				
  				List<WebElement> lst=driver.findElements(By.xpath("//td[contains(@class,'vehicle-reg sorting')]"));
  				System.out.println(lst.size());
  			
- 				Thread.sleep(500);
+ 				Thread.sleep(100);
  				JavascriptExecutor js = (JavascriptExecutor)BrowserUtilities.driver;
  				js.executeScript("window.scrollBy(0,400)", "");
  		        for(WebElement element:lst){
