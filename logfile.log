@@ -1464,3 +1464,64 @@
 2018-01-11 16:24:24,972 INFO  [LogUtilities] User login Successfully 
 2018-01-11 16:28:03,193 INFO  [LogUtilities] Browser launched with url Successfully 
 2018-01-11 16:28:07,174 INFO  [LogUtilities] User login Successfully 
+2018-01-11 16:42:00,288 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-11 16:42:04,129 INFO  [LogUtilities] User login Successfully 
+2018-01-11 16:42:05,203 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-11 16:42:14,575 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-11 16:42:17,843 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-11 16:42:22,378 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-11 16:42:26,325 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-11 16:42:28,758 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-11 16:42:31,999 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-11 16:45:36,768 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-11 16:45:40,579 INFO  [LogUtilities] User login Successfully 
+2018-01-11 17:22:40,615 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-11 17:22:55,618 INFO  [LogUtilities] User login Successfully 
+2018-01-11 17:22:56,915 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-11 17:23:03,956 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-11 17:23:07,042 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-11 17:23:13,042 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-11 17:23:18,410 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-11 17:23:21,079 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-11 17:23:23,923 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-11 17:27:11,016 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-11 17:27:34,889 INFO  [LogUtilities] User login Successfully 
+2018-01-12 10:49:04,267 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 10:49:09,989 INFO  [LogUtilities] User login Successfully 
+2018-01-12 10:49:23,472 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-12 10:49:27,923 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-12 10:49:34,486 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-12 10:49:38,618 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-12 10:49:41,351 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-12 10:49:44,188 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-12 10:52:44,704 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 10:52:56,981 INFO  [LogUtilities] User login Successfully 
+2018-01-12 11:26:34,915 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 11:26:44,066 INFO  [LogUtilities] User login Successfully 
+2018-01-12 11:26:45,052 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-12 11:26:52,789 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-12 11:26:56,244 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-12 11:27:01,243 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-12 11:27:05,410 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-12 11:27:09,197 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-12 11:27:12,474 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-12 11:32:19,199 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 11:32:24,514 INFO  [LogUtilities] User login Successfully 
+2018-01-12 11:32:25,327 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-12 11:32:33,799 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-12 11:32:47,338 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-12 11:33:07,590 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-12 11:33:19,292 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-12 11:33:21,764 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-12 11:33:24,365 INFO  [LogUtilities] All elements verified :Test step8 passed 
+2018-01-12 11:37:11,354 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 11:37:15,813 INFO  [LogUtilities] User login Successfully 
+2018-01-12 12:14:09,793 INFO  [LogUtilities] Browser launched with url Successfully 
+2018-01-12 12:14:15,961 INFO  [LogUtilities] User login Successfully 
+2018-01-12 12:14:16,769 INFO  [LogUtilities] Test step 1 passed Successfully 
+2018-01-12 12:14:42,125 INFO  [LogUtilities] All tiles verified with their colors:Test step2 passed 
+2018-01-12 12:14:45,936 INFO  [LogUtilities] All elements verified :Test step3 passed 
+2018-01-12 12:14:50,724 INFO  [LogUtilities] All elements verified :Test step4 passed 
+2018-01-12 12:14:54,920 INFO  [LogUtilities] All elements verified :Test step5 passed 
+2018-01-12 12:14:57,735 INFO  [LogUtilities] All elements verified :Test step7 passed 
+2018-01-12 12:15:00,494 INFO  [LogUtilities] All elements verified :Test step8 passed 

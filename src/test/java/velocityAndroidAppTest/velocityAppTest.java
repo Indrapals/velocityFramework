@@ -52,9 +52,9 @@ public class velocityAppTest  extends BrowserUtilities{
 	Set<String> allElementsText = new HashSet<String>();
 	Set<String> allWebElementsText = new HashSet<String>();
 	 ATUTestRecorder recorder;
-	  DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
-	  Date date = new Date();
-	  Dimension size;
+	 DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss");
+	 Date date = new Date();
+     Dimension size;
 	  
 	 @BeforeTest
 	  public void launch() throws IOException, ATUTestRecorderException {
@@ -392,10 +392,11 @@ public class velocityAppTest  extends BrowserUtilities{
 			  }		 	  
      }
 	   
+	   
 	  
-	      @AfterMethod
-	      public void captureTest(){
-	      ScreenshotUtilities.captureAndroidScreenShot();
+	    @AfterMethod
+        public void captureTest(){
+        ScreenshotUtilities.captureAndroidScreenShot();
 	      }
 	      
 	   
@@ -406,6 +407,5 @@ public class velocityAppTest  extends BrowserUtilities{
 	    recorder.stop();
 	   
  	    }
-       
        
 }

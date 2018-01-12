@@ -169,7 +169,7 @@ public class AndroidAppPage {
 			LOGIN_USERNAME.sendKeys("jen.littletom@kinesisdemo.com");
 		
 			LOGIN_PASSWORD.sendKeys("783234307");
-			AndroidAction.implicit_wait(10, TimeUnit.SECONDS);
+			AndroidAction.implicit_wait(20, TimeUnit.SECONDS);
 			LOGIN_BUTTON.click();
 		 
 		}

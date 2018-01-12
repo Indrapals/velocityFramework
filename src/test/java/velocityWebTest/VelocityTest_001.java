@@ -20,6 +20,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import actionsLibrary.AndroidAction;
 import actionsLibrary.CommonActionUtil;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
@@ -82,7 +83,9 @@ public class VelocityTest_001 {
 	    	Assert.assertTrue(hpobj.VEHICLECHECK_MENU.isDisplayed(),"Vehicle menu displayed");
 	    
             CommonActionUtil.moveTo(hpobj.VEHICLECHECK_MENU);
-			
+            
+            CommonActionUtil.implicit_wait(20, TimeUnit.SECONDS);
+            
 			String arr[] = {"", "Home", "Vehicle Check Dashboard", "Due Dates Dashboard", "Defect Management", "How It Works", "Manage Fleet", "Manage Groups", "Manage Questions", "Reports", "Alerts"};
 	    	
 			for(int i=0;i<vcpobj.VEHICLECHECK_DROPDOWNLIST.size();i++)
@@ -323,8 +326,7 @@ public class VelocityTest_001 {
 			    TestLinkIntegration.updateResult("VLC-10", null, TestLinkAPIResults.TEST_PASSED);
 			  }	       
 		    }
-         
-         
+                  
          
          @AfterMethod
          public void captureTest(){
