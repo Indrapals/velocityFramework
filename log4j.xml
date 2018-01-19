@@ -9,7 +9,9 @@
 <param name="Threshold" value="INFO" />
  
 <param name="File" value="logfile.log"/>
- 
+
+<param name="File" value="errorlog.log"/>
+
 <layout class="org.apache.log4j.PatternLayout">
  
 <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />

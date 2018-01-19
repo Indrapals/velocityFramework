@@ -1,10 +1,11 @@
-package actionsLibrary;
+package actionslibrary;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,17 +15,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import genericLibrary.ApplicationSetup;
+import genericlibrary.ApplicationSetup;
+import genericlibrary.LogUtilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.TouchAction;
 
-public class AndroidAction {
+public final class AndroidAction {
+	
+	
+	private AndroidAction() {
+	    throw new IllegalStateException("Utility class");
+	  }
 	
 	// common timeout for all tests can be set here
-	public final static int timeOut = 70;
+	public static final int TIMEOUT = 70;
 	
 	
 	/**
@@ -32,15 +39,18 @@ public class AndroidAction {
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
+	
 	public static WebElement findElement(By locator){
 		try {
-			WebElement element = ApplicationSetup.driver.findElement(locator);
-			return element;
+			
+			return ApplicationSetup.driver.findElement(locator);
 		}
 		catch (NoSuchElementException e){
+
+			LogUtilities.error("Element not found");
 			throw new NoSuchElementException(e.getMessage());
-		}
 		
+		}		
 	}
 	
 	
@@ -49,7 +59,7 @@ public class AndroidAction {
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElement_Click(By locator){
+	public static WebElement findElementandclick(By locator){
 		try {
 			WebElement element = ApplicationSetup.driver.findElement(locator);
 			element.click();
@@ -65,15 +75,14 @@ public class AndroidAction {
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElement_getText(By locator){
+	public static String findElementandgettext(By locator){
 		try {
-			WebElement element = ApplicationSetup.driver.findElement(locator);
-			System.out.println(element.getText());
+			
+		 return	ApplicationSetup.driver.findElement(locator).getText();
 		}
 		catch (NoSuchElementException e){
 			throw new NoSuchElementException(e.getMessage());
 		}
-		return null;
 	}
 	
 	/**
@@ -95,12 +104,12 @@ public class AndroidAction {
 	/*
 	 * method for implicit wait
 	 */
-	public static Object implicit_wait(int i,TimeUnit arg1){
+	public static Object implicitwait(int i,TimeUnit arg1){
 		try {
 			ApplicationSetup.driver.manage().timeouts().implicitlyWait(i, arg1);
 				}
 		catch (Exception e){
-			e.printStackTrace();
+			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
@@ -108,15 +117,13 @@ public class AndroidAction {
 	/*
 	 * method for Explicit wait
 	 */
-	public static void explicit_wait(By by){
+	public static void explicitwait(By by){
 		try {
 			(new WebDriverWait(ApplicationSetup.driver, 30)).until(ExpectedConditions.elementToBeClickable(by));
 			ApplicationSetup.driver.findElement(by).click();
-			//ApplicationSetup.driver.manage().timeouts().implicitlyWait(i, arg1);
 				}
 		catch (StaleElementReferenceException  ser) {
-			// TODO Auto-generated catch block
-			ApplicationSetup.driver.findElement(by).click();
+			throw new NoSuchElementException(ser.getMessage());
 		}
 		}
         
@@ -129,7 +136,7 @@ public class AndroidAction {
 			ApplicationSetup.driver.navigate().back();
 				}
 		catch (Exception e){
-			e.printStackTrace();
+			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
@@ -146,7 +153,7 @@ public class AndroidAction {
 		tapObject.put("startY", yPosition);
 		js.executeScript("mobile: tap", tapObject);	
 	}
-
+	
 	
 	/**
 	 *  method to find all the elements of specific locator
@@ -156,8 +163,8 @@ public class AndroidAction {
 	
 	public static List<MobileElement> findElements(By locator){
 		try {
-			List<MobileElement> element = ApplicationSetup.driver.findElements(locator);
-			return element;
+			
+			return ApplicationSetup.driver.findElements(locator);
 		}
 		catch (NoSuchElementException e){
 			throw new NoSuchElementException(e.getMessage());
@@ -172,8 +179,8 @@ public class AndroidAction {
 	{ 
 		try {
 			Alert alert = ApplicationSetup.driver.switchTo().alert(); 
-			String alertText = alert.getText(); 
-			return alertText; 
+			
+			return alert.getText();
 		} catch (NoAlertPresentException e){
 			throw new NoAlertPresentException();
 		}
@@ -187,7 +194,7 @@ public class AndroidAction {
 	{ 
 		try 
 		{ 
-			WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, timeOut);
+			WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 			wait.until(ExpectedConditions.alertIsPresent());
 			ApplicationSetup.driver.switchTo().alert();
 			return true; 
@@ -206,11 +213,11 @@ public class AndroidAction {
 	{ 
 			if(ApplicationSetup.driver.findElement(locator).isEnabled())
 				
-			System.out.println("Element is clickable");
+			LogUtilities.info("Element is clickable");
 			
 			else
 			
-			System.out.println("Element is not clickable");
+			LogUtilities.info("Element is not clickable");
 		
 		   
 	}
@@ -224,11 +231,11 @@ public class AndroidAction {
 		
 			if(ApplicationSetup.driver.findElement(locator).isSelected())
 				
-			System.out.println("Element is selected");
+				LogUtilities.info("Element is selected");
 			
 			else
 			
-			System.out.println("Element is not selected");
+				LogUtilities.info("Element is not selected");
 		 
 	}
 	
@@ -242,11 +249,11 @@ public class AndroidAction {
 		
 			if(!ApplicationSetup.driver.findElement(locator).isSelected())
 				
-			System.out.println("Element is not selected");
+				LogUtilities.info("Element is not selected");
 			
 			else
 			
-			System.out.println("Element is  selected");
+				LogUtilities.info("Element is selected");
 		 
 	}
 	
@@ -261,29 +268,28 @@ public class AndroidAction {
 
 		if(element.isDisplayed())
 			
-			System.out.println(element+"is displayed");
-		
+			LogUtilities.info(element+"is displayed");
 		else
-		
-			System.out.println(element+"is not displayed");
+			LogUtilities.info(element+"is not displayed");
 		}
  
 	/**
 	 *  method to verify if element is Displayed
 	 * @return returns true if element is Displayed else false
 	 */
-	public static boolean isDisplayed1(By locator,String message) 
+	public static boolean isDisplayed1(By locator) 
 	{ 
 		
 		WebElement element=ApplicationSetup.driver.findElement(locator);
 
 		if(element.isDisplayed())
 			
-			System.out.println(element+"is displayed");
+			LogUtilities.info(element+"is displayed");
 		
 		else
 		
-			System.out.println(element+"is not displayed");
+			LogUtilities.info(element+"is not displayed");
+		
 		return false;
 		}
  
@@ -293,7 +299,7 @@ public class AndroidAction {
 	 */
 	
 	public static void acceptAlert(){
-		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		ApplicationSetup.driver.switchTo().alert().accept();
 	}
@@ -302,7 +308,7 @@ public class AndroidAction {
 	 */
 	
 	public static void dismissAlert(){
-		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		ApplicationSetup.driver.switchTo().alert().dismiss();
 	}
@@ -386,7 +392,6 @@ public class AndroidAction {
 	{ 
 		JavascriptExecutor js = (JavascriptExecutor) ApplicationSetup.driver;
 		HashMap<String, Double> swipeObject = new HashMap<String, Double>();
-		// swipeObject.put("touchCount", 1.0);
 		swipeObject.put("startX", startX);
 		swipeObject.put("startY", startY);
 		swipeObject.put("endX", endX);
@@ -453,8 +458,8 @@ public class AndroidAction {
 	public static void scrollExact(String text) {
 		try{
 			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text); 
-			System.out.println("Found Element After Scrolling");
 			
+			LogUtilities.info("Found Element After Scrolling");
 		}
 		catch(NoSuchElementException e){
 		
@@ -471,8 +476,8 @@ public class AndroidAction {
 	public static void scrollAndClick(String text) {
 		try{
 			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text).click(); 
-			System.out.println("Found and clicked Element After Scrolling");
 			
+			LogUtilities.info("Found and clicked Element After Scrolling");
 		}
 		catch(NoSuchElementException e){
 			

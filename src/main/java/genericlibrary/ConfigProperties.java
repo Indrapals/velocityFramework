@@ -1,4 +1,4 @@
-package genericLibrary;
+package genericlibrary;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,6 +8,11 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class ConfigProperties {
+	
+	private ConfigProperties() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	/**
 	 * @author Indrapal Singh
 	 * read and write properties to configure properties file
@@ -29,12 +34,11 @@ public class ConfigProperties {
 		properties.store(output, null);
 	}
 	
-	public static String getObject(String Data) throws IOException
+	public static String getObject(String value) throws IOException
 	{
 		readProperties();
-	String data=properties.getProperty(Data);
-	//System.out.println(data);
-	return data;
+	
+	return properties.getProperty(value);
 	
 	}
 }

@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsLibrary.CommonActionUtil;
-import genericLibrary.BrowserUtilities;
+import actionslibrary.CommonActionUtil;
+import genericlibrary.BrowserUtilities;
 
 public class LivemapPage {
 
@@ -24,133 +24,133 @@ public class LivemapPage {
 
 	@FindBy(id ="nav_live_map")
 	@CacheLookup
-	public WebElement LIVEMAP_MODULE;
+	public WebElement livemapModule;
 
 	@FindBy(id ="map_canvas")
 	@CacheLookup
-	public WebElement MAP_CANVAS;
+	public WebElement mapCanvas;
 
 	@FindBy(xpath ="//div[contains(@class,'info_window_wrapper device_wrapper')]")
 	@CacheLookup
-	public List<WebElement> INDEPENDENT_VEHICLE_LIST;
+	public List<WebElement> independentVehicleList;
 	
 	@FindBy(xpath ="//div[contains(@class,'info_window_outer_wrapper')]")
 	@CacheLookup
-	public List<WebElement> INDEPENDENT_VEHICLE_LIST_WITH_DRIVERNAME;
+	public List<WebElement> independentVehicleListWithDropdown;
 	
 	@FindBy(xpath ="//div[contains(@style,'m1.png')]")
 	@CacheLookup
-	public List<WebElement> VEHICLECLUSTER_LIST;
+	public List<WebElement> vehicleClustorList;
 	
 	@FindBy(css =".fa.fa-stop.ignition_state_icon")
 	@CacheLookup
-	public List<WebElement> PARKEDVEHICLE_LIST;
+	public List<WebElement> parkedVehicleList;
 	
 	@FindBy(css =".fa.fa-play.ignition_state_icon")
 	@CacheLookup
-	public List<WebElement> MOVINGVEHICLE_LIST;
+	public List<WebElement> movingVehicleList;
 	
 	@FindBy(css =".options_button.tab_button")
 	@CacheLookup
-	public WebElement OPTIONS_BUTTON;
+	public WebElement optionsButton;
 
 	@FindBy(css =".reset_button.tab_button")
 	@CacheLookup
-	public WebElement RESTMAP_BUTTON;
+	public WebElement restmapButton;
 	
 	@FindBy(css =".service_list_tab_button.tab_button")
 	@CacheLookup
-	public WebElement SUMMARY_BUTTON;
+	public WebElement summaryButton;
 	
 	@FindBy(css =".fullscreen_tab_button.tab_button")
 	@CacheLookup
-	public WebElement FULLSCREEN_BUTTON;
+	public WebElement fullScreenButton;
 	
 	@FindBy(css =".options_button.tab_button")
 	@CacheLookup
-	public WebElement OPTIONS_CLOSE_BUTTON;
+	public WebElement optionsCloseButton;
 	
 	@FindBy(css =".service_list_tab_button.tab_button")
 	@CacheLookup
-	public WebElement SERVICESUMMARY_CLOSE_BUTTON;
+	public WebElement serviceSummaryCloseButton;
 	
 	@FindBy(xpath ="//div[contains(text(),'Vehicle Display')]")
 	@CacheLookup
-	public WebElement VEHICLEDISPLAY_TEXTBOX;
+	public WebElement vehicleDisplayTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Vehicle Registration')]")
 	@CacheLookup
-	public WebElement VEHICLEREGISTRATION_TEXTBOX;
+	public WebElement vehicleRegistrationTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Driver Name')]")
 	@CacheLookup
-	public WebElement DRIVERNAME_TEXTBOX;
+	public WebElement drivernameTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Map Style')]")
 	@CacheLookup
-	public WebElement MAPSTYLE_TEXTBOX;
+	public WebElement mapstyleTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Standard')]")
 	@CacheLookup
-	public WebElement STANDARD_TEXTBOX;
+	public WebElement standardTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Satellite')]")
 	@CacheLookup
-	public WebElement SATELLITE_TEXTBOX;
+	public WebElement satelliteTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Traffic')]")
 	@CacheLookup
-	public WebElement TRAFFIC_TEXTBOX;
+	public WebElement trafficTextbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Points of Interest')]")
 	@CacheLookup
-	public WebElement POINTSOFINTEREST_TEXTBOX;
+	public WebElement pointofinterestTextbox;
 
 	@FindBy(xpath ="//div[contains(text(),'Vehicle Registration')]//following-sibling::div")
 	@CacheLookup
-	public WebElement VEHICLEREGISTRATION_CHECKBOX;
+	public WebElement vehicleRegistrationCheckbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Driver Name')]//following-sibling::div")
 	@CacheLookup
-	public WebElement DRIVERNAME_CHECKBOX;
+	public WebElement drivernameCheckbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Standard')]//following-sibling::div")
 	@CacheLookup
-	public WebElement STANDARD_CHECKBOX;
+	public WebElement standardCheckbox;
 	
 	@FindBy(xpath ="//div[contains(text(),'Satellite')]//following-sibling::div")
 	@CacheLookup
-	public WebElement SATELLITE_CHECKBOX;
+	public WebElement satelliteCheckbox;
 
 	@FindBy(xpath ="//div[contains(text(),'Show')]//following-sibling::div[contains(@class,'traffic_enable')]")
 	@CacheLookup
-	public WebElement TRAFFIC_CHECKBOX;
+	public WebElement trafficCheckbox;
 
 	@FindBy(id ="points_of_interest_enable")
 	@CacheLookup
-	public WebElement POINTSOFINTEREST_CHECKBOX;
+	public WebElement pointofInterestCheckbox;
 	
 	@FindBy(xpath ="//button[text()='Manage']")
 	@CacheLookup
-	public WebElement MANAGE_BUTTON;
+	public WebElement manageButton;
 	
 	//SERVICE SUMMARY
 	
 	@FindBy(id ="services_list_table")
 	@CacheLookup
-	public WebElement VEHICLE_SERVICE_TABLE;
+	public WebElement vehicleServiceTable;
 	
 	@FindBy(xpath ="//td[@class='service_row_reg']")
 	@CacheLookup
-	public List<WebElement> VEHICLE_REGISTERED_LIST;
+	public List<WebElement> vehicleRegisteredList;
 	
 	@FindBy(xpath ="//td[@class='service_row_name']")
 	@CacheLookup
-	public List<WebElement> DRIVER_NAME_LIST;
+	public List<WebElement> driverNameList;
 	
 	@FindBy(css =".select_all_vehicles_button.gradient_button_primary")
 	@CacheLookup
-	public WebElement SUMMARY_SELECT_DESELECT_BUTTON;
+	public WebElement summarySelectDeselectButton;
 	
 	@FindBy(css =".select_by_group.gradient_button_primary")
 	@CacheLookup

@@ -25,25 +25,26 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import actionsLibrary.AndroidAction;
-import actionsLibrary.CommonActionUtil;
+import actionslibrary.AndroidAction;
+import actionslibrary.CommonActionUtil;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
-import genericLibrary.AppiumServer;
-import genericLibrary.ApplicationSetup;
-import genericLibrary.BrowserUtilities;
-import genericLibrary.ScreenshotUtilities;
-import genericLibrary.TestLinkIntegration;
+import genericlibrary.AppiumServer;
+import genericlibrary.ApplicationSetup;
+import genericlibrary.BrowserUtilities;
+import genericlibrary.ConfigProperties;
+import genericlibrary.ScreenshotUtilities;
+import genericlibrary.TestLinkIntegration;
 import io.appium.java_client.MobileElement;
-import pageObjects.AndroidAppPage;
-import pageObjects.HomePage;
-import pageObjects.LivemapPage;
-import pageObjects.LoginPage;
-import pageObjects.VehicleCheckPage;
+import pageobjects.AndroidAppPage;
+import pageobjects.HomePage;
+import pageobjects.LivemapPage;
+import pageobjects.LoginPage;
+import pageobjects.VehicleCheckPage;
 import testlink.api.java.client.TestLinkAPIException;
 import testlink.api.java.client.TestLinkAPIResults;
 
-public class velocityAppTest  extends BrowserUtilities{
+public class velocityAppTest  {
 
 	AndroidAppPage appobj;
 	LoginPage lpobj;
@@ -59,7 +60,7 @@ public class velocityAppTest  extends BrowserUtilities{
 	 @BeforeTest
 	  public void launch() throws IOException, ATUTestRecorderException {
 		//Provide path to store videos and file name format.
-		  recorder = new ATUTestRecorder("C:\\Users\\Ranosys\\workspace\\velocity\\ScriptVideos\\","TestVideo-"+dateFormat.format(date),false);
+		  recorder = new ATUTestRecorder(ConfigProperties.getObject("ScriptVideos"),"TestVideo-"+dateFormat.format(date),false);
 		  //To start video recording.
 		  recorder.start(); 
 		 AppiumServer.startServer();		    
@@ -72,21 +73,21 @@ public class velocityAppTest  extends BrowserUtilities{
 	  
 	 
      appobj=PageFactory.initElements(ApplicationSetup.driver, AndroidAppPage.class);
-     lpobj= PageFactory.initElements(driver, LoginPage.class);
-	  hpobj=PageFactory.initElements(driver, HomePage.class);
-	  vcpobj=PageFactory.initElements(driver, VehicleCheckPage.class); 
+     lpobj= PageFactory.initElements(BrowserUtilities.driver, LoginPage.class);
+	  hpobj=PageFactory.initElements(BrowserUtilities.driver, HomePage.class);
+	  vcpobj=PageFactory.initElements(BrowserUtilities.driver, VehicleCheckPage.class); 
      
           }
 	
 	 
 	
 		@Test(enabled = true)
-	    public void vehicleAppTest_011() throws TestLinkAPIException 
+	    public void vehicleAppTest_011() throws TestLinkAPIException, IOException 
 	    {
 	      try {
-			appobj.login_InactiveUser_Without_Code();
+			appobj.loginInactiveUserWithoutCode();
 			String ExpectedMessage="Please enter the secret code associated with your account";
-	          Assert.assertEquals(ExpectedMessage,appobj.MESSAGE_POPUP.getText());
+	          Assert.assertEquals(ExpectedMessage,appobj.messagePopup.getText());
 	          TestLinkIntegration.updateResult("VLC-11", null, TestLinkAPIResults.TEST_PASSED);  
 			  } catch (Exception e) {
 			System.out.println("Test Failed");	
@@ -96,12 +97,12 @@ public class velocityAppTest  extends BrowserUtilities{
 	    
 		   
 	   @Test(enabled = true)
-	    public void vehicleAppTest_012() throws TestLinkAPIException 
+	    public void vehicleAppTest_012() throws TestLinkAPIException, IOException 
 	    {
     	   try {
-			 appobj.login_InactiveUser_With_Code();
+			 appobj.loginInactiveUserWithCode();
 			 String ExpectedMessage="Driver not found.";
-	          Assert.assertEquals(ExpectedMessage,appobj.MESSAGE_POPUP.getText());
+	          Assert.assertEquals(ExpectedMessage,appobj.messagePopup.getText());
 	          
 	          TestLinkIntegration.updateResult("VLC-12", null, TestLinkAPIResults.TEST_PASSED); 
 	          
@@ -114,12 +115,12 @@ public class velocityAppTest  extends BrowserUtilities{
 	
       
 	   @Test(enabled = true)
-	    public void vehicleAppTest_013() throws TestLinkAPIException 
+	    public void vehicleAppTest_013() throws TestLinkAPIException, IOException 
 	    {
    	   try {
-			 appobj.login_ActiveUser_With_IncorrectCode();
+			 appobj.loginActiveUserWithIncorrectCode();
 			 String ExpectedMessage="Driver not found.";
-	          Assert.assertEquals(ExpectedMessage,appobj.MESSAGE_POPUP.getText());
+	          Assert.assertEquals(ExpectedMessage,appobj.messagePopup.getText());
 	          TestLinkIntegration.updateResult("VLC-13", null, TestLinkAPIResults.TEST_PASSED); 
 	          }
    	   catch (Exception e) {
@@ -130,22 +131,22 @@ public class velocityAppTest  extends BrowserUtilities{
         
          
         @Test(enabled = true)
-	    public void vehicleAppTest_014() throws TestLinkAPIException 
+	    public void vehicleAppTest_014() throws TestLinkAPIException, IOException 
 	    {
   	      try { 
   	   
   
-  		      appobj.login_ActiveUser_With_CorrectCode();
-  		      Assert.assertTrue(appobj.NAVBACK_BUTTON.isDisplayed(), "Exit Icon is displayed");
-  		      Assert.assertTrue(appobj.BELL_ICON.isDisplayed(), "Bell Icon is displayed");
-  		      Assert.assertTrue(appobj.TITLE_VEHICLE_CHECK.isDisplayed(), "Vehicle check title is displayed");
-  		      Assert.assertTrue(appobj.COMPANY_NAME.isDisplayed(), "Account you logged in is displayed");
-  		      Assert.assertTrue(appobj.VEHICLE_SELECT_DROPDOWN.isDisplayed(), "Vehicle dropdown list is displayed");
-  		      Assert.assertTrue(appobj.REFRESH_ICON.isDisplayed(), "Refresh icon is displayed");
-  		      Assert.assertTrue(appobj.REMEMBERCHOICE_CHECKBOX_CHECKED.isDisplayed(), "Remember checkbox is displayed");
-  		      Assert.assertTrue(appobj.USEWIFI_CHECKBOX_UNCHECKED.isDisplayed(), "Wifi checkbox is displayed");
-  		      Assert.assertTrue(appobj.VEHICLECHECK_SUBMITBUTTON.isDisplayed(), "Submit button is displayed");
-  		      Assert.assertTrue(appobj.PREVIOUS_VEHICLECHECK_BUTTON.isDisplayed(), "Previous check button is displayed");
+  		      appobj.loginActiveUserWithCorrectCode();
+  		      Assert.assertTrue(appobj.navbackButton.isDisplayed(), "Exit Icon is displayed");
+  		      Assert.assertTrue(appobj.bellIcon.isDisplayed(), "Bell Icon is displayed");
+  		      Assert.assertTrue(appobj.titleVehicleCheck.isDisplayed(), "Vehicle check title is displayed");
+  		      Assert.assertTrue(appobj.companyName.isDisplayed(), "Account you logged in is displayed");
+  		      Assert.assertTrue(appobj.vehicleSelectDropDown.isDisplayed(), "Vehicle dropdown list is displayed");
+  		      Assert.assertTrue(appobj.refreshIcon.isDisplayed(), "Refresh icon is displayed");
+  		      Assert.assertTrue(appobj.rememberChoiceCheckboxChecked.isDisplayed(), "Remember checkbox is displayed");
+  		      Assert.assertTrue(appobj.useWifiCheckboxUnchecked.isDisplayed(), "Wifi checkbox is displayed");
+  		      Assert.assertTrue(appobj.vehicleCheckSubmitButton.isDisplayed(), "Submit button is displayed");
+  		      Assert.assertTrue(appobj.previousVehicleCheckButton.isDisplayed(), "Previous check button is displayed");
   		      
   		    TestLinkIntegration.updateResult("VLC-14", null, TestLinkAPIResults.TEST_PASSED); 
 		       }
@@ -158,10 +159,10 @@ public class velocityAppTest  extends BrowserUtilities{
      
       
 	   @Test(enabled = true)
-	    public void vehicleAppTest_015() throws TestLinkAPIException 
+	    public void vehicleAppTest_015() throws TestLinkAPIException, IOException 
 	    {
  	      try { 
- 	   	   	  appobj.VEHICLE_SELECT_DROPDOWN.click();
+ 	   	   	  appobj.vehicleSelectDropDown.click();
  	   	     List<MobileElement> list1=  ApplicationSetup.driver.findElements(By.id("item_name"));
  		 
 		   for(WebElement element: list1){
@@ -246,18 +247,18 @@ public class velocityAppTest  extends BrowserUtilities{
 			}
 			
  	   	   	BrowserUtilities.getBrowser();
- 	   	    driver.findElement(By.xpath("//a[contains(text(),'I agree')]")).click();
- 	   		driver.findElement(By.xpath("//input[@value='Login']")).click();
- 	   	    	driver.findElement(By.id("id_username")).sendKeys("anand.ramdeo@ranosys.com");
- 				driver.findElement(By.id("id_password")).sendKeys("Wednesday1350");
- 				driver.findElement(By.xpath("//input[@value='Login']")).click();
+ 	   	BrowserUtilities.driver.findElement(By.xpath("//a[contains(text(),'I agree')]")).click();
+ 	   BrowserUtilities.driver.findElement(By.xpath("//input[@value='Login']")).click();
+ 	  BrowserUtilities.driver.findElement(By.id("id_username")).sendKeys("anand.ramdeo@ranosys.com");
+ 	 BrowserUtilities.driver.findElement(By.id("id_password")).sendKeys("Wednesday1350");
+ 	BrowserUtilities.driver.findElement(By.xpath("//input[@value='Login']")).click();
  				Thread.sleep(300);
- 				driver.findElement(By.xpath("//img[@alt='Vehicle Check']")).click();
+ 				BrowserUtilities.driver.findElement(By.xpath("//img[@alt='Vehicle Check']")).click();
  				Thread.sleep(200);
- 				driver.findElement(By.id("vehicle-check-manage-fleet")).click();
- 				driver.findElement(By.xpath("//a[@href='/vehicle-check/manage-vehicles/']")).click();
+ 				BrowserUtilities.driver.findElement(By.id("vehicle-check-manage-fleet")).click();
+ 				BrowserUtilities.driver.findElement(By.xpath("//a[@href='/vehicle-check/manage-vehicles/']")).click();
  				
- 				List<WebElement> lst=driver.findElements(By.xpath("//td[contains(@class,'vehicle-reg sorting')]"));
+ 				List<WebElement> lst=BrowserUtilities.driver.findElements(By.xpath("//td[contains(@class,'vehicle-reg sorting')]"));
  				System.out.println(lst.size());
  			
  				Thread.sleep(100);
@@ -287,15 +288,15 @@ public class velocityAppTest  extends BrowserUtilities{
        }
 	   
 	 @Test(enabled = true)
-	    public void vehicleAppTest_016() throws TestLinkAPIException 
+	    public void vehicleAppTest_016() throws TestLinkAPIException, IOException 
 	    {
 	      try { 
 	    	 
-	    	 appobj.NAVBACK_BUTTON.click();
-	    	 appobj.LOGIN_BUTTON.click();
-	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
+	    	 appobj.navbackButton.click();
+	    	 appobj.loginButton.click();
+	    	 appobj.vehicleCheckSubmitButton.click();
 	    	 String ExpectedMessage="Vehicle not found.";
-	          Assert.assertEquals(ExpectedMessage,appobj.MESSAGE_POPUP.getText());
+	          Assert.assertEquals(ExpectedMessage,appobj.messagePopup.getText());
 	    	      TestLinkIntegration.updateResult("VLC-16", null, TestLinkAPIResults.TEST_PASSED); 
 		       }
 	      catch (Exception e)
@@ -306,14 +307,14 @@ public class velocityAppTest  extends BrowserUtilities{
      }
        
 	   @Test(enabled = true)
-	    public void vehicleAppTest_017() throws TestLinkAPIException 
+	    public void vehicleAppTest_017() throws TestLinkAPIException, IOException 
 	    {
  	      try { 
  	    	
- 	    	 appobj.OK_BUTTON.click();
- 	    	AndroidAction.implicit_wait(200, TimeUnit.SECONDS);
+ 	    	 appobj.okButton.click();
+ 	    	AndroidAction.implicitwait(200, TimeUnit.SECONDS);
  	    	  Thread.sleep(1000);
- 	    	 appobj.VEHICLE_SELECT_DROPDOWN.click();
+ 	    	 appobj.vehicleSelectDropDown.click();
  	    	  size = ApplicationSetup.driver.manage().window().getSize();
  			   System.out.println(size);
  			    int height=size.getHeight();
@@ -325,14 +326,14 @@ public class velocityAppTest  extends BrowserUtilities{
  			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
  			    }
  	    	
- 	   	     appobj.SELECT_HIREVAN1.click();
- 	   	     appobj.SELECTVEHICLE_OK_BUTTON.click();
- 	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
+ 	   	     appobj.selectHirevan1.click();
+ 	   	     appobj.selectVehicleOkButton.click();
+ 	    	 appobj.vehicleCheckSubmitButton.click();
  	    	 
- 	    	 Assert.assertTrue(appobj.PLSESE_SELECT_TITLE.isDisplayed(), "Please select Icon is displayed");
- 		      Assert.assertTrue(appobj.HOME_ICON.isDisplayed(), "Home Icon is displayed");
- 		      Assert.assertTrue(appobj.VEHICLE_CHECK_ICON.isDisplayed(), "Vehicle check Icon is displayed");
- 		      Assert.assertTrue(appobj.REPORT_INCIDENT_ICON.isDisplayed(), "Report an incident Icon is displayed");
+ 	    	 Assert.assertTrue(appobj.pleaseSelectTitle.isDisplayed(), "Please select Icon is displayed");
+ 		      Assert.assertTrue(appobj.homeIcon.isDisplayed(), "Home Icon is displayed");
+ 		      Assert.assertTrue(appobj.vehicleCheckIcon.isDisplayed(), "Vehicle check Icon is displayed");
+ 		      Assert.assertTrue(appobj.reportIncidentIcon.isDisplayed(), "Report an incident Icon is displayed");
  		     TestLinkIntegration.updateResult("VLC-17", null, TestLinkAPIResults.TEST_PASSED); 
  		     
 		       }
@@ -346,12 +347,12 @@ public class velocityAppTest  extends BrowserUtilities{
 	  
 	   
 	   @Test(enabled = true)
-	    public void vehicleAppTest_018() throws TestLinkAPIException 
+	    public void vehicleAppTest_018() throws TestLinkAPIException, IOException 
 	    {
 	      try { 
 	    	 
-	    	 appobj.HOME_ICON.click();
-	    	 Assert.assertTrue(appobj.TITLE_VEHICLE_CHECK.isDisplayed(), "Vehicle check home screen is displayed");
+	    	 appobj.homeIcon.click();
+	    	 Assert.assertTrue(appobj.titleVehicleCheck.isDisplayed(), "Vehicle check home screen is displayed");
 	    	   TestLinkIntegration.updateResult("VLC-18", null, TestLinkAPIResults.TEST_PASSED); 
 		       }
 	      catch (Exception e)
@@ -361,11 +362,11 @@ public class velocityAppTest  extends BrowserUtilities{
 			  }		 	  
      }
 	   @Test(enabled = true)
-	    public void vehicleAppTest_019() throws TestLinkAPIException 
+	    public void vehicleAppTest_019() throws TestLinkAPIException, IOException 
 	    {
 	      try { 
 	    	 
-	    	  appobj.VEHICLE_SELECT_DROPDOWN.click();
+	    	  appobj.vehicleSelectDropDown.click();
 	    	  size = ApplicationSetup.driver.manage().window().getSize();
 			   System.out.println(size);
 			    int height=size.getHeight();
@@ -377,12 +378,12 @@ public class velocityAppTest  extends BrowserUtilities{
 			    ApplicationSetup.driver.swipe(x, starty, x, endy, 500);
 			    }
 	 	 
-	 	   	     appobj.SELECT_HIREVAN1.click();
-	 	   	     appobj.SELECTVEHICLE_OK_BUTTON.click();
-	 	    	 appobj.VEHICLECHECK_SUBMITBUTTON.click();
-	 	         appobj.VEHICLE_CHECK_ICON.click();
-	 	         appobj.INTERIOR_QUESTIONS_ICON.click();
-	 	        Assert.assertTrue(appobj.INTERIOR_QUESTION_TEXT.isDisplayed(), "Interior question text is displayed");
+	 	   	     appobj.selectHirevan1.click();
+	 	   	     appobj.selectVehicleOkButton.click();
+	 	    	 appobj.vehicleCheckSubmitButton.click();
+	 	         appobj.vehicleCheckIcon.click();
+	 	         appobj.interiorQuestionIcon.click();
+	 	        Assert.assertTrue(appobj.interiorQuestionText.isDisplayed(), "Interior question text is displayed");
 	 	       TestLinkIntegration.updateResult("VLC-19", null, TestLinkAPIResults.TEST_PASSED); 
 		       }
 	      catch (Exception e)

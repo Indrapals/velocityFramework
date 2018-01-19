@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import genericLibrary.BrowserUtilities;
+import genericlibrary.BrowserUtilities;
 
 public class HomePage {
 
@@ -18,19 +18,19 @@ public class HomePage {
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]")
 	@CacheLookup
-	public WebElement VEHICLECHECK_MENU;
+	public WebElement vehicleCheckMenu;
 		
 	@FindBy(xpath ="//img[@alt='Vehicle Check']")
 	@CacheLookup
-	public WebElement VEHICLECHECK_TILE;
+	public WebElement vehicleCheckTile;
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]//following-sibling::ul/li")
 	@CacheLookup
-	public WebElement VEHICLECHECK_DROPDOWN;
+	public WebElement vehicleCheckDropDown;
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(text(),'Kinesis Telematics')]")
 	@CacheLookup
-	public WebElement KINESISTELEMATICS_MENU;
+	public WebElement kinesistelematicsMenu;
 	
 
 	

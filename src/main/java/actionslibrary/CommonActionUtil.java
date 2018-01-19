@@ -1,4 +1,4 @@
-package actionsLibrary;
+package actionslibrary;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,36 +17,43 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import genericLibrary.*;
+import genericlibrary.*;
 
 
 
 public class CommonActionUtil {
 
+	private CommonActionUtil() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	/**
 	 * @author Indrapal Singh
 	 *Commonly used Webdriver actions perform on webelement  
 	 */
 	
-	public final static int timeOut = 70;
-	public final static int i=0;
-	public final static int n=0;
+	public static final int TIMEOUT = 70;
+	public static final int I =0;
+	public static final int N=0;
+	
 	
 	/**
-	 * @author Indrapal Singh
 	 * method to find an element
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElement(WebElement element){
+	
+	public static WebElement findElement(By locator){
 		try {
 			
-			return element;
+			return ApplicationSetup.driver.findElement(locator);
 		}
 		catch (NoSuchElementException e){
+
+			LogUtilities.error("Element not found");
 			throw new NoSuchElementException(e.getMessage());
-		}
 		
+		}		
 	}
 	
 	
@@ -55,9 +62,9 @@ public class CommonActionUtil {
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElement_Click(WebElement element){
+	public static WebElement findElementandclick(By locator){
 		try {
-			
+			WebElement element = ApplicationSetup.driver.findElement(locator);
 			element.click();
 		}
 		catch (NoSuchElementException e){
@@ -71,15 +78,14 @@ public class CommonActionUtil {
 	 * @param locator element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElement_getText(WebElement element){
+	public static String findElementandgettext(By locator){
 		try {
 			
-			System.out.println(element.getText());
+		 return	ApplicationSetup.driver.findElement(locator).getText();
 		}
 		catch (NoSuchElementException e){
 			throw new NoSuchElementException(e.getMessage());
 		}
-		return null;
 	}
 	
 	/**
@@ -87,9 +93,9 @@ public class CommonActionUtil {
 	 * @param locator element to be found
 	 * @Sendkeys to element if found else throws NoSuchElementException
 	 */
-	public static WebElement sendkeys(WebElement element,String value){
+	public static WebElement sendkeys(By locator,String value){
 		try {
-			
+			WebElement element = ApplicationSetup.driver.findElement(locator);
 			element.sendKeys(value);
 		}
 		catch (NoSuchElementException e){
@@ -101,12 +107,12 @@ public class CommonActionUtil {
 	/*
 	 * method for implicit wait
 	 */
-	public static Object implicit_wait(int i,TimeUnit arg1){
+	public static Object implicitwait(int i,TimeUnit arg1){
 		try {
-			BrowserUtilities.driver.manage().timeouts().implicitlyWait(i, arg1);
+			ApplicationSetup.driver.manage().timeouts().implicitlyWait(i, arg1);
 				}
 		catch (Exception e){
-			e.printStackTrace();
+			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
@@ -114,15 +120,13 @@ public class CommonActionUtil {
 	/*
 	 * method for Explicit wait
 	 */
-	public static void explicit_wait(By by){
+	public static void explicitwait(By by){
 		try {
-			(new WebDriverWait(BrowserUtilities.driver, 30)).until(ExpectedConditions.elementToBeClickable(by));
-			BrowserUtilities.driver.findElement(by).click();
-			//BrowserUtilities.driver.manage().timeouts().implicitlyWait(i, arg1);
+			(new WebDriverWait(ApplicationSetup.driver, 30)).until(ExpectedConditions.elementToBeClickable(by));
+			ApplicationSetup.driver.findElement(by).click();
 				}
 		catch (StaleElementReferenceException  ser) {
-			// TODO Auto-generated catch block
-			BrowserUtilities.driver.findElement(by).click();
+			throw new NoSuchElementException(ser.getMessage());
 		}
 		}
         
@@ -132,10 +136,10 @@ public class CommonActionUtil {
 	 */
 	public static Object back(){
 		try {
-			BrowserUtilities.driver.navigate().back();
+			ApplicationSetup.driver.navigate().back();
 				}
 		catch (Exception e){
-			e.printStackTrace();
+			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
@@ -149,8 +153,8 @@ public class CommonActionUtil {
 	
 	public static List<WebElement> findElements(By locator){
 		try {
-			List<WebElement> element = BrowserUtilities.driver.findElements(locator);
-			return element;
+			 
+			return BrowserUtilities.driver.findElements(locator);
 		}
 		catch (NoSuchElementException e){
 			throw new NoSuchElementException(e.getMessage());
@@ -163,22 +167,24 @@ public class CommonActionUtil {
 	 * @return return the list of elements if found else throws NoSuchElementException
 	 */
 	
-	public static void VerifyVehicleCheck(By locator){
+	public static void verifyVehicleCheck(By locator){
 		try {
 			String[] expected = {"", "Home", "Vehicle Check Dashboard ", "Due Dates Dashboard", "Defect Management", "How It Works", "Manage Fleet", "Manage Groups", "Manage Questions", "Reports", "Alerts"};
 			List<WebElement> element = BrowserUtilities.driver.findElements(locator);
 
 			// make sure you found the right number of elements
 			if (expected.length != element.size()) {
-			    System.out.println("fail, wrong number of elements found");
+				LogUtilities.error("fail, wrong number of elements found");
+			    
 			}
 			// make sure that the value of every <option> element equals the expected value
 			for (int i = 0; i < expected.length; i++) {
 			    String optionValue = element.get(i).getAttribute("value");
 			    if (optionValue.equals(expected[i])) {
-			        System.out.println("passed on: " + optionValue);
+			    	LogUtilities.error("passed on: " + optionValue);
 			    } else {
-			        System.out.println("failed on: " + optionValue);
+			    	LogUtilities.error("failed on: " + optionValue);
+			        
 			    }
 			
 			}
@@ -198,8 +204,7 @@ public class CommonActionUtil {
 		try {
 			Alert alert = BrowserUtilities.driver.switchTo().alert(); 
 			Thread.sleep(1000);
-			String alertText = alert.getText(); 
-			return alertText; 
+			return alert.getText(); 
 		} catch (NoAlertPresentException e){
 			throw new NoAlertPresentException();
 		}
@@ -214,7 +219,7 @@ public class CommonActionUtil {
 	{ 
 		try 
 		{ 
-			WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, timeOut);
+			WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, TIMEOUT);
 			wait.until(ExpectedConditions.alertIsPresent());
 			BrowserUtilities.driver.switchTo().alert();
 			return true; 
@@ -233,11 +238,10 @@ public class CommonActionUtil {
 	{ 
 			if(element.isEnabled())
 				
-			System.out.println("Element is clickable");
-			
+				LogUtilities.error("Element is clickable");
 			else
 			
-			System.out.println("Element is not clickable");
+				LogUtilities.error("Element is not clickable");
 		
 		   
 	}
@@ -251,11 +255,11 @@ public class CommonActionUtil {
 		
 			if(element.isSelected())
 				
-			System.out.println("Element is selected");
+				LogUtilities.error("Element is selected");
 			
 			else
 			
-			System.out.println("Element is not selected");
+				LogUtilities.error("Element is not selected");
 		 
 	}
 	
@@ -269,11 +273,11 @@ public class CommonActionUtil {
 		
 			if(!element.isSelected())
 				
-			System.out.println("Element is not selected");
+				LogUtilities.error("Element is not selected");
 			
 			else
 			
-			System.out.println("Element is  selected");
+				LogUtilities.error("Element is selected");
 		 
 	}
 	
@@ -287,13 +291,14 @@ public class CommonActionUtil {
 
 		if(element.isDisplayed())
 			
-			{System.out.println(element+"is displayed");
+			{
+			LogUtilities.error(element+"is displayed");
 		
 		return true;}
 		
 		else {
 			
-			System.out.println(element+"is not displayed");
+			LogUtilities.error(element+"is not displayed");
 			return false;
 		}
 		}
@@ -307,13 +312,14 @@ public class CommonActionUtil {
 
 		if(((WebElement) element).isDisplayed())
 			
-			{System.out.println(element+"is displayed");
+			{
+			LogUtilities.error(element+"is displayed");
 		
 		return true;}
 		
 		else {
 			
-			System.out.println(element+"is not displayed");
+			LogUtilities.error(element+"is not displayed");
 			return false;
 		}
 		}
@@ -323,7 +329,7 @@ public class CommonActionUtil {
 	 */
 	
 	public static void acceptAlert(){
-		WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		BrowserUtilities.driver.switchTo().alert().accept();
 	}
@@ -332,7 +338,7 @@ public class CommonActionUtil {
 	 */
 	
 	public static void dismissAlert(){
-		WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(BrowserUtilities.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		BrowserUtilities.driver.switchTo().alert().dismiss();
 	}
@@ -342,7 +348,7 @@ public class CommonActionUtil {
 	 *  method to scrollpage using JavaScript Executor
 	 */
 
-	public static void scrollPageDown_300(){
+	public static void scrollPageDown300(){
 		JavascriptExecutor js = (JavascriptExecutor)BrowserUtilities.driver;
 		js.executeScript("window.scrollBy(0,300)", "");
 	}
@@ -351,7 +357,7 @@ public class CommonActionUtil {
 	 *  method to scrollpage using JavaScript Executor
 	 */
 
-	public static void scrollPageDown_600(){
+	public static void scrollPageDown600(){
 		JavascriptExecutor js = (JavascriptExecutor)BrowserUtilities.driver;
 		js.executeScript("window.scrollBy(0,600)", "");
 	}
@@ -360,7 +366,7 @@ public class CommonActionUtil {
 	 *  method to scrollpage up using JavaScript Executor
 	 */
 
-	public static void scrollPageUp_300(){
+	public static void scrollPageUp300(){
 		JavascriptExecutor js = (JavascriptExecutor)BrowserUtilities.driver;
 		js.executeScript("window.scrollBy(0,-300)", "");
 	}
@@ -386,16 +392,6 @@ public class CommonActionUtil {
 	}
 	 
 	
-		/**
-		 *  method to click and hold element 
-		 */
-
-		public static void clickAndHold(WebElement element){
-			Actions action=new Actions(BrowserUtilities.driver);
-			action.moveToElement(element).build().perform();
-			
-			
-		}
 
 		/**
 		 *  method to release hold element 
@@ -431,9 +427,9 @@ public class CommonActionUtil {
 
 		public static void winHandle(){
 			
-			Set<String> Winlist=BrowserUtilities.driver.getWindowHandles();
-			System.out.println(Winlist.size());
-			for (String win : Winlist) {
+			Set<String> winlist=BrowserUtilities.driver.getWindowHandles();
+		
+			for (String win : winlist) {
 	 	    	   
 	        	BrowserUtilities.driver.switchTo().window(win);
                
@@ -445,34 +441,31 @@ public class CommonActionUtil {
 
 			public static String getcolor(WebElement element){
 				
-				String BColor=element.getCssValue("background-color");
-		    	//String BColor=BrowserUtilities.driver.findElement(By.id("vehicle-check-manage-fleet")).getCssValue("background-color");
-		    	
-				return BColor;	
+			
+				return element.getCssValue("background-color");	
 		}
 			
-			public static void implicitWait()
+			public static void implicitWait1()
 			{
 				BrowserUtilities.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);	
 			}
 			
 
-			public static void expWait_elementclick(WebDriver driver,By by){
+			public static void expWaitElementClick(WebDriver driver,By by){
 				
 			        try {
 						(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
 						driver.findElement(by).click();
 					} catch (StaleElementReferenceException  ser) {
-						// TODO Auto-generated catch block
+
 						driver.findElement(by).click();
 					}
-			        catch (TimeoutException   toe) {
-						//  test.log(logStatus.Error, "Element identified by " + by.toString() + " was not clickable after 10 seconds");
-						
+			        catch (TimeoutException  toe) {
+			        	LogUtilities.error("Timeout of session");
 					}
 			}
 			
-			public static void expWait_elementlocated(WebDriver driver,WebElement element){
+			public static void expWaitElementLocated(WebDriver driver,WebElement element){
 				
 					(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated((By) element));			
 		       
@@ -485,12 +478,10 @@ public class CommonActionUtil {
 					(new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(by));
 					driver.findElement(by).click();
 				} catch (StaleElementReferenceException  ser) {
-					// TODO Auto-generated catch block
 					driver.findElement(by).click();
 				}
 		        catch (TimeoutException   toe) {
-					//  test.log(logStatus.Error, "Element identified by " + by.toString() + " was not clickable after 10 seconds");
-					
+		        	LogUtilities.error("Timeout of session");
 				}
 		
 		}

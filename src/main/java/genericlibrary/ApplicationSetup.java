@@ -1,4 +1,4 @@
-package genericLibrary;
+package genericlibrary;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -14,16 +14,22 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class ApplicationSetup {
 
+	private ApplicationSetup()  {
+	    throw new IllegalStateException("Utility class");
+	  }
+
 
 	
 	public static AppiumDriver<MobileElement> driver;
-	private static DesiredCapabilities capabilities = null;
+	
 	private static String appPackage ="com.radiuspaymentsolutions.vehiclecheck.dev";
 	private static String appActivity = "com.radiuspaymentsolutions.vehiclecheck.Views.Activities.SplashActivity";
 
 	
 	public static void setCapability() throws IOException{
-		 capabilities = new DesiredCapabilities();
+		
+		
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 
 		  capabilities.setCapability("deviceName", "Android Emulator");
 	

@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import actionsLibrary.CommonActionUtil;
-import genericLibrary.BrowserUtilities;
+import actionslibrary.CommonActionUtil;
+import genericlibrary.BrowserUtilities;
 
 
 
@@ -25,226 +25,226 @@ public class VehicleCheckPage {
 	
 	@FindBy(id ="vehicle-check-manage-fleet")
 	@CacheLookup
-	public WebElement MANAGEFLEET_TILE;
+	public WebElement manageFleetTile;
 	
 	@FindBy(id ="vehicle-check-manage-groups")
 	@CacheLookup
-	public WebElement MANAGEGROUPS_TILE;
+	public WebElement manageGroupsTile;
 	
 	@FindBy(id ="vehicle-check-reports")
 	@CacheLookup
-	public WebElement REPORTS_TILE;
+	public WebElement reportsTile;
 	
 	@FindBy(id ="vehicle-check-manage-questions")
 	@CacheLookup
-	public WebElement MANAGEQUESTION_TILE;
+	public WebElement manageQuestionTile;
 	
 	@FindBy(id ="vehicle-check-defect-management")
 	@CacheLookup
-	public WebElement DEFECTMANAGEMENT_TILE;
+	public WebElement defectManagementTile;
 
 	@FindBy(id ="vehicle-due-dates-dashboard")
 	@CacheLookup
-	public WebElement DUEDATES_TILE;
+	public WebElement duedatesTile;
 
 	@FindBy(id ="vehicle-check-dashboard")
 	@CacheLookup
-	public WebElement VEHICLECHECKDASH_TILE;
+	public WebElement vehiclecheckDashboardTile;
 	
 	@FindBy(id ="vehicle-check-alerts")
 	@CacheLookup
-	public WebElement ALERTS_TILE;
+	public WebElement alertsTile;
 	
 	@FindBy(xpath ="//h2[text()='Manage Fleet']")
 	@CacheLookup
-	public WebElement MANAGEFLEET_MENU;
+	public WebElement manageFleetMenu;
 	
 	@FindBy(xpath ="//a[@href='/vehicle-check/manage-vehicles/']")
 	@CacheLookup
-	public WebElement VEHICLES_TILE;
+	public WebElement vehiclesTile;
 	
 	@FindBy(xpath ="//section[@class='top-bar-section']/ul/li/a[contains(.,'Vehicle Check')]//following-sibling::ul/li")
 	@CacheLookup
-	public List<WebElement> VEHICLECHECK_DROPDOWNLIST;
+	public List<WebElement> vehiclecheckDropdownlist;
 	
 	
 	@FindBy(xpath ="//div[text()='Vehicles']")
 	@CacheLookup
-	public WebElement VEHICLES_TILE_TEXT;
+	public WebElement vehiclesTileText;
 	
 	@FindBy(xpath ="//div[text()='Drivers']")
 	@CacheLookup
-	public WebElement DRIVERS_TILE;
+	public WebElement driversTile;
 	
 	@FindBy(xpath ="//h2[text()='Manage Vehicles']")
 	@CacheLookup
-	public WebElement MANAGEVEHICLES_MENU;
+	public WebElement manageVehiclesMenu;
 	
 	@FindBy(xpath ="//table[@id='data-table']/thead/tr[1]/th")
 	@CacheLookup
-	public List<WebElement> MANAGEVEHICLES_HEADERLIST;
+	public List<WebElement> manageVehiclesHeaderList;
 	
 	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Active']")
 	@CacheLookup
-	public List<WebElement> ACTIVECHECK_LIST;
+	public List<WebElement> activeCheckList;
 	
 	@FindBy(xpath ="//button[contains(text(),'Show Removed Vehicles')]")
 	@CacheLookup
-	public WebElement SHOWREMOVED_VEHICLES_BUTTON;
+	public WebElement showRemovedVehiclesButton;
 	
 	@FindBy(xpath ="//button[contains(text(),'Hide Removed Vehicles')]")
 	@CacheLookup
-	public WebElement HIDEREMOVED_VEHICLES_BUTTON;
+	public WebElement hideRemovedVehiclesButton;
 	
 	@FindBy(xpath ="//td[@class='vehicle-active']/img[@title='Inactive']")
 	@CacheLookup
-	public List<WebElement> INACTIVECHECK_LIST;
+	public List<WebElement> inactiveCheckList;
 	
 	@FindBy(id ="add-objects")
 	@CacheLookup
-	public WebElement ADDOBJECTS_BUTTON;
+	public WebElement addobjectsButton;
 	
 	@FindBy(id ="edit-objects")
 	@CacheLookup
-	public WebElement EDITOBJECTS_BUTTON;
+	public WebElement editObjectsButton;
 	
 	@FindBy(xpath ="//div[@id='formset-modal']/div/div/form/table/thead/tr/th[contains(text(),'Vehicle Type')]")
 	@CacheLookup
-	public WebElement VEHICLETYPE_HEADER;
+	public WebElement vehicleTypeHeader;
 	
 	@FindBy(xpath ="//div[@id='formset-modal']/div/div[1]/form/table/thead/tr/th")
 	@CacheLookup
-	public List<WebElement> VEHICLETYPE_HEADER_LIST;
+	public List<WebElement> vehicleTypeHeaderList;
 	
 	@FindBy(id ="id_form-0-vehicle_type")
 	@CacheLookup
-	public WebElement VEHICLETYPE_DROPDOWN;
+	public WebElement vehicleTypeDropdown;
 	
 	@FindBy(xpath ="//select[@id='id_form-0-vehicle_type']/option")
 	@CacheLookup
-	public List<WebElement> VEHICLETYPE_DROPDOWN_LIST;
+	public List<WebElement> vehicleTypeDropdownList;
 	
 	@FindBy(id ="id_form-0-registration")
 	@CacheLookup
-	public WebElement VEHICLEREGISTRATION_TEXTBOX;
+	public WebElement vehicleRegistrationTextbox;
 	
 	@FindBy(xpath ="//input[@id='id_form-0-can_attach_trailer']//following-sibling::img")
 	@CacheLookup
-	public WebElement ATTACHTRAILER_CHECKBOX;
+	public WebElement attachTrailerCheckbox;
 	
 	@FindBy(id ="id_form-0-groups")
 	@CacheLookup
-	public WebElement GROUP_DROPDOWN;
+	public WebElement groupDropdown;
 	
 	@FindBy(xpath ="//input[@id='id_form-0-visible']//following-sibling::img")
 	@CacheLookup
-	public WebElement ACTIVE_CHECKBOX;
+	public WebElement activeCheckbox;
 	
 	@FindBy(xpath ="//input[@id='id_form-0-removed']//following-sibling::button")
 	@CacheLookup
-	public WebElement MANAGEVEHICLEPOPUP_REMOVEBUTTON;
+	public WebElement manageVehiclePopupRemoveButton;
 	
 	
 	@FindBy(xpath ="//div[@id='formset-modal']/div/div/form/table/tbody/tr/td/div/label")
 	@CacheLookup
-	public List<WebElement> DUEDATES_CALENDER_LIST;
+	public List<WebElement> dueDatesCalanderList;
 		
 	@FindBy(name ="add_objects")
 	@CacheLookup
-	public WebElement MANAGEVEHICLEPOPUP_ADDBUTTON;
+	public WebElement manageVehiclePopupAddButton;
 	
 	@FindBy(name ="submit_formset")
 	@CacheLookup
-	public WebElement MANAGEVEHICLEPOPUP_SUBMITBUTTON;
+	public WebElement manageVehiclePopupSubmitButton;
 	
 	@FindBy(name ="cancel-button")
 	@CacheLookup
-	public WebElement MANAGEVEHICLEPOPUP_CANCELBUTTON;
+	public WebElement manageVehiclePopupCancelButton;
 	
 
 	@FindBy(xpath ="//td[contains(@class,'vehicle-reg sorting')]")
 	@CacheLookup
-	public List<WebElement> ACTIVEVEHICLE_LIST;
+	public List<WebElement> activeVehicleList;
 	
 	
 	
 	@FindBy(xpath ="//img[@alt='Vehicle Check']")
 	@CacheLookup
-	public WebElement VEHICLECHECK_TILE;
+	public WebElement vehicleCheckTile;
 	
-	public String getManagementFleetTileColor() throws Exception
+	public String getManagementFleetTileColor() 
 	{
 		
-	    return CommonActionUtil.getcolor(MANAGEFLEET_TILE);
-	}
-	
-	public String getManageGroupsTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(MANAGEGROUPS_TILE);
-	}
-	public String getReportsTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(REPORTS_TILE);
-	}
-	public String getManageQuestionTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(MANAGEQUESTION_TILE);
-	}
-	public String getDefectManagementTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(DEFECTMANAGEMENT_TILE);
-	}
-	public String getDueDatesTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(DUEDATES_TILE);
-	}
-	public String getVechicleCheckDashboardTileColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(VEHICLECHECKDASH_TILE);
+	    return CommonActionUtil.getcolor(manageFleetTile);
 	}
 	
-	public String getAlertTileColor() throws Exception
+	public String getManageGroupsTileColor() 
 	{
 		
-	    return CommonActionUtil.getcolor(ALERTS_TILE);
+	    return CommonActionUtil.getcolor(manageGroupsTile);
+	}
+	public String getReportsTileColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(reportsTile);
+	}
+	public String getManageQuestionTileColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(manageQuestionTile);
+	}
+	public String getDefectManagementTileColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(defectManagementTile);
+	}
+	public String getDueDatesTileColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(duedatesTile);
+	}
+	public String getVechicleCheckDashboardTileColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(vehiclecheckDashboardTile);
 	}
 	
-	public String getManageVehiclepopupAddButtonColor() throws Exception
+	public String getAlertTileColor() 
 	{
 		
-	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_ADDBUTTON);
+	    return CommonActionUtil.getcolor(alertsTile);
 	}
 	
-	public String getManageVehiclepopupSubmitButtonColor() throws Exception
+	public String getManageVehiclepopupAddButtonColor() 
 	{
 		
-	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_SUBMITBUTTON);
-	}
-	public String getManageVehiclepopupCancelButtonColor() throws Exception
-	{
-		
-	    return CommonActionUtil.getcolor(MANAGEVEHICLEPOPUP_CANCELBUTTON);
+	    return CommonActionUtil.getcolor(manageVehiclePopupAddButton);
 	}
 	
-	public void clickonSubmitButton() throws Exception
+	public String getManageVehiclepopupSubmitButtonColor() 
 	{
-		MANAGEVEHICLEPOPUP_SUBMITBUTTON.click();
+		
+	    return CommonActionUtil.getcolor(manageVehiclePopupSubmitButton);
+	}
+	public String getManageVehiclepopupCancelButtonColor() 
+	{
+		
+	    return CommonActionUtil.getcolor(manageVehiclePopupCancelButton);
+	}
+	
+	public void clickonSubmitButton() 
+	{
+		manageVehiclePopupSubmitButton.click();
 	}
 	
 	public void getaction(){
 		
-		VEHICLECHECK_TILE.click();
-		MANAGEFLEET_TILE.click();
-		VEHICLES_TILE.click();
+		vehicleCheckTile.click();
+		manageFleetTile.click();
+		vehiclesTile.click();
 
 		List<String> lstMovedItem=new ArrayList<String>();
-        for(int i=0;i<ACTIVECHECK_LIST.size();i++){
-           lstMovedItem.add(ACTIVECHECK_LIST.get(i).getText());
+        for(int i=0;i<activeCheckList.size();i++){
+           lstMovedItem.add(activeCheckList.get(i).getText());
         }}
 }

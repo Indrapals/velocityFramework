@@ -18,19 +18,22 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import actionslibrary.CommonActionUtil;
+
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
-import actionsLibrary.CommonActionUtil;
+
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
-import genericLibrary.BrowserUtilities;
-import genericLibrary.LogUtilities;
-import genericLibrary.ScreenshotUtilities;
-import genericLibrary.TestLinkIntegration;
-import pageObjects.HomePage;
-import pageObjects.LivemapPage;
-import pageObjects.LoginPage;
-import pageObjects.VehicleCheckPage;
+import genericlibrary.BrowserUtilities;
+import genericlibrary.LogUtilities;
+import genericlibrary.ScreenshotUtilities;
+import genericlibrary.TestLinkIntegration;
+import pageobjects.HomePage;
+import pageobjects.LivemapPage;
+import pageobjects.LoginPage;
+import pageobjects.VehicleCheckPage;
 import testlink.api.java.client.TestLinkAPIResults;
 
 public class VelocityLiveMapTest {
@@ -73,32 +76,32 @@ public class VelocityLiveMapTest {
 		
 	    try {
 	    	
-	    	lpobj.login_User();
+	    	lpobj.loginUser();
 	    	
 	    	LogUtilities.info("User login Successfully");
 	    	
-	    	Assert.assertTrue(hpobj.VEHICLECHECK_MENU.isDisplayed(),"Vehicle menu displayed");
+	    	Assert.assertTrue(hpobj.vehicleCheckMenu.isDisplayed(),"Vehicle menu displayed");
 	    
-            CommonActionUtil.moveTo(hpobj.KINESISTELEMATICS_MENU);
+            CommonActionUtil.moveTo(hpobj.kinesistelematicsMenu);
             
-            lmpobj.LIVEMAP_MODULE.click();
+            lmpobj.livemapModule.click();
         
-            lmpobj.MAP_CANVAS.isDisplayed();
+            lmpobj.mapCanvas.isDisplayed();
             
-            System.out.println("No of Independent vehicle present on screen :  " + lmpobj.INDEPENDENT_VEHICLE_LIST.size());
+            System.out.println("No of Independent vehicle present on screen :  " + lmpobj.independentVehicleList.size());
             
-            System.out.println("No of Parked vehicle present on screen :  " + lmpobj.PARKEDVEHICLE_LIST.size()/4);
+            System.out.println("No of Parked vehicle present on screen :  " + lmpobj.parkedVehicleList.size()/4);
             
-            System.out.println("No of Moving vehicle present on screen :  " + lmpobj.MOVINGVEHICLE_LIST.size()/4);
+            System.out.println("No of Moving vehicle present on screen :  " + lmpobj.movingVehicleList.size()/4);
             
-            System.out.println("No of vehicle clusters present on screen :  " + lmpobj.VEHICLECLUSTER_LIST.size());
+            System.out.println("No of vehicle clusters present on screen :  " + lmpobj.vehicleClustorList.size());
             
-            for(WebElement element:lmpobj.VEHICLECLUSTER_LIST){
+            for(WebElement element:lmpobj.vehicleClustorList){
             	System.out.println("Clusters contain no vehicles "+element.getText());
             }
             
-            for(int i=0;i<lmpobj.INDEPENDENT_VEHICLE_LIST.size();i++){
-            	if(lmpobj.INDEPENDENT_VEHICLE_LIST.get(i).getCssValue("background-color").equals("rgba(40, 142, 205, 1)")){
+            for(int i=0;i<lmpobj.independentVehicleList.size();i++){
+            	if(lmpobj.independentVehicleList.get(i).getCssValue("background-color").equals("rgba(40, 142, 205, 1)")){
                		countblue++;
                		System.out.println("Numbers of Independent vehicles with blue color are : " + countblue);
                	}
@@ -123,16 +126,16 @@ public class VelocityLiveMapTest {
 	  public void liveMapTest_021() throws Exception{
 		
 	    try {
-	    	lmpobj.OPTIONS_BUTTON.click();
-	    	Assert.assertTrue(lmpobj.VEHICLEDISPLAY_TEXTBOX.isDisplayed(), "Vehicle Display text box is displayed");
-	    	Assert.assertTrue(lmpobj.VEHICLEREGISTRATION_TEXTBOX.isDisplayed(), "Vehicle Registration text box is displayed");
-	    	Assert.assertTrue(lmpobj.DRIVERNAME_TEXTBOX.isDisplayed(), "Driver Name text box is displayed");
-	    	Assert.assertTrue(lmpobj.VEHICLEDISPLAY_TEXTBOX.isDisplayed(), "Vehicle Display text box is displayed");
-	    	Assert.assertTrue(lmpobj.MAPSTYLE_TEXTBOX.isDisplayed(), "May style text box is displayed");
-	    	Assert.assertTrue(lmpobj.STANDARD_TEXTBOX.isDisplayed(), "Standard text box is displayed");
-	    	Assert.assertTrue(lmpobj.SATELLITE_TEXTBOX.isDisplayed(), "Satellite text box is displayed");	    	
-	    	Assert.assertTrue(lmpobj.TRAFFIC_TEXTBOX.isDisplayed(), "Traffic text box is displayed");
-	    	Assert.assertTrue(lmpobj.POINTSOFINTEREST_TEXTBOX.isDisplayed(), "Point of interest text box is displayed");
+	    	lmpobj.optionsButton.click();
+	    	Assert.assertTrue(lmpobj.vehicleDisplayTextbox.isDisplayed(), "Vehicle Display text box is displayed");
+	    	Assert.assertTrue(lmpobj.vehicleRegistrationTextbox.isDisplayed(), "Vehicle Registration text box is displayed");
+	    	Assert.assertTrue(lmpobj.drivernameTextbox.isDisplayed(), "Driver Name text box is displayed");
+	    	Assert.assertTrue(lmpobj.vehicleDisplayTextbox.isDisplayed(), "Vehicle Display text box is displayed");
+	    	Assert.assertTrue(lmpobj.mapstyleTextbox.isDisplayed(), "May style text box is displayed");
+	    	Assert.assertTrue(lmpobj.standardTextbox.isDisplayed(), "Standard text box is displayed");
+	    	Assert.assertTrue(lmpobj.satelliteTextbox.isDisplayed(), "Satellite text box is displayed");	    	
+	    	Assert.assertTrue(lmpobj.trafficTextbox.isDisplayed(), "Traffic text box is displayed");
+	    	Assert.assertTrue(lmpobj.pointofinterestTextbox.isDisplayed(), "Point of interest text box is displayed");
 	    	
 	    	
 			System.out.println("Verified test successfully: => Assertion for Step 21 PASS ");
@@ -149,8 +152,8 @@ public class VelocityLiveMapTest {
 		
 	    try {
 	    	
-	    	lmpobj.DRIVERNAME_CHECKBOX.click();
-	    	for(WebElement element:lmpobj.INDEPENDENT_VEHICLE_LIST_WITH_DRIVERNAME){
+	    	lmpobj.drivernameCheckbox.click();
+	    	for(WebElement element:lmpobj.independentVehicleListWithDropdown){
 	    		System.out.println(element.getText());
 	    		
 	    	}
@@ -168,12 +171,12 @@ public class VelocityLiveMapTest {
 		
 	    try {
 	    	
-	    	lmpobj.SATELLITE_CHECKBOX.click();
+	    	lmpobj.satelliteCheckbox.click();
 	    	Screen screen = new Screen();
 	    	Pattern SatelliteImage = new Pattern("D:\\Sikuli.sikuli\\1514292511154.png");
 	    	if(screen.exists(SatelliteImage) != null){
 	    		
-	    		lmpobj.STANDARD_CHECKBOX.click();
+	    		lmpobj.standardCheckbox.click();
 	    	}
 	    	
 			System.out.println("Satellite view verified test successfully: => Assertion for Step 23 PASS ");
@@ -190,12 +193,12 @@ public class VelocityLiveMapTest {
 		
 	    try {
 	    	
-	    	lmpobj.TRAFFIC_CHECKBOX.click();
+	    	lmpobj.trafficCheckbox.click();
 	    	Screen screen = new Screen();
 	    	Pattern TrafficImage = new Pattern("D:\\Sikuli.sikuli\\1514292696619.png");
 	    	if(screen.exists(TrafficImage) != null){
-	    		lmpobj.TRAFFIC_CHECKBOX.click();
-	    		lmpobj.RESTMAP_BUTTON.click();
+	    		lmpobj.trafficCheckbox.click();
+	    		lmpobj.restmapButton.click();
 	    	}
 	    	
 			System.out.println("Traffic view verified test successfully: => Assertion for Step 24 PASS ");
@@ -210,14 +213,14 @@ public class VelocityLiveMapTest {
 	  public void liveMapTest_025() throws Exception{
 	    try {
 	    	
-	    	lmpobj.POINTSOFINTEREST_CHECKBOX.click();
+	    	lmpobj.pointofInterestCheckbox.click();
 	    	Screen screen = new Screen();
 	    	Pattern POIImage = new Pattern("D:\\Sikuli.sikuli\\1514351111559.png");
 	    	if(screen.exists(POIImage) != null){
 	    	
-	    	lmpobj.POINTSOFINTEREST_CHECKBOX.click();
-	    	lmpobj.RESTMAP_BUTTON.click();
-	    	lmpobj.OPTIONS_CLOSE_BUTTON.click();
+	    	lmpobj.pointofInterestCheckbox.click();
+	    	lmpobj.restmapButton.click();
+	    	lmpobj.optionsCloseButton.click();
 	    	}
 	    	
 			System.out.println("POI view verified test successfully: => Assertion for Step 25 PASS ");
@@ -232,9 +235,9 @@ public class VelocityLiveMapTest {
 	  public void liveMapTest_026() throws Exception{
 	    try {
 	    	
-	    	lmpobj.SUMMARY_BUTTON.click();
-	    	Assert.assertTrue(lmpobj.VEHICLE_SERVICE_TABLE.isDisplayed(), "Vehicle Service DropDown list displayed");
-	    	lmpobj.SERVICESUMMARY_CLOSE_BUTTON.click();
+	    	lmpobj.summaryButton.click();
+	    	Assert.assertTrue(lmpobj.vehicleServiceTable.isDisplayed(), "Vehicle Service DropDown list displayed");
+	    	lmpobj.serviceSummaryCloseButton.click();
 	    	
 			System.out.println("Verified test successfully: => Assertion for Step 26 PASS ");
 			TestLinkIntegration.updateResult("VLC-26", null, TestLinkAPIResults.TEST_PASSED);
@@ -248,7 +251,7 @@ public class VelocityLiveMapTest {
 	  public void liveMapTest_027() throws Exception{
 	    try {
 	    	
-	    	lmpobj.SUMMARY_BUTTON.click();
+	    	lmpobj.summaryButton.click();
 	 	
 	    	lmpobj.SUMMARY_GROUP_BUTTON.click();
 	    	
@@ -282,8 +285,8 @@ public class VelocityLiveMapTest {
 	        }
 	        
 	        List<String> lstMovedItem=new ArrayList<String>();
-	        for(int i=0;i<lmpobj.INDEPENDENT_VEHICLE_LIST.size();i++){
-	           lstMovedItem.add(lmpobj.INDEPENDENT_VEHICLE_LIST.get(i).getText());
+	        for(int i=0;i<lmpobj.independentVehicleList.size();i++){
+	           lstMovedItem.add(lmpobj.independentVehicleList.get(i).getText());
 	        }
 	        
 	        Collections.sort(lstSelectedItem);

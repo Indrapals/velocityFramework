@@ -3,15 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="velocityAndroidAppTest.velocityAppTest">
+      <class name="velocityWebTest.VelocityTest_001">
         <methods>
-          <include name="launch"/>
-          <include name="setUp"/>
-          <include name="endTest"/>
           <include name="captureTest"/>
-          <include name="vehicleAppTest_015"/>
+          <include name="vehicleCheckTileTest_002"/>
+          <include name="vehiclesaddButtonPopupTest_007"/>
+          <include name="laodPages"/>
+          <include name="vehiclesaddButtonPopupTest_008"/>
+          <include name="vehiclesaddButtonPopupTest_005"/>
+          <include name="launch"/>
+          <include name="vehicleCheckTileTest_003"/>
+          <include name="vehiclesTileTest_004"/>
         </methods>
-      </class> <!-- velocityAndroidAppTest.velocityAppTest -->
+      </class> <!-- velocityWebTest.VelocityTest_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

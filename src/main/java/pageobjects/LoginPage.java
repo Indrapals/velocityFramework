@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import genericLibrary.*;
+import genericlibrary.*;
 
 
 public class LoginPage {
@@ -25,56 +25,56 @@ public class LoginPage {
 	
 	@FindBy(xpath ="//a[contains(text(),'I agree')]")
 	@CacheLookup
-	public WebElement I_AGREE;
+	public WebElement iagreeCheck;
 	
 	@FindBy(id ="id_username")
 	@CacheLookup
-	public WebElement USERNAME;
+	public WebElement usernameField;
 	
 	@FindBy(id ="id_password")
 	@CacheLookup
-	public WebElement PASSWORD; 
+	public WebElement passwordField; 
 	
 	@FindBy(css =".image-button.btn-primary-colour.login-image-button")
 	@CacheLookup
-	public WebElement LOGIN_BTN; 
+	public WebElement loginButton; 
 
 	@FindBy(css =".image-button.btn-primary-colour.login-image-button")
 	@CacheLookup
-	public WebElement RESETPASSWORD_BTN; 
+	public WebElement resetPasswordButton; 
 
 	@FindBy(css =".logo>img")
 	@CacheLookup
-	public WebElement LOGO_IMAGE;
+	public WebElement logoImage;
 
 	@FindBy(css =".tiny.round>img")
 	@CacheLookup
-	public WebElement LANG_FLAG;
+	public WebElement langFlag;
 
 	@FindBy(xpath ="//span[text()='English']")
 	@CacheLookup
-	public WebElement LANG_ENG;
+	public WebElement langEng;
 
 	@FindBy(xpath ="//span[text()='American-English']")
 	@CacheLookup
-	public WebElement LANG_AMERICAN_ENG;
+	public WebElement langAmericanEng;
 
 	
 		
-	public void login_User() throws Exception
+	public void loginUser() throws IOException 
 	{
-		I_AGREE.click();
-		USERNAME.sendKeys(ConfigProperties.getObject("userName"));
-		PASSWORD.sendKeys(ConfigProperties.getObject("passWord"));
-		LOGIN_BTN.click();
+		iagreeCheck.click();
+		usernameField.sendKeys(ConfigProperties.getObject("userName"));
+		passwordField.sendKeys(ConfigProperties.getObject("passWord"));
+		loginButton.click();
 	 
 	}
 	
 	public void testweb() throws IOException{
 		BrowserUtilities.getBrowser();
-		USERNAME.sendKeys(ConfigProperties.getObject("userName"));
-		PASSWORD.sendKeys(ConfigProperties.getObject("passWord"));
-		LOGIN_BTN.click();
+		usernameField.sendKeys(ConfigProperties.getObject("userName"));
+		passwordField.sendKeys(ConfigProperties.getObject("passWord"));
+		loginButton.click();
 		
 		
         }

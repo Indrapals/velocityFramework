@@ -1,6 +1,4 @@
-package genericLibrary;
-
-
+package genericlibrary;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,9 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestNGMethod;
 
-import actionsLibrary.AndroidAction;
-import pageObjects.AndroidAppPage;
-
 /**
  * @author Indrapal Singh
  * @getScreenShot method to capture screenshoot for failed test 
@@ -22,6 +17,12 @@ import pageObjects.AndroidAppPage;
 
 
 public class ScreenshotUtilities {
+	
+	 static final String ERRORMESSAGESCREENSHOT="Screenshot not getting captured";
+	
+	private ScreenshotUtilities() {
+	    throw new IllegalStateException("Utility class");
+	  }
 	
 	public static void getScreenShot(WebDriver ldriver,ITestNGMethod method){
 	 
@@ -37,7 +38,7 @@ public class ScreenshotUtilities {
 	 
 	{
 	 
-	System.out.println(e.getMessage());
+		LogUtilities.error(ERRORMESSAGESCREENSHOT);
 	 
 	    }
 	 
@@ -57,8 +58,7 @@ public class ScreenshotUtilities {
 		catch (IOException e)
 		 
 		{
-		 
-		System.out.println(e.getMessage());
+			LogUtilities.error(ERRORMESSAGESCREENSHOT);
 		 
 		    }
 		 
@@ -78,7 +78,7 @@ public class ScreenshotUtilities {
 		 
 		{
 		 
-		System.out.println(e.getMessage());
+			LogUtilities.error(ERRORMESSAGESCREENSHOT);
 		 
 		    }
 		 
