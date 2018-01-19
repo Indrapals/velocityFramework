@@ -24,327 +24,325 @@ import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.TouchAction;
 
 public final class AndroidAction {
-	
-	
+
 	private AndroidAction() {
-	    throw new IllegalStateException("Utility class");
-	  }
-	
+		throw new IllegalStateException("Utility class");
+	}
+
 	// common timeout for all tests can be set here
 	public static final int TIMEOUT = 70;
-	
-	
+
 	/**
 	 * method to find an element
-	 * @param locator element to be found
+	 * 
+	 * @param locator
+	 *            element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	
-	public static WebElement findElement(By locator){
+
+	public static WebElement findElement(By locator) {
 		try {
-			
+
 			return ApplicationSetup.driver.findElement(locator);
-		}
-		catch (NoSuchElementException e){
+		} catch (NoSuchElementException e) {
 
 			LogUtilities.error("Element not found");
 			throw new NoSuchElementException(e.getMessage());
-		
-		}		
+
+		}
 	}
-	
-	
+
 	/**
 	 * method to find an element
-	 * @param locator element to be found
+	 * 
+	 * @param locator
+	 *            element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static WebElement findElementandclick(By locator){
+	public static WebElement findElementandclick(By locator) {
 		try {
 			WebElement element = ApplicationSetup.driver.findElement(locator);
 			element.click();
-		}
-		catch (NoSuchElementException e){
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
-	
+
 	/**
 	 * method to find an element
-	 * @param locator element to be found
+	 * 
+	 * @param locator
+	 *            element to be found
 	 * @click on element if found else throws NoSuchElementException
 	 */
-	public static String findElementandgettext(By locator){
+	public static String findElementandgettext(By locator) {
 		try {
-			
-		 return	ApplicationSetup.driver.findElement(locator).getText();
-		}
-		catch (NoSuchElementException e){
+
+			return ApplicationSetup.driver.findElement(locator).getText();
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * method to find an element
-	 * @param locator element to be found
+	 * 
+	 * @param locator
+	 *            element to be found
 	 * @Sendkeys to element if found else throws NoSuchElementException
 	 */
-	public static WebElement sendkeys(By locator,String value){
+	public static WebElement sendkeys(By locator, String value) {
 		try {
 			WebElement element = ApplicationSetup.driver.findElement(locator);
 			element.sendKeys(value);
-		}
-		catch (NoSuchElementException e){
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
-	
+
 	/*
 	 * method for implicit wait
 	 */
-	public static Object implicitwait(int i,TimeUnit arg1){
+	public static Object implicitwait(int i, TimeUnit arg1) {
 		try {
 			ApplicationSetup.driver.manage().timeouts().implicitlyWait(i, arg1);
-				}
-		catch (Exception e){
+		} catch (Exception e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
-	
+
 	/*
 	 * method for Explicit wait
 	 */
-	public static void explicitwait(By by){
+	public static void explicitwait(By by) {
 		try {
 			(new WebDriverWait(ApplicationSetup.driver, 30)).until(ExpectedConditions.elementToBeClickable(by));
 			ApplicationSetup.driver.findElement(by).click();
-				}
-		catch (StaleElementReferenceException  ser) {
+		} catch (StaleElementReferenceException ser) {
 			throw new NoSuchElementException(ser.getMessage());
 		}
-		}
-        
-	
+	}
+
 	/*
 	 * method to navigate back
 	 */
-	public static Object back(){
+	public static Object back() {
 		try {
 			ApplicationSetup.driver.navigate().back();
-				}
-		catch (Exception e){
+		} catch (Exception e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 		return null;
 	}
-	
+
 	/**
-	 *  method to tap on the screen on provided coordinates
-	 * @param xPosition x coordinate to be tapped
-	 * @param yPosition y coordinate to be tapped
+	 * method to tap on the screen on provided coordinates
+	 * 
+	 * @param xPosition
+	 *            x coordinate to be tapped
+	 * @param yPosition
+	 *            y coordinate to be tapped
 	 */
-	public static void tap(double xPosition, double yPosition){
-		JavascriptExecutor js = (JavascriptExecutor)ApplicationSetup.driver;
-		HashMap<String, Double>  tapObject = new HashMap<String, Double>();
+	public static void tap(double xPosition, double yPosition) {
+		JavascriptExecutor js = (JavascriptExecutor) ApplicationSetup.driver;
+		HashMap<String, Double> tapObject = new HashMap<String, Double>();
 		tapObject.put("startX", xPosition);
 		tapObject.put("startY", yPosition);
-		js.executeScript("mobile: tap", tapObject);	
+		js.executeScript("mobile: tap", tapObject);
 	}
-	
-	
+
 	/**
-	 *  method to find all the elements of specific locator
-	 * @param locator element to be found
-	 * @return return the list of elements if found else throws NoSuchElementException
+	 * method to find all the elements of specific locator
+	 * 
+	 * @param locator
+	 *            element to be found
+	 * @return return the list of elements if found else throws
+	 *         NoSuchElementException
 	 */
-	
-	public static List<MobileElement> findElements(By locator){
+
+	public static List<MobileElement> findElements(By locator) {
 		try {
-			
+
 			return ApplicationSetup.driver.findElements(locator);
-		}
-		catch (NoSuchElementException e){
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 	}
-	
-	/**
-	 *  method to get message test of alert
-	 * @return message text which is displayed
-	 */
-	public static String getAlertText() 
-	{ 
-		try {
-			Alert alert = ApplicationSetup.driver.switchTo().alert(); 
-			
-			return alert.getText();
-		} catch (NoAlertPresentException e){
-			throw new NoAlertPresentException();
-		}
-	}   
 
 	/**
-	 *  method to verify if alert is present
+	 * method to get message test of alert
+	 * 
+	 * @return message text which is displayed
+	 */
+	public static String getAlertText() {
+		try {
+			Alert alert = ApplicationSetup.driver.switchTo().alert();
+
+			return alert.getText();
+		} catch (NoAlertPresentException e) {
+			throw new NoAlertPresentException();
+		}
+	}
+
+	/**
+	 * method to verify if alert is present
+	 * 
 	 * @return returns true if alert is present else false
 	 */
-	public static boolean isAlertPresent() 
-	{ 
-		try 
-		{ 
+	public static boolean isAlertPresent() {
+		try {
 			WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 			wait.until(ExpectedConditions.alertIsPresent());
 			ApplicationSetup.driver.switchTo().alert();
-			return true; 
-		}   
-		catch (NoAlertPresentException e) 
-		{   
-			throw new NoAlertPresentException(); 
-		}   
+			return true;
+		} catch (NoAlertPresentException e) {
+			throw new NoAlertPresentException();
+		}
 	}
-	
+
 	/**
-	 *  method to verify if element is clickable
+	 * method to verify if element is clickable
+	 * 
 	 * @return returns true if element is clickable else false
 	 */
-	public static void isClickable(By locator) 
-	{ 
-			if(ApplicationSetup.driver.findElement(locator).isEnabled())
-				
+	public static void isClickable(By locator) {
+		if (ApplicationSetup.driver.findElement(locator).isEnabled())
+
 			LogUtilities.info("Element is clickable");
-			
-			else
-			
+
+		else
+
 			LogUtilities.info("Element is not clickable");
-		
-		   
+
 	}
-	
+
 	/**
-	 *  method to verify if element is selected
+	 * method to verify if element is selected
+	 * 
 	 * @return returns true if element is selected else false
 	 */
-	public static void isSelected(By locator) 
-	{ 
-		
-			if(ApplicationSetup.driver.findElement(locator).isSelected())
-				
-				LogUtilities.info("Element is selected");
-			
-			else
-			
-				LogUtilities.info("Element is not selected");
-		 
+	public static void isSelected(By locator) {
+
+		if (ApplicationSetup.driver.findElement(locator).isSelected())
+
+			LogUtilities.info("Element is selected");
+
+		else
+
+			LogUtilities.info("Element is not selected");
+
 	}
-	
-	
+
 	/**
-	 *  method to verify if element is selected
+	 * method to verify if element is selected
+	 * 
 	 * @return returns true if element is selected else false
 	 */
-	public static void isNotSelected(By locator) 
-	{ 
-		
-			if(!ApplicationSetup.driver.findElement(locator).isSelected())
-				
-				LogUtilities.info("Element is not selected");
-			
-			else
-			
-				LogUtilities.info("Element is selected");
-		 
+	public static void isNotSelected(By locator) {
+
+		if (!ApplicationSetup.driver.findElement(locator).isSelected())
+
+			LogUtilities.info("Element is not selected");
+
+		else
+
+			LogUtilities.info("Element is selected");
+
 	}
-	
+
 	/**
-	 *  method to verify if element is Displayed
+	 * method to verify if element is Displayed
+	 * 
 	 * @return returns true if element is Displayed else false
 	 */
-	public static void isDisplayed(By locator) 
-	{ 
-		
-		WebElement element=ApplicationSetup.driver.findElement(locator);
+	public static void isDisplayed(By locator) {
 
-		if(element.isDisplayed())
-			
-			LogUtilities.info(element+"is displayed");
+		WebElement element = ApplicationSetup.driver.findElement(locator);
+
+		if (element.isDisplayed())
+
+			LogUtilities.info(element + "is displayed");
 		else
-			LogUtilities.info(element+"is not displayed");
-		}
- 
+			LogUtilities.info(element + "is not displayed");
+	}
+
 	/**
-	 *  method to verify if element is Displayed
+	 * method to verify if element is Displayed
+	 * 
 	 * @return returns true if element is Displayed else false
 	 */
-	public static boolean isDisplayed1(By locator) 
-	{ 
-		
-		WebElement element=ApplicationSetup.driver.findElement(locator);
+	public static boolean isDisplayed1(By locator) {
 
-		if(element.isDisplayed())
-			
-			LogUtilities.info(element+"is displayed");
-		
+		WebElement element = ApplicationSetup.driver.findElement(locator);
+
+		if (element.isDisplayed())
+
+			LogUtilities.info(element + "is displayed");
+
 		else
-		
-			LogUtilities.info(element+"is not displayed");
-		
+
+			LogUtilities.info(element + "is not displayed");
+
 		return false;
-		}
- 
-	
+	}
+
 	/**
-	 *  method to Accept Alert if alert is present
+	 * method to Accept Alert if alert is present
 	 */
-	
-	public static void acceptAlert(){
+
+	public static void acceptAlert() {
 		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		ApplicationSetup.driver.switchTo().alert().accept();
 	}
+
 	/**
-	 *  method to Dismiss Alert if alert is present
+	 * method to Dismiss Alert if alert is present
 	 */
-	
-	public static void dismissAlert(){
+
+	public static void dismissAlert() {
 		WebDriverWait wait = new WebDriverWait(ApplicationSetup.driver, TIMEOUT);
 		wait.until(ExpectedConditions.alertIsPresent());
 		ApplicationSetup.driver.switchTo().alert().dismiss();
 	}
-	
 
 	/**
 	 * method to get all the context handles at particular screen
 	 */
-	public static void getContext(){
+	public static void getContext() {
 		(ApplicationSetup.driver).getContextHandles();
 	}
-	
+
 	/**
 	 * method to set the context to required view.
-	 * @param context view to be set 
+	 * 
+	 * @param context
+	 *            view to be set
 	 */
-	public static void setContext(String context){
+	public static void setContext(String context) {
 
 		Set<String> contextNames = (ApplicationSetup.driver).getContextHandles();
 
-		if (contextNames.contains(context)){
+		if (contextNames.contains(context)) {
 			(ApplicationSetup.driver).context(context);
 		}
 	}
-	
+
 	/**
 	 * method to long press on specific element by passing locator
-	 * @param locator element to be long pressed
+	 * 
+	 * @param locator
+	 *            element to be long pressed
 	 */
-	public static void longPress(By locator){
+	public static void longPress(By locator) {
 		try {
 			WebElement element = ApplicationSetup.driver.findElement(locator);
-			TouchAction touch = new TouchAction((MobileDriver)ApplicationSetup.driver);
+			TouchAction touch = new TouchAction((MobileDriver) ApplicationSetup.driver);
 			touch.longPress(element).release().perform();
-		}
-		catch (NoSuchElementException e){
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 
@@ -352,44 +350,55 @@ public final class AndroidAction {
 
 	/**
 	 * method to long press on specific x,y coordinates
-	 * @param x x offset
-	 * @param y y offset
+	 * 
+	 * @param x
+	 *            x offset
+	 * @param y
+	 *            y offset
 	 */
-	public static void longPress(int x, int y){
+	public static void longPress(int x, int y) {
 		TouchAction touch = new TouchAction((MobileDriver) ApplicationSetup.driver);
 		touch.longPress(x, y).release().perform();
 
 	}
 
-
 	/**
 	 * method to long press on element with absolute coordinates.
-	 * @param locator element to be long pressed
-	 * @param x x offset
-	 * @param y y offset
+	 * 
+	 * @param locator
+	 *            element to be long pressed
+	 * @param x
+	 *            x offset
+	 * @param y
+	 *            y offset
 	 */
-	public static void longPress(By locator, int x, int y){
+	public static void longPress(By locator, int x, int y) {
 		try {
 			WebElement element = ApplicationSetup.driver.findElement(locator);
 			TouchAction touch = new TouchAction((MobileDriver) ApplicationSetup.driver);
-			touch.longPress(element,x, y).release().perform();
-		}
-		catch (NoSuchElementException e){
+			touch.longPress(element, x, y).release().perform();
+		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
 
 	}
+
 	/**
-	 *  method to swipe on the screen on provided coordinates
-	 * @param startX - start X coordinate to be tapped
-	 * @param endX - end X coordinate to be tapped
-	 * @param startY - start y coordinate to be tapped
-	 *  @param endY - end Y coordinate to be tapped
-	 *   @param duration duration to be tapped
+	 * method to swipe on the screen on provided coordinates
+	 * 
+	 * @param startX
+	 *            - start X coordinate to be tapped
+	 * @param endX
+	 *            - end X coordinate to be tapped
+	 * @param startY
+	 *            - start y coordinate to be tapped
+	 * @param endY
+	 *            - end Y coordinate to be tapped
+	 * @param duration
+	 *            duration to be tapped
 	 */
 
-	public static void swipe(double startX, double startY, double endX, double endY, double duration)
-	{ 
+	public static void swipe(double startX, double startY, double endX, double endY, double duration) {
 		JavascriptExecutor js = (JavascriptExecutor) ApplicationSetup.driver;
 		HashMap<String, Double> swipeObject = new HashMap<String, Double>();
 		swipeObject.put("startX", startX);
@@ -400,89 +409,104 @@ public final class AndroidAction {
 		js.executeScript("mobile: swipe", swipeObject);
 	}
 
-
 	/**
-	 *  method to Swipe Left on Element By Locator
-	 * @param locator - By locator
-	 *  @param duration - Time to swipe
+	 * method to Swipe Left on Element By Locator
+	 * 
+	 * @param locator
+	 *            - By locator
+	 * @param duration
+	 *            - Time to swipe
 	 */
 
-   	public static void swipeLeft(By locator , int duration){
+	public static void swipeLeft(By locator, int duration) {
 		MobileElement element = (MobileElement) ApplicationSetup.driver.findElement(locator);
 		element.swipe(SwipeElementDirection.LEFT, duration);
 
 	}
 
 	/**
-	 *  method to Swipe Right on Element By Locator
-	 * @param locator - By locator
-	 *  @param duration - Time to swipe
+	 * method to Swipe Right on Element By Locator
+	 * 
+	 * @param locator
+	 *            - By locator
+	 * @param duration
+	 *            - Time to swipe
 	 */
 
-	public static void swipeRight(By locator , int duration){
+	public static void swipeRight(By locator, int duration) {
 		MobileElement element = (MobileElement) ApplicationSetup.driver.findElement(locator);
 		element.swipe(SwipeElementDirection.RIGHT, duration);
 
 	}
 
 	/**
-	 *  method to Swipe UP on Element By Locator
-	 *  @param locator - By locator
-	 *  @param duration - Time to swipe
+	 * method to Swipe UP on Element By Locator
+	 * 
+	 * @param locator
+	 *            - By locator
+	 * @param duration
+	 *            - Time to swipe
 	 */
 
-	public static void swipeUP(By locator , int duration){
+	public static void swipeUP(By locator, int duration) {
 		MobileElement element = (MobileElement) ApplicationSetup.driver.findElement(locator);
 		element.swipe(SwipeElementDirection.UP, duration);
 	}
-	
 
 	/**
-	 *  method to Swipe Down on Element By Locator
-	 *  @param locator - By locator
-	 *  @param duration - Time to swipe
+	 * method to Swipe Down on Element By Locator
+	 * 
+	 * @param locator
+	 *            - By locator
+	 * @param duration
+	 *            - Time to swipe
 	 */
-	
-	public static void swipeDown(By locator , int duration){
+
+	public static void swipeDown(By locator, int duration) {
 		MobileElement element = (MobileElement) ApplicationSetup.driver.findElement(locator);
 		element.swipe(SwipeElementDirection.DOWN, duration);
-	}	
-	
+	}
+
 	/**
-	 * Scroll forward to the element which has a description or name which contains the input text.
-	 * The scrolling is performed on the first scrollView present on the UI
-	 * @param text text of the element text to be found
+	 * Scroll forward to the element which has a description or name which
+	 * contains the input text. The scrolling is performed on the first
+	 * scrollView present on the UI
+	 * 
+	 * @param text
+	 *            text of the element text to be found
 	 */
 
 	@SuppressWarnings("deprecation")
 	public static void scrollExact(String text) {
-		try{
-			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text); 
-			
+		try {
+			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text);
+
 			LogUtilities.info("Found Element After Scrolling");
-		}
-		catch(NoSuchElementException e){
-		
+		} catch (NoSuchElementException e) {
+
 			throw new NoSuchElementException(e.getMessage());
-		}}
-	
+		}
+	}
+
 	/**
-	 * Scroll forward to the element which has a description or name which exactly matches the input text.
-	 * The scrolling is performed on the first scrollView present on the UI
-	 * @param text - exact text of the element to be found
+	 * Scroll forward to the element which has a description or name which
+	 * exactly matches the input text. The scrolling is performed on the first
+	 * scrollView present on the UI
+	 * 
+	 * @param text
+	 *            - exact text of the element to be found
 	 */
 
 	@SuppressWarnings("deprecation")
 	public static void scrollAndClick(String text) {
-		try{
-			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text).click(); 
-			
+		try {
+			((AppiumDriver<MobileElement>) ApplicationSetup.driver).scrollToExact(text).click();
+
 			LogUtilities.info("Found and clicked Element After Scrolling");
-		}
-		catch(NoSuchElementException e){
-			
+		} catch (NoSuchElementException e) {
+
 			throw new NoSuchElementException(e.getMessage());
-		}  
+		}
 	}
 
 }
