@@ -64,25 +64,4 @@ public class ScreenshotUtilities {
 		}
 
 	}
-
-	public static void captureAndroidScreenShot() {
-
-		// Take screenshot and store as a file format
-		File src = ((TakesScreenshot) ApplicationSetup.driver).getScreenshotAs(OutputType.FILE);
-		try {
-			// now copy the screenshot to desired location using copyFile method
-
-			FileUtils.copyFile(src,
-					new File(ConfigProperties.getObject("Screenshotpath") + System.currentTimeMillis() + ".png"));
-		}
-
-		catch (IOException e)
-
-		{
-
-			LogUtilities.error(ERRORMESSAGESCREENSHOT);
-
-		}
-
-	}
 }

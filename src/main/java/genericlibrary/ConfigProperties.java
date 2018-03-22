@@ -23,13 +23,13 @@ public class ConfigProperties {
 	public static void readProperties() throws IOException {
 		
 		properties =new Properties();
-		InputStream input=new FileInputStream("C:\\Users\\Ranosys\\workspace\\velocity\\Constant.properties");
+		InputStream input=new FileInputStream("./Constant.properties");
 			properties.load(input);
 		
 	}
 	
 	public static void writeProperties() throws IOException{
-		OutputStream output=new FileOutputStream("C:\\Users\\Ranosys\\workspace\\velocity\\Constant.properties");
+		OutputStream output=new FileOutputStream("./Constant.properties");
 		properties.setProperty("browser", "chrome");
 		properties.store(output, null);
 	}

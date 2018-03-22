@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import genericlibrary.BrowserUtilities;
 import genericlibrary.ConfigProperties;
 
 public class LoginPage {
@@ -19,52 +18,20 @@ public class LoginPage {
 
 	}
 
-	@FindBy(xpath = "//a[contains(text(),'I agree')]")
-	@CacheLookup
-	public WebElement iagreeCheck;
-
-	@FindBy(id = "id_username")
+	@FindBy(xpath = "//input[@name='email']")
 	@CacheLookup
 	public WebElement usernameField;
 
-	@FindBy(id = "id_password")
+	@FindBy(xpath = "//input[@name='password']")
 	@CacheLookup
 	public WebElement passwordField;
 
-	@FindBy(css = ".image-button.btn-primary-colour.login-image-button")
+	@FindBy(css = ".btn.btn-primary.btn-block")
 	@CacheLookup
 	public WebElement loginButton;
 
-	@FindBy(css = ".image-button.btn-primary-colour.login-image-button")
-	@CacheLookup
-	public WebElement resetPasswordButton;
-
-	@FindBy(css = ".logo>img")
-	@CacheLookup
-	public WebElement logoImage;
-
-	@FindBy(css = ".tiny.round>img")
-	@CacheLookup
-	public WebElement langFlag;
-
-	@FindBy(xpath = "//span[text()='English']")
-	@CacheLookup
-	public WebElement langEng;
-
-	@FindBy(xpath = "//span[text()='American-English']")
-	@CacheLookup
-	public WebElement langAmericanEng;
-
 	public void loginUser() throws IOException {
-		iagreeCheck.click();
-		usernameField.sendKeys(ConfigProperties.getObject("userName"));
-		passwordField.sendKeys(ConfigProperties.getObject("passWord"));
-		loginButton.click();
 
-	}
-
-	public void testweb() throws IOException {
-		BrowserUtilities.getBrowser();
 		usernameField.sendKeys(ConfigProperties.getObject("userName"));
 		passwordField.sendKeys(ConfigProperties.getObject("passWord"));
 		loginButton.click();

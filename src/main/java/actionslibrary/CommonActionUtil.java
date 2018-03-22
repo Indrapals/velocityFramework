@@ -1,5 +1,6 @@
 package actionslibrary;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -17,7 +18,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import genericlibrary.ApplicationSetup;
 import genericlibrary.BrowserUtilities;
 import genericlibrary.LogUtilities;
 
@@ -36,162 +36,12 @@ public class CommonActionUtil {
 	public static final int I = 0;
 	public static final int N = 0;
 
-	/**
-	 * method to find an element
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @click on element if found else throws NoSuchElementException
-	 */
-
-	public static WebElement findElement(By locator) {
-		try {
-
-			return ApplicationSetup.driver.findElement(locator);
-		} catch (NoSuchElementException e) {
-
-			LogUtilities.error("Element not found");
-			throw new NoSuchElementException(e.getMessage());
-
-		}
-	}
-
-	/**
-	 * method to find an element
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @click on element if found else throws NoSuchElementException
-	 */
-	public static WebElement findElementandclick(By locator) {
-		try {
-			WebElement element = ApplicationSetup.driver.findElement(locator);
-			element.click();
-		} catch (NoSuchElementException e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-		return null;
-	}
-
-	/**
-	 * method to find an element
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @click on element if found else throws NoSuchElementException
-	 */
-	public static String findElementandgettext(By locator) {
-		try {
-
-			return ApplicationSetup.driver.findElement(locator).getText();
-		} catch (NoSuchElementException e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-	}
-
-	/**
-	 * method to find an element
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @Sendkeys to element if found else throws NoSuchElementException
-	 */
-	public static WebElement sendkeys(By locator, String value) {
-		try {
-			WebElement element = ApplicationSetup.driver.findElement(locator);
-			element.sendKeys(value);
-		} catch (NoSuchElementException e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-		return null;
-	}
-
-	/*
-	 * method for implicit wait
-	 */
-	public static Object implicitwait(int i, TimeUnit arg1) {
-		try {
-			ApplicationSetup.driver.manage().timeouts().implicitlyWait(i, arg1);
-		} catch (Exception e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-		return null;
-	}
-
-	/*
-	 * method for Explicit wait
-	 */
-	public static void explicitwait(By by) {
-		try {
-			(new WebDriverWait(ApplicationSetup.driver, 30)).until(ExpectedConditions.elementToBeClickable(by));
-			ApplicationSetup.driver.findElement(by).click();
-		} catch (StaleElementReferenceException ser) {
-			throw new NoSuchElementException(ser.getMessage());
-		}
-	}
-
-	/*
-	 * method to navigate back
-	 */
-	public static Object back() {
-		try {
-			ApplicationSetup.driver.navigate().back();
-		} catch (Exception e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-		return null;
-	}
-
-	/**
-	 * method to find all the elements of specific locator
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @return return the list of elements if found else throws
-	 *         NoSuchElementException
-	 */
+	
 
 	public static List<WebElement> findElements(By locator) {
 		try {
 
 			return BrowserUtilities.driver.findElements(locator);
-		} catch (NoSuchElementException e) {
-			throw new NoSuchElementException(e.getMessage());
-		}
-	}
-
-	/**
-	 * method to find all the elements of specific locator
-	 * 
-	 * @param locator
-	 *            element to be found
-	 * @return return the list of elements if found else throws
-	 *         NoSuchElementException
-	 */
-
-	public static void verifyVehicleCheck(By locator) {
-		try {
-			String[] expected = { "", "Home", "Vehicle Check Dashboard ", "Due Dates Dashboard", "Defect Management",
-					"How It Works", "Manage Fleet", "Manage Groups", "Manage Questions", "Reports", "Alerts" };
-			List<WebElement> element = BrowserUtilities.driver.findElements(locator);
-
-			// make sure you found the right number of elements
-			if (expected.length != element.size()) {
-				LogUtilities.error("fail, wrong number of elements found");
-
-			}
-			// make sure that the value of every <option> element equals the
-			// expected value
-			for (int i = 0; i < expected.length; i++) {
-				String optionValue = element.get(i).getAttribute("value");
-				if (optionValue.equals(expected[i])) {
-					LogUtilities.error("passed on: " + optionValue);
-				} else {
-					LogUtilities.error("failed on: " + optionValue);
-
-				}
-
-			}
 		} catch (NoSuchElementException e) {
 			throw new NoSuchElementException(e.getMessage());
 		}
@@ -206,7 +56,7 @@ public class CommonActionUtil {
 	public static String getAlertText() throws InterruptedException {
 		try {
 			Alert alert = BrowserUtilities.driver.switchTo().alert();
-			Thread.sleep(1000);
+			BrowserUtilities.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			return alert.getText();
 		} catch (NoAlertPresentException e) {
 			throw new NoAlertPresentException();
@@ -417,7 +267,7 @@ public class CommonActionUtil {
 	}
 
 	/**
-	 * method to handle windows
+	 * method to handle windows using for loop
 	 */
 
 	public static void winHandle() {
@@ -430,7 +280,24 @@ public class CommonActionUtil {
 
 		}
 	}
+	
+	/**
+	 * method to handle windows using iterator(Priority)
+	 */
 
+	public static void getWindowHandles() throws InterruptedException {
+		CommonActionUtil.implicitWait();
+
+		String subWindowHandler = null;
+
+		Set<String> handles = BrowserUtilities.driver.getWindowHandles(); 
+		Iterator<String> iterator = handles.iterator();
+		while (iterator.hasNext()) {
+			subWindowHandler = iterator.next();
+			BrowserUtilities.driver.switchTo().window(subWindowHandler);
+		}
+
+	}
 	/**
 	 * method to get rgba color style of element
 	 */
@@ -440,8 +307,8 @@ public class CommonActionUtil {
 		return element.getCssValue("background-color");
 	}
 
-	public static void implicitWait1() {
-		BrowserUtilities.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	public static void implicitWait() {
+		BrowserUtilities.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	public static void expWaitElementClick(WebDriver driver, By by) {
