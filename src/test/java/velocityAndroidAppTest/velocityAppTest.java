@@ -359,7 +359,7 @@ public class velocityAppTest {
 
 	@AfterMethod
 	public void captureTest() {
-		ScreenshotUtilities.captureAndroidScreenShot();
+		ScreenshotUtilities.captureScreenShot();
 	}
 
 	@AfterTest
