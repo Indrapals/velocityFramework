@@ -1,79 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15045" started-at="2018-03-21T12:20:03Z" finished-at="2018-03-21T12:20:18Z">
+  <suite name="Default suite" duration-ms="4961" started-at="2018-07-30T10:23:09Z" finished-at="2018-07-30T10:23:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15045" started-at="2018-03-21T12:20:03Z" finished-at="2018-03-21T12:20:18Z">
-      <class name="geberitWebTest.GeberitTest_001">
-        <test-method status="PASS" signature="launch()[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee]" name="launch" is-config="true" duration-ms="6431" started-at="2018-03-21T17:50:03Z" finished-at="2018-03-21T17:50:10Z">
+    <test name="Default test" duration-ms="4961" started-at="2018-07-30T10:23:09Z" finished-at="2018-07-30T10:23:14Z">
+      <class name="restAPITest.SimpleGetTest">
+        <test-method status="PASS" signature="GetWeatherDetails()[pri:0, instance:restAPITest.SimpleGetTest@5700d6b1]" name="GetWeatherDetails" duration-ms="4930" started-at="2018-07-30T15:53:09Z" finished-at="2018-07-30T15:53:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method status="PASS" signature="laodPages()[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee]" name="laodPages" is-config="true" duration-ms="102" started-at="2018-03-21T17:50:10Z" finished-at="2018-03-21T17:50:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- laodPages -->
-        <test-method status="FAIL" signature="loginuserTest_001()[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee]" name="loginuserTest_001" duration-ms="5408" started-at="2018-03-21T17:50:10Z" finished-at="2018-03-21T17:50:15Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [fadfd] but found [dfsdf]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [fadfd] but found [dfsdf]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:496)
-	at org.testng.Assert.assertEquals(Assert.java:125)
-	at org.testng.Assert.assertEquals(Assert.java:178)
-	at org.testng.Assert.assertEquals(Assert.java:188)
-	at geberitWebTest.GeberitTest_001.loginuserTest_001(GeberitTest_001.java:62)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:821)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:773)
-	at org.testng.TestRunner.run(TestRunner.java:623)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1110)
-	at org.testng.TestNG.run(TestNG.java:1018)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginuserTest_001 -->
-        <test-method status="PASS" signature="screenshot(org.testng.ITestResult)[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee]" name="screenshot" is-config="true" duration-ms="738" started-at="2018-03-21T17:50:15Z" finished-at="2018-03-21T17:50:16Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginuserTest_001 status=FAILURE method=GeberitTest_001.loginuserTest_001()[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenshot -->
-        <test-method status="PASS" signature="crash()[pri:0, instance:geberitWebTest.GeberitTest_001@7085bdee]" name="crash" is-config="true" duration-ms="2248" started-at="2018-03-21T17:50:16Z" finished-at="2018-03-21T17:50:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- crash -->
-      </class> <!-- geberitWebTest.GeberitTest_001 -->
+        </test-method> <!-- GetWeatherDetails -->
+      </class> <!-- restAPITest.SimpleGetTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="geberitWebTest.GeberitTest_001">
+      <class name="restAPITest.SimpleGetTest">
         <methods>
-          <include name="screenshot"/>
-          <include name="crash"/>
-          <include name="loginuserTest_001"/>
-          <include name="launch"/>
-          <include name="laodPages"/>
+          <include name="getUserRequest"/>
         </methods>
-      </class> <!-- geberitWebTest.GeberitTest_001 -->
+      </class> <!-- restAPITest.SimpleGetTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,4 +1,4 @@
-package geberitWebTest;
+package sampleWebTest;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -23,7 +23,7 @@ import genericlibrary.LogUtilities;
 import genericlibrary.ScreenshotUtilities;
 import pageobjects.LoginPage;
 
-public class GeberitTest_001 {
+public class SampleTest_001 {
 
 	LoginPage lpobj;
 	Logger log;
